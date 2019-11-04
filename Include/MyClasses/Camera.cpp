@@ -1,0 +1,126 @@
+#include "Camera.hpp"
+#include "VectorOperations.hpp"
+
+Camera::Camera()
+{
+	this->pos = sf::Vector3f(0, 3, -5);
+	this->rot = sf::Vector2f();
+	this->pointToLookAt = pos;
+	this->pointToLookAt.z -= 1;
+	this->lookDirection = this->pointToLookAt - this->pos;
+	this->lookDirectionFlat = this->lookDirection;
+	this->walkDirection = sf::Vector3f();
+}
+
+Camera::~Camera()
+{
+}
+
+void Camera::updateCameraPosition() 
+{
+	static float pi	= (float)3.14159265359;
+	static float r = 2;
+	float alpha = this->rot.x / (2 * pi);
+	float beta	= -this->rot.y / (2 * pi);
+
+	this->pos = this->pointToLookAt - this->lookDirection;
+
+	this->pos.x += r * cos(alpha)*cos(beta);
+	this->pos.y += r * sin(beta);
+	this->pos.z += r * cos(beta)*sin(alpha);
+
+	this->updateLookDirectionCallback();
+	this->updateSideDirectionCallback();
+}
+
+void Camera::updateCameraRotation(float dx, float dy) 
+{
+	static bool canLookUp = 1;
+	static bool canLookDown = 1;
+	float pi = (float)3.14159265359;
+
+	float radY = this->rot.y / (2 * pi);
+
+	this->rot.x += dx;
+	
+	if (radY > pi/2 - 0.1) //less than pi/2
+	{
+		canLookUp = 0;
+	}
+	else 
+	{
+		canLookUp = 1;
+	}
+	if (radY < -pi/2 + 0.1) //less than pi/2
+	{
+		canLookDown = 0;
+	}
+	else
+	{
+		canLookDown = 1;
+	}
+
+	if (canLookUp && dy > 0)
+	{
+		this->rot.y += dy;
+	}
+	if (canLookDown && dy < 0)
+	{
+		this->rot.y += dy;
+	}
+
+	this->updateLookDirectionCallback();
+	this->updateSideDirectionCallback();
+}
+
+void Camera::updateLookDirectionCallback() 
+{
+	this->lookDirection = this->pointToLookAt - this->pos;
+	normalize(&this->lookDirection);
+	this->lookDirectionFlat = this->lookDirection;
+	this->lookDirectionFlat.y = 0;
+	normalize(&this->lookDirectionFlat);
+}
+
+void Camera::updateSideDirectionCallback() 
+{
+	this->sideDirection = sf::Vector3f(-this->lookDirection.z, 0, this->lookDirection.x); //sneaky method all adjacent vectors on plane be like [(a,b), (-b,a)]
+	normalize(&this->sideDirection);
+}
+
+void Camera::updatePointToLookAtPosition(sf::Vector3f newPos) 
+{
+	this->pointToLookAt = newPos;
+}
+
+void Camera::updateWalkDirection() 
+{
+	sf::Vector3f resultant = sf::Vector3f(0, 0, 0);
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+	{
+		 resultant += lookDirectionFlat;
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+	{
+		resultant -= lookDirectionFlat;
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+	{
+		resultant -= sideDirection;
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+	{
+		resultant += sideDirection;
+	}
+	normalize(&resultant);
+	this->walkDirection = resultant;
+}
+
+void Camera::moveCamera() 
+{
+	gluLookAt(this->pos.x, this->pos.y, this->pos.z, this->pointToLookAt.x, this->pointToLookAt.y, this->pointToLookAt.z, 0, 1, 0);
+}

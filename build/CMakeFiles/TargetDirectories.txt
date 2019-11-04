@@ -1,0 +1,3 @@
+/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/rebuild_cache.dir
+/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/edit_cache.dir
+/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir
