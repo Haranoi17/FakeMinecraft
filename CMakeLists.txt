@@ -26,7 +26,8 @@ link_libraries(
     sfml-system
     GL
     GLU
-    glut           
+    glut    
+    GLEW   
 )
 
 add_executable(game.out ${SRC})

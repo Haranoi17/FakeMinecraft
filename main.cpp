@@ -11,6 +11,8 @@ void eventHandlingFunction();
 void mouseWithCamera();
 void dealWithCollisions();
 
+GLuint initShaders();
+
 void playerShoot();
 
 void drawAxis();
@@ -32,19 +34,23 @@ float 								ambientLight[] = {0.2,0.2,0.2,1};
 float 								spotDir[] = { 1,0,0 };
 float 								fov = 60;
 GLUquadric*							quad;
+GLuint program;
+float x = 0;
 
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
+	glewInit();
 	initBullet();
 	initGL();
-	reshapeScreen();
+	
+	program = initShaders();
 
-	worldTimer.restart();
-	dynamicsWorld->computeOverlappingPairs();
+	reshapeScreen();
 
 	while (window.isOpen())
 	{
+
 		eventHandlingFunction();
 		updateFunction();
 		dealWithCollisions();
@@ -57,16 +63,6 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-void updateLightPos()
-{
-	player->playerRigidBody->getMotionState()->getWorldTransform(trans);
-
-	lightPos[0] = trans.getOrigin().getX();
-	lightPos[1] = trans.getOrigin().getY() + 1;
-	lightPos[2] = trans.getOrigin().getZ();
-	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
-}
-
 void drawScreen()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -74,6 +70,8 @@ void drawScreen()
 	glLoadIdentity();
 
 	cam->moveCamera();
+
+	//glUseProgram(program);
 
 	glPushMatrix();
 	glTranslatef(lightPos[0],lightPos[1],lightPos[2]);
@@ -121,6 +119,8 @@ void drawScreen()
 	gluSphere(quad,2,40, 40);
 	glPopMatrix();
 
+	//glUseProgram(0);
+	
 	glPushMatrix();
 	glColor3f(1, 0, 0);
 	glTranslatef(-3, 4, 0);
@@ -393,4 +393,57 @@ void playerShoot()
 		bullets.pop_back();
 	}
 	timer.restart();
+}
+
+void updateLightPos()
+{
+	player->playerRigidBody->getMotionState()->getWorldTransform(trans);
+
+	lightPos[0] = trans.getOrigin().getX();
+	lightPos[1] = trans.getOrigin().getY() + 1;
+	lightPos[2] = trans.getOrigin().getZ();
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
+}
+
+GLuint initShaders()
+{
+
+	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+	std::string vertexShaderString;
+	std::string fragmentShaderString;
+
+	std::ifstream vertexShaderFile;
+	std::ifstream fragmentShaderFile;
+
+	std::stringstream vertexShaderStream;
+	std::stringstream fragmentShaderStream;
+	
+	vertexShaderFile.open("/home/haranoi17/Documents/Projects/OpenGl_SFML/shaders/vertexShader.vert");
+	fragmentShaderFile.open("/home/haranoi17/Documents/Projects/OpenGl_SFML/shaders/fragmentShader.frag");
+
+	vertexShaderStream << vertexShaderFile.rdbuf();
+	fragmentShaderStream << fragmentShaderFile.rdbuf();
+
+	vertexShaderString = vertexShaderStream.str();
+	fragmentShaderString = fragmentShaderStream.str();
+
+	const GLchar *vertexShaderCode = vertexShaderString.c_str();
+	const GLchar *fragmentShaderCode = fragmentShaderString.c_str();
+
+	glShaderSource(vertexShader, 1, &vertexShaderCode, NULL);
+	glShaderSource(fragmentShader, 1, &fragmentShaderCode, NULL);
+
+	glCompileShader(vertexShader);
+	glCompileShader(fragmentShader);
+
+	GLuint program = glCreateProgram();
+
+	glAttachShader(program, vertexShader);
+	glAttachShader(program, fragmentShader);
+	
+	glLinkProgram(program);
+
+	return program;
 }
