@@ -1,4 +1,4 @@
-#include "VectorOperations.hpp"
+#include <vectorOperations.hpp>
 #include <math.h>
 
 void normalize(sf::Vector3f* vec)

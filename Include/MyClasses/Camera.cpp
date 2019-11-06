@@ -1,5 +1,5 @@
 #include "Camera.hpp"
-#include "VectorOperations.hpp"
+#include <vectorOperations.hpp>
 
 Camera::Camera()
 {
@@ -33,7 +33,7 @@ void Camera::updateCameraPosition()
 	this->updateSideDirectionCallback();
 }
 
-void Camera::updateCameraRotation(float dx, float dy) 
+void Camera::updateCameraRotation(sf::Vector2i d, float mouseSpeed) 
 {
 	static bool canLookUp = 1;
 	static bool canLookDown = 1;
@@ -41,7 +41,7 @@ void Camera::updateCameraRotation(float dx, float dy)
 
 	float radY = this->rot.y / (2 * pi);
 
-	this->rot.x += dx;
+	this->rot.x += (float)d.x * mouseSpeed;
 	
 	if (radY > pi/2 - 0.1) //less than pi/2
 	{
@@ -60,13 +60,13 @@ void Camera::updateCameraRotation(float dx, float dy)
 		canLookDown = 1;
 	}
 
-	if (canLookUp && dy > 0)
+	if (canLookUp && d.y > 0)
 	{
-		this->rot.y += dy;
+		this->rot.y += (float)d.y * mouseSpeed;
 	}
-	if (canLookDown && dy < 0)
+	if (canLookDown && d.y < 0)
 	{
-		this->rot.y += dy;
+		this->rot.y += (float)d.y * mouseSpeed;
 	}
 
 	this->updateLookDirectionCallback();

@@ -258,32 +258,383 @@ Include/MyClasses/Player.cpp.s:
 	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.s
 .PHONY : Include/MyClasses/Player.cpp.s
 
-Include/MyClasses/VectorOperations.o: Include/MyClasses/VectorOperations.cpp.o
+Include/MyFunctions/dealWithCollisions.o: Include/MyFunctions/dealWithCollisions.cpp.o
 
-.PHONY : Include/MyClasses/VectorOperations.o
+.PHONY : Include/MyFunctions/dealWithCollisions.o
 
 # target to build an object file
-Include/MyClasses/VectorOperations.cpp.o:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o
-.PHONY : Include/MyClasses/VectorOperations.cpp.o
+Include/MyFunctions/dealWithCollisions.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o
+.PHONY : Include/MyFunctions/dealWithCollisions.cpp.o
 
-Include/MyClasses/VectorOperations.i: Include/MyClasses/VectorOperations.cpp.i
+Include/MyFunctions/dealWithCollisions.i: Include/MyFunctions/dealWithCollisions.cpp.i
 
-.PHONY : Include/MyClasses/VectorOperations.i
+.PHONY : Include/MyFunctions/dealWithCollisions.i
 
 # target to preprocess a source file
-Include/MyClasses/VectorOperations.cpp.i:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.i
-.PHONY : Include/MyClasses/VectorOperations.cpp.i
+Include/MyFunctions/dealWithCollisions.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.i
+.PHONY : Include/MyFunctions/dealWithCollisions.cpp.i
 
-Include/MyClasses/VectorOperations.s: Include/MyClasses/VectorOperations.cpp.s
+Include/MyFunctions/dealWithCollisions.s: Include/MyFunctions/dealWithCollisions.cpp.s
 
-.PHONY : Include/MyClasses/VectorOperations.s
+.PHONY : Include/MyFunctions/dealWithCollisions.s
 
 # target to generate assembly for a file
-Include/MyClasses/VectorOperations.cpp.s:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.s
-.PHONY : Include/MyClasses/VectorOperations.cpp.s
+Include/MyFunctions/dealWithCollisions.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.s
+.PHONY : Include/MyFunctions/dealWithCollisions.cpp.s
+
+Include/MyFunctions/drawAxis.o: Include/MyFunctions/drawAxis.cpp.o
+
+.PHONY : Include/MyFunctions/drawAxis.o
+
+# target to build an object file
+Include/MyFunctions/drawAxis.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o
+.PHONY : Include/MyFunctions/drawAxis.cpp.o
+
+Include/MyFunctions/drawAxis.i: Include/MyFunctions/drawAxis.cpp.i
+
+.PHONY : Include/MyFunctions/drawAxis.i
+
+# target to preprocess a source file
+Include/MyFunctions/drawAxis.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.i
+.PHONY : Include/MyFunctions/drawAxis.cpp.i
+
+Include/MyFunctions/drawAxis.s: Include/MyFunctions/drawAxis.cpp.s
+
+.PHONY : Include/MyFunctions/drawAxis.s
+
+# target to generate assembly for a file
+Include/MyFunctions/drawAxis.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.s
+.PHONY : Include/MyFunctions/drawAxis.cpp.s
+
+Include/MyFunctions/drawScreen.o: Include/MyFunctions/drawScreen.cpp.o
+
+.PHONY : Include/MyFunctions/drawScreen.o
+
+# target to build an object file
+Include/MyFunctions/drawScreen.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o
+.PHONY : Include/MyFunctions/drawScreen.cpp.o
+
+Include/MyFunctions/drawScreen.i: Include/MyFunctions/drawScreen.cpp.i
+
+.PHONY : Include/MyFunctions/drawScreen.i
+
+# target to preprocess a source file
+Include/MyFunctions/drawScreen.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.i
+.PHONY : Include/MyFunctions/drawScreen.cpp.i
+
+Include/MyFunctions/drawScreen.s: Include/MyFunctions/drawScreen.cpp.s
+
+.PHONY : Include/MyFunctions/drawScreen.s
+
+# target to generate assembly for a file
+Include/MyFunctions/drawScreen.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.s
+.PHONY : Include/MyFunctions/drawScreen.cpp.s
+
+Include/MyFunctions/eventHandling.o: Include/MyFunctions/eventHandling.cpp.o
+
+.PHONY : Include/MyFunctions/eventHandling.o
+
+# target to build an object file
+Include/MyFunctions/eventHandling.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o
+.PHONY : Include/MyFunctions/eventHandling.cpp.o
+
+Include/MyFunctions/eventHandling.i: Include/MyFunctions/eventHandling.cpp.i
+
+.PHONY : Include/MyFunctions/eventHandling.i
+
+# target to preprocess a source file
+Include/MyFunctions/eventHandling.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.i
+.PHONY : Include/MyFunctions/eventHandling.cpp.i
+
+Include/MyFunctions/eventHandling.s: Include/MyFunctions/eventHandling.cpp.s
+
+.PHONY : Include/MyFunctions/eventHandling.s
+
+# target to generate assembly for a file
+Include/MyFunctions/eventHandling.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.s
+.PHONY : Include/MyFunctions/eventHandling.cpp.s
+
+Include/MyFunctions/finishBullet.o: Include/MyFunctions/finishBullet.cpp.o
+
+.PHONY : Include/MyFunctions/finishBullet.o
+
+# target to build an object file
+Include/MyFunctions/finishBullet.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o
+.PHONY : Include/MyFunctions/finishBullet.cpp.o
+
+Include/MyFunctions/finishBullet.i: Include/MyFunctions/finishBullet.cpp.i
+
+.PHONY : Include/MyFunctions/finishBullet.i
+
+# target to preprocess a source file
+Include/MyFunctions/finishBullet.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.i
+.PHONY : Include/MyFunctions/finishBullet.cpp.i
+
+Include/MyFunctions/finishBullet.s: Include/MyFunctions/finishBullet.cpp.s
+
+.PHONY : Include/MyFunctions/finishBullet.s
+
+# target to generate assembly for a file
+Include/MyFunctions/finishBullet.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.s
+.PHONY : Include/MyFunctions/finishBullet.cpp.s
+
+Include/MyFunctions/initBullet.o: Include/MyFunctions/initBullet.cpp.o
+
+.PHONY : Include/MyFunctions/initBullet.o
+
+# target to build an object file
+Include/MyFunctions/initBullet.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o
+.PHONY : Include/MyFunctions/initBullet.cpp.o
+
+Include/MyFunctions/initBullet.i: Include/MyFunctions/initBullet.cpp.i
+
+.PHONY : Include/MyFunctions/initBullet.i
+
+# target to preprocess a source file
+Include/MyFunctions/initBullet.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.i
+.PHONY : Include/MyFunctions/initBullet.cpp.i
+
+Include/MyFunctions/initBullet.s: Include/MyFunctions/initBullet.cpp.s
+
+.PHONY : Include/MyFunctions/initBullet.s
+
+# target to generate assembly for a file
+Include/MyFunctions/initBullet.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.s
+.PHONY : Include/MyFunctions/initBullet.cpp.s
+
+Include/MyFunctions/initGL.o: Include/MyFunctions/initGL.cpp.o
+
+.PHONY : Include/MyFunctions/initGL.o
+
+# target to build an object file
+Include/MyFunctions/initGL.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o
+.PHONY : Include/MyFunctions/initGL.cpp.o
+
+Include/MyFunctions/initGL.i: Include/MyFunctions/initGL.cpp.i
+
+.PHONY : Include/MyFunctions/initGL.i
+
+# target to preprocess a source file
+Include/MyFunctions/initGL.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.i
+.PHONY : Include/MyFunctions/initGL.cpp.i
+
+Include/MyFunctions/initGL.s: Include/MyFunctions/initGL.cpp.s
+
+.PHONY : Include/MyFunctions/initGL.s
+
+# target to generate assembly for a file
+Include/MyFunctions/initGL.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.s
+.PHONY : Include/MyFunctions/initGL.cpp.s
+
+Include/MyFunctions/initShaders.o: Include/MyFunctions/initShaders.cpp.o
+
+.PHONY : Include/MyFunctions/initShaders.o
+
+# target to build an object file
+Include/MyFunctions/initShaders.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o
+.PHONY : Include/MyFunctions/initShaders.cpp.o
+
+Include/MyFunctions/initShaders.i: Include/MyFunctions/initShaders.cpp.i
+
+.PHONY : Include/MyFunctions/initShaders.i
+
+# target to preprocess a source file
+Include/MyFunctions/initShaders.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.i
+.PHONY : Include/MyFunctions/initShaders.cpp.i
+
+Include/MyFunctions/initShaders.s: Include/MyFunctions/initShaders.cpp.s
+
+.PHONY : Include/MyFunctions/initShaders.s
+
+# target to generate assembly for a file
+Include/MyFunctions/initShaders.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.s
+.PHONY : Include/MyFunctions/initShaders.cpp.s
+
+Include/MyFunctions/mouseHandling.o: Include/MyFunctions/mouseHandling.cpp.o
+
+.PHONY : Include/MyFunctions/mouseHandling.o
+
+# target to build an object file
+Include/MyFunctions/mouseHandling.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o
+.PHONY : Include/MyFunctions/mouseHandling.cpp.o
+
+Include/MyFunctions/mouseHandling.i: Include/MyFunctions/mouseHandling.cpp.i
+
+.PHONY : Include/MyFunctions/mouseHandling.i
+
+# target to preprocess a source file
+Include/MyFunctions/mouseHandling.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.i
+.PHONY : Include/MyFunctions/mouseHandling.cpp.i
+
+Include/MyFunctions/mouseHandling.s: Include/MyFunctions/mouseHandling.cpp.s
+
+.PHONY : Include/MyFunctions/mouseHandling.s
+
+# target to generate assembly for a file
+Include/MyFunctions/mouseHandling.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.s
+.PHONY : Include/MyFunctions/mouseHandling.cpp.s
+
+Include/MyFunctions/playerShoot.o: Include/MyFunctions/playerShoot.cpp.o
+
+.PHONY : Include/MyFunctions/playerShoot.o
+
+# target to build an object file
+Include/MyFunctions/playerShoot.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o
+.PHONY : Include/MyFunctions/playerShoot.cpp.o
+
+Include/MyFunctions/playerShoot.i: Include/MyFunctions/playerShoot.cpp.i
+
+.PHONY : Include/MyFunctions/playerShoot.i
+
+# target to preprocess a source file
+Include/MyFunctions/playerShoot.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.i
+.PHONY : Include/MyFunctions/playerShoot.cpp.i
+
+Include/MyFunctions/playerShoot.s: Include/MyFunctions/playerShoot.cpp.s
+
+.PHONY : Include/MyFunctions/playerShoot.s
+
+# target to generate assembly for a file
+Include/MyFunctions/playerShoot.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.s
+.PHONY : Include/MyFunctions/playerShoot.cpp.s
+
+Include/MyFunctions/reshapeScreen.o: Include/MyFunctions/reshapeScreen.cpp.o
+
+.PHONY : Include/MyFunctions/reshapeScreen.o
+
+# target to build an object file
+Include/MyFunctions/reshapeScreen.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o
+.PHONY : Include/MyFunctions/reshapeScreen.cpp.o
+
+Include/MyFunctions/reshapeScreen.i: Include/MyFunctions/reshapeScreen.cpp.i
+
+.PHONY : Include/MyFunctions/reshapeScreen.i
+
+# target to preprocess a source file
+Include/MyFunctions/reshapeScreen.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.i
+.PHONY : Include/MyFunctions/reshapeScreen.cpp.i
+
+Include/MyFunctions/reshapeScreen.s: Include/MyFunctions/reshapeScreen.cpp.s
+
+.PHONY : Include/MyFunctions/reshapeScreen.s
+
+# target to generate assembly for a file
+Include/MyFunctions/reshapeScreen.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.s
+.PHONY : Include/MyFunctions/reshapeScreen.cpp.s
+
+Include/MyFunctions/setMaterial.o: Include/MyFunctions/setMaterial.cpp.o
+
+.PHONY : Include/MyFunctions/setMaterial.o
+
+# target to build an object file
+Include/MyFunctions/setMaterial.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o
+.PHONY : Include/MyFunctions/setMaterial.cpp.o
+
+Include/MyFunctions/setMaterial.i: Include/MyFunctions/setMaterial.cpp.i
+
+.PHONY : Include/MyFunctions/setMaterial.i
+
+# target to preprocess a source file
+Include/MyFunctions/setMaterial.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.i
+.PHONY : Include/MyFunctions/setMaterial.cpp.i
+
+Include/MyFunctions/setMaterial.s: Include/MyFunctions/setMaterial.cpp.s
+
+.PHONY : Include/MyFunctions/setMaterial.s
+
+# target to generate assembly for a file
+Include/MyFunctions/setMaterial.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.s
+.PHONY : Include/MyFunctions/setMaterial.cpp.s
+
+Include/MyFunctions/update.o: Include/MyFunctions/update.cpp.o
+
+.PHONY : Include/MyFunctions/update.o
+
+# target to build an object file
+Include/MyFunctions/update.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o
+.PHONY : Include/MyFunctions/update.cpp.o
+
+Include/MyFunctions/update.i: Include/MyFunctions/update.cpp.i
+
+.PHONY : Include/MyFunctions/update.i
+
+# target to preprocess a source file
+Include/MyFunctions/update.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.i
+.PHONY : Include/MyFunctions/update.cpp.i
+
+Include/MyFunctions/update.s: Include/MyFunctions/update.cpp.s
+
+.PHONY : Include/MyFunctions/update.s
+
+# target to generate assembly for a file
+Include/MyFunctions/update.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.s
+.PHONY : Include/MyFunctions/update.cpp.s
+
+Include/MyFunctions/vectorOperations.o: Include/MyFunctions/vectorOperations.cpp.o
+
+.PHONY : Include/MyFunctions/vectorOperations.o
+
+# target to build an object file
+Include/MyFunctions/vectorOperations.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o
+.PHONY : Include/MyFunctions/vectorOperations.cpp.o
+
+Include/MyFunctions/vectorOperations.i: Include/MyFunctions/vectorOperations.cpp.i
+
+.PHONY : Include/MyFunctions/vectorOperations.i
+
+# target to preprocess a source file
+Include/MyFunctions/vectorOperations.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.i
+.PHONY : Include/MyFunctions/vectorOperations.cpp.i
+
+Include/MyFunctions/vectorOperations.s: Include/MyFunctions/vectorOperations.cpp.s
+
+.PHONY : Include/MyFunctions/vectorOperations.s
+
+# target to generate assembly for a file
+Include/MyFunctions/vectorOperations.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.s
+.PHONY : Include/MyFunctions/vectorOperations.cpp.s
 
 main.o: main.cpp.o
 
@@ -336,9 +687,48 @@ help:
 	@echo "... Include/MyClasses/Player.o"
 	@echo "... Include/MyClasses/Player.i"
 	@echo "... Include/MyClasses/Player.s"
-	@echo "... Include/MyClasses/VectorOperations.o"
-	@echo "... Include/MyClasses/VectorOperations.i"
-	@echo "... Include/MyClasses/VectorOperations.s"
+	@echo "... Include/MyFunctions/dealWithCollisions.o"
+	@echo "... Include/MyFunctions/dealWithCollisions.i"
+	@echo "... Include/MyFunctions/dealWithCollisions.s"
+	@echo "... Include/MyFunctions/drawAxis.o"
+	@echo "... Include/MyFunctions/drawAxis.i"
+	@echo "... Include/MyFunctions/drawAxis.s"
+	@echo "... Include/MyFunctions/drawScreen.o"
+	@echo "... Include/MyFunctions/drawScreen.i"
+	@echo "... Include/MyFunctions/drawScreen.s"
+	@echo "... Include/MyFunctions/eventHandling.o"
+	@echo "... Include/MyFunctions/eventHandling.i"
+	@echo "... Include/MyFunctions/eventHandling.s"
+	@echo "... Include/MyFunctions/finishBullet.o"
+	@echo "... Include/MyFunctions/finishBullet.i"
+	@echo "... Include/MyFunctions/finishBullet.s"
+	@echo "... Include/MyFunctions/initBullet.o"
+	@echo "... Include/MyFunctions/initBullet.i"
+	@echo "... Include/MyFunctions/initBullet.s"
+	@echo "... Include/MyFunctions/initGL.o"
+	@echo "... Include/MyFunctions/initGL.i"
+	@echo "... Include/MyFunctions/initGL.s"
+	@echo "... Include/MyFunctions/initShaders.o"
+	@echo "... Include/MyFunctions/initShaders.i"
+	@echo "... Include/MyFunctions/initShaders.s"
+	@echo "... Include/MyFunctions/mouseHandling.o"
+	@echo "... Include/MyFunctions/mouseHandling.i"
+	@echo "... Include/MyFunctions/mouseHandling.s"
+	@echo "... Include/MyFunctions/playerShoot.o"
+	@echo "... Include/MyFunctions/playerShoot.i"
+	@echo "... Include/MyFunctions/playerShoot.s"
+	@echo "... Include/MyFunctions/reshapeScreen.o"
+	@echo "... Include/MyFunctions/reshapeScreen.i"
+	@echo "... Include/MyFunctions/reshapeScreen.s"
+	@echo "... Include/MyFunctions/setMaterial.o"
+	@echo "... Include/MyFunctions/setMaterial.i"
+	@echo "... Include/MyFunctions/setMaterial.s"
+	@echo "... Include/MyFunctions/update.o"
+	@echo "... Include/MyFunctions/update.i"
+	@echo "... Include/MyFunctions/update.s"
+	@echo "... Include/MyFunctions/vectorOperations.o"
+	@echo "... Include/MyFunctions/vectorOperations.i"
+	@echo "... Include/MyFunctions/vectorOperations.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

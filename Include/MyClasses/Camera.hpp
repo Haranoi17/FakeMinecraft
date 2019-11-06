@@ -34,7 +34,7 @@ public:
 	sf::Vector3f sideDirection;
 
 	void updateCameraPosition();
-	void updateCameraRotation(float dx, float dy);
+	void updateCameraRotation(sf::Vector2i d, float mouseSpeed);
 	
 	void updateWalkDirection();
 

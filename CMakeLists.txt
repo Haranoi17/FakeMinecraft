@@ -9,7 +9,20 @@ set(
     ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyClasses/Cube.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyClasses/Enemy.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyClasses/Player.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyClasses/VectorOperations.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/dealWithCollisions.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initBullet.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/reshapeScreen.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/setMaterial.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initGL.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawAxis.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initShaders.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/update.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/vectorOperations.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/mouseHandling.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/eventHandling.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/finishBullet.cpp
+    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/playerShoot.cpp
     main.cpp
     )
 
@@ -27,7 +40,7 @@ link_libraries(
     GL
     GLU
     glut    
-    GLEW   
+    GLEW 
 )
 
 add_executable(game.out ${SRC})

@@ -177,33 +177,345 @@ CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o.provides: CMakeFiles/game
 CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o
 
 
-CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o: CMakeFiles/game.out.dir/flags.make
-CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o: ../Include/MyClasses/VectorOperations.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/VectorOperations.cpp
+CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/MyFunctions/dealWithCollisions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/dealWithCollisions.cpp
 
-CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/VectorOperations.cpp > CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.i
+CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/dealWithCollisions.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.i
 
-CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/VectorOperations.cpp -o CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.s
+CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/dealWithCollisions.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.s
 
-CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o.requires:
+CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o.requires:
 
-.PHONY : CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o.requires
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o.requires
 
-CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o.requires
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o.provides.build
-.PHONY : CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o.provides
+CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o.provides
 
-CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o
+CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/MyFunctions/initBullet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initBullet.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initBullet.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initBullet.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/reshapeScreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/reshapeScreen.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/reshapeScreen.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/reshapeScreen.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o: ../Include/MyFunctions/setMaterial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/setMaterial.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/setMaterial.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/setMaterial.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyFunctions/initGL.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initGL.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initGL.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initGL.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o: ../Include/MyFunctions/drawAxis.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawAxis.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawAxis.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawAxis.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/drawScreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o: ../Include/MyFunctions/initShaders.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initShaders.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initShaders.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initShaders.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/update.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/update.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/update.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/update.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o: ../Include/MyFunctions/vectorOperations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/vectorOperations.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/vectorOperations.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/vectorOperations.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o: ../Include/MyFunctions/mouseHandling.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/mouseHandling.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/mouseHandling.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/mouseHandling.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/eventHandling.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/eventHandling.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/eventHandling.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/eventHandling.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/MyFunctions/finishBullet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/finishBullet.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/finishBullet.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/finishBullet.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o
+
+
+CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/MyFunctions/playerShoot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/playerShoot.cpp
+
+CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/playerShoot.cpp > CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.i
+
+CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/playerShoot.cpp -o CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.s
+
+CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o.requires:
+
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o.requires
+
+CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o.provides: CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o.requires
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o.provides.build
+.PHONY : CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o.provides
+
+CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o.provides.build: CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o
 
 
 CMakeFiles/game.out.dir/main.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.out.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/game.out.dir/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/main.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
 
 CMakeFiles/game.out.dir/main.cpp.i: cmake_force
@@ -232,7 +544,20 @@ game_out_OBJECTS = \
 "CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o" \
 "CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o" \
 "CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o" \
-"CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o" \
+"CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o" \
 "CMakeFiles/game.out.dir/main.cpp.o"
 
 # External object files for target game.out
@@ -243,11 +568,24 @@ game.out: CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.o
 game.out: CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o
 game.out: CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o
 game.out: CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o
-game.out: CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o
+game.out: CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o
 game.out: CMakeFiles/game.out.dir/main.cpp.o
 game.out: CMakeFiles/game.out.dir/build.make
 game.out: CMakeFiles/game.out.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable game.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable game.out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.out.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -260,7 +598,20 @@ CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyClasses/Came
 CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o.requires
 CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o.requires
 CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o.requires
-CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyClasses/VectorOperations.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/mouseHandling.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o.requires
+CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o.requires
 CMakeFiles/game.out.dir/requires: CMakeFiles/game.out.dir/main.cpp.o.requires
 
 .PHONY : CMakeFiles/game.out.dir/requires
