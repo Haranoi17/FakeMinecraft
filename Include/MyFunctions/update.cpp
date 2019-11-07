@@ -12,6 +12,13 @@ void updateLightPos()
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
 }
 
+void updateGunPosition()
+{
+	gunPosition = cam->pos;
+
+	gunPosition.y = 2;
+	//TODO: zrobic tak zeby sie obracal z kamerka
+}
 
 void update()
 {
@@ -29,5 +36,6 @@ void update()
 	cam->updateCameraPosition();
 
 	updateLightPos();
+	updateGunPosition();
 }
 

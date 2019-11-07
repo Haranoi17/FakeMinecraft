@@ -2,9 +2,9 @@
 
 sf::Vector2i mouseHandling()
 {
-	static	sf::Vector2i prev = sf::Mouse::getPosition();
-	sf::Vector2i mousePos = sf::Mouse::getPosition();
-	sf::Vector2i d = mousePos - prev;
+	static	sf::Vector2i 	prev = sf::Mouse::getPosition();
+	sf::Vector2i 			mousePos = sf::Mouse::getPosition();
+	sf::Vector2i 			d = mousePos - prev;
 
 	if(mousePos.x == 0)
 	{

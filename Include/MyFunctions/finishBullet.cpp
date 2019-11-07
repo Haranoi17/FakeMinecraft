@@ -4,6 +4,7 @@
 void finishBullet()
 {
 	for (auto &enemy : enemies) dynamicsWorld->removeRigidBody(enemy->enemyRigidBody);
+	
 	dynamicsWorld->removeRigidBody(groundRigidBody);
 
 	delete groundRigidBody->getMotionState();

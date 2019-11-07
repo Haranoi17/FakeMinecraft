@@ -3,13 +3,13 @@
 
 void playerShoot()
 {
-	static bool blockLeft = false;
-	static sf::Clock timer = sf::Clock();
+	static bool 		blockLeft = false;
+	static sf::Clock 	timer = sf::Clock();
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && !blockLeft)
 	{
 		bullets.push_back(new btRigidBody(btRigidBody::btRigidBodyConstructionInfo(btScalar(0.2), new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
-			btVector3((btScalar)cam->pointToLookAt.x, (btScalar)(cam->pointToLookAt.y + 0.2), (btScalar)cam->pointToLookAt.z))), new btSphereShape((btScalar)0.2), btVector3(1, 1, 1))));
+							btVector3((btScalar)gunPosition.x, (btScalar)(gunPosition.y), (btScalar)gunPosition.z))), new btSphereShape((btScalar)0.2), btVector3(1, 1, 1))));
 
 		bullets.back()->applyCentralImpulse(btVector3(cam->lookDirection.x * 10, 0, cam->lookDirection.z * 10));
 		dynamicsWorld->addRigidBody(bullets.back());

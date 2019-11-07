@@ -5,12 +5,13 @@
 btDefaultCollisionConfiguration* 	collisionConfiguration;
 btDiscreteDynamicsWorld* 			dynamicsWorld;
 btRigidBody* 						groundRigidBody;
-std::vector<btRigidBody*> 			bullets;
 btTransform 						trans;
-sf::RenderWindow 					window(sf::VideoMode(800, 600), "SfmlOpenGl", 7U, sf::ContextSettings(24, 8, 2));
 Camera* 							cam = new Camera();
 Player* 							player = new Player();
+std::vector<btRigidBody*> 			bullets;
 std::vector<Enemy*> 				enemies;
+sf::RenderWindow 					window(sf::VideoMode(800, 600), "SfmlOpenGl", 7U, sf::ContextSettings(24, 8, 2));
+sf::Vector3f						gunPosition;
 sf::Clock 							worldTimer = sf::Clock();
 sf::Clock							animationTimer = sf::Clock();
 sf::Event 							event;
@@ -21,9 +22,8 @@ float 								x = 0;
 float								mouseSpeed = 0.05;
 GLUquadric*							quad;
 GLuint 								program;
-
-static const char* vertexShaderPath = "/home/haranoi17/Documents/Projects/OpenGl_SFML/shaders/vertexShader.vert";
-static const char* fragmentShaderPath = "/home/haranoi17/Documents/Projects/OpenGl_SFML/shaders/fragmentShader.frag";
+static const char* 					vertexShaderPath = "/home/haranoi17/Documents/Projects/OpenGl_SFML/shaders/vertexShader.vert";
+static const char* 					fragmentShaderPath = "/home/haranoi17/Documents/Projects/OpenGl_SFML/shaders/fragmentShader.frag";
 
 int main(int argc, char** argv)
 {
@@ -40,7 +40,6 @@ int main(int argc, char** argv)
 
 	while (window.isOpen())
 	{
-
 		eventHandling();
 		update();
 		dealWithCollisions();
