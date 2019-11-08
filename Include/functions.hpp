@@ -1,7 +1,6 @@
 #pragma once
 
 #include <dealWithCollisions.hpp>
-#include <drawAxis.hpp>
 #include <drawScreen.hpp>
 #include <eventHandling.hpp>
 #include <finishBullet.hpp>

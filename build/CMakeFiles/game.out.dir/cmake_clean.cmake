@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/game.out.dir/Include/Bullet/bullet_src.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.o"
-  "CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o"
+  "CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o"
@@ -9,7 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyFunctions/setMaterial.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o"
-  "CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyFunctions/initShaders.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o"

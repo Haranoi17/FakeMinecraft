@@ -91,6 +91,9 @@ void Camera::updateSideDirectionCallback()
 void Camera::updatePointToLookAtPosition(sf::Vector3f newPos) 
 {
 	this->pointToLookAt = newPos;
+
+	//some trivial transformations
+	this->pointToLookAt.y += 1;
 }
 
 void Camera::updateWalkDirection() 

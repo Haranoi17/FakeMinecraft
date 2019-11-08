@@ -391,9 +391,6 @@ CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.o: ../Include/MyFunctions/v
 CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.o: ../Include/MyClasses/Camera.cpp
 CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.o: ../Include/MyClasses/Camera.hpp
 
-CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o: ../Include/MyClasses/Cube.cpp
-CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o: ../Include/MyClasses/Cube.hpp
-
 CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
 CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
 CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
@@ -598,6 +595,9 @@ CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/Bullet/btBull
 CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyClasses/Player.cpp
 CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyClasses/Player.hpp
 
+CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.o: ../Include/MyClasses/World.hpp
+CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.o: ../Include/MyClasses/World.cpp
+
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
@@ -701,13 +701,11 @@ CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/externs.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o: ../Include/MyFunctions/dealWithCollisions.cpp
-
-CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o: ../Include/MyFunctions/drawAxis.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o: ../Include/MyFunctions/drawAxis.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
@@ -812,8 +810,8 @@ CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/Headers
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/drawAxis.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/finishBullet.hpp
@@ -934,8 +932,8 @@ CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/Head
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/drawAxis.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/finishBullet.hpp
@@ -1056,6 +1054,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/Heade
 CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/MyFunctions/finishBullet.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o: ../Include/externs.hpp
@@ -1164,6 +1163,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/Headers
 CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/MyFunctions/initBullet.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o: ../Include/externs.hpp
@@ -1272,6 +1272,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/Headers.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyFunctions/initGL.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/externs.hpp
@@ -1486,6 +1487,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/Header
 CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/MyFunctions/playerShoot.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o: ../Include/externs.hpp
@@ -1594,6 +1596,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/Head
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/reshapeScreen.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/externs.hpp
@@ -1705,8 +1708,8 @@ CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/Headers.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/drawAxis.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/finishBullet.hpp
@@ -1830,8 +1833,8 @@ CMakeFiles/game.out.dir/main.cpp.o: ../Include/Headers.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyClasses/Enemy.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
-CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/drawAxis.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/finishBullet.hpp

@@ -6,11 +6,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/Bullet/bullet_src.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/Bullet/bullet_src.cpp.o"
   "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Camera.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.o"
-  "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Cube.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o"
   "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Enemy.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o"
   "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Player.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o"
+  "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/World.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.o"
   "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/dealWithCollisions.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o"
-  "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawAxis.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o"
   "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o"
   "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/eventHandling.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o"
   "/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/finishBullet.cpp" "/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o"

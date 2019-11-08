@@ -391,9 +391,6 @@ CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.o
  ../Include/MyFunctions/vectorOperations.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Camera.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Camera.hpp
-CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Cube.cpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Cube.hpp
 CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
@@ -598,6 +595,9 @@ CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o
  ../Include/Bullet/btBulletDynamicsCommon.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Player.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Player.hpp
+CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.o
+ ../Include/MyClasses/World.hpp
+ /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/World.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
@@ -702,13 +702,11 @@ CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/dealWithCollisions.cpp
-CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o
- ../Include/MyFunctions/drawAxis.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawAxis.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
@@ -813,8 +811,8 @@ CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
- ../Include/MyFunctions/drawAxis.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/finishBullet.hpp
@@ -935,8 +933,8 @@ CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
- ../Include/MyFunctions/drawAxis.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/finishBullet.hpp
@@ -1057,6 +1055,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/finishBullet.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/finishBullet.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
@@ -1165,6 +1164,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initBullet.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/initBullet.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
@@ -1273,6 +1273,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/initGL.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
@@ -1487,6 +1488,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/playerShoot.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/playerShoot.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
@@ -1595,6 +1597,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
@@ -1706,8 +1709,8 @@ CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
- ../Include/MyFunctions/drawAxis.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/finishBullet.hpp
@@ -1831,8 +1834,8 @@ CMakeFiles/game.out.dir/main.cpp.o
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/Player.hpp
+ ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
- ../Include/MyFunctions/drawAxis.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/finishBullet.hpp

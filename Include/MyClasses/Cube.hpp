@@ -5,11 +5,10 @@ class Cube
 {
 public:
 	Cube();
-	Cube(float x, float y, float z);
+	Cube(int x, int y, int z);
 	~Cube();
 
-	sf::Vector3f pos;
-
+	sf::Vector3i pos;
 	void draw();
 };
 

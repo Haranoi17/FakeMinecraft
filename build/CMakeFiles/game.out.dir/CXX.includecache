@@ -1022,13 +1022,15 @@ Bullet/btBulletDynamicsCommon.h
 SFML/Graphics.hpp
 ../Include/MyClasses/SFML/Graphics.hpp
 
+../Include/MyClasses/World.hpp
+SFML/Graphics.hpp
+-
+
 ../Include/MyClasses/materials.h
 GL/gl.h
 -
 
 ../Include/MyFunctions/dealWithCollisions.hpp
-
-../Include/MyFunctions/drawAxis.hpp
 
 ../Include/MyFunctions/drawScreen.hpp
 
@@ -1067,6 +1069,8 @@ Enemy.hpp
 -
 Player.hpp
 -
+World.hpp
+-
 
 ../Include/externs.hpp
 Headers.hpp
@@ -1076,8 +1080,6 @@ classes.hpp
 
 ../Include/functions.hpp
 dealWithCollisions.hpp
--
-drawAxis.hpp
 -
 drawScreen.hpp
 -
@@ -4912,16 +4914,6 @@ iostream
 math.h
 -
 
-/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Cube.cpp
-Cube.hpp
-/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Cube.hpp
-SFML/OpenGL.hpp
--
-
-/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Cube.hpp
-SFML/Graphics.hpp
--
-
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Enemy.cpp
 Enemy.hpp
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Enemy.hpp
@@ -4942,16 +4934,16 @@ Bullet/btBulletDynamicsCommon.h
 SFML/Graphics.hpp
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/SFML/Graphics.hpp
 
+/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/World.cpp
+World.hpp
+-
+random
+-
+
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/dealWithCollisions.cpp
 externs.hpp
 -
 dealWithCollisions.hpp
--
-
-/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawAxis.cpp
-SFML/OpenGL.hpp
--
-drawAxis.hpp
 -
 
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp
@@ -5020,6 +5012,8 @@ materials.h
 externs.hpp
 -
 functions.hpp
+-
+math.h
 -
 
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/vectorOperations.cpp

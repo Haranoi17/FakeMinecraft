@@ -1,6 +1,6 @@
 #include <externs.hpp>
 #include <functions.hpp> //update.hpp is already here
-
+#include <math.h>
 
 void updateLightPos()
 {
@@ -14,10 +14,17 @@ void updateLightPos()
 
 void updateGunPosition()
 {
-	gunPosition = cam->pos;
-
-	gunPosition.y = 2;
+	gunPosition = cam->pointToLookAt;
+	gunPosition.x += cos(cam->rot.x/6.28 - 1.57);
+	gunPosition.z += sin((float)cam->rot.x/6.28 - 1.57); 
 	//TODO: zrobic tak zeby sie obracal z kamerka
+}
+
+void updateCrosshairPosition()
+{
+	crosshairPos = cam->pointToLookAt;
+	crosshairPos.x -= 0.5;
+	crosshairPos.y -= 2;
 }
 
 void update()
@@ -37,5 +44,6 @@ void update()
 
 	updateLightPos();
 	updateGunPosition();
+	updateCrosshairPosition();
 }
 

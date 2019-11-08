@@ -177,33 +177,6 @@ Include/MyClasses/Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.s
 .PHONY : Include/MyClasses/Camera.cpp.s
 
-Include/MyClasses/Cube.o: Include/MyClasses/Cube.cpp.o
-
-.PHONY : Include/MyClasses/Cube.o
-
-# target to build an object file
-Include/MyClasses/Cube.cpp.o:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.o
-.PHONY : Include/MyClasses/Cube.cpp.o
-
-Include/MyClasses/Cube.i: Include/MyClasses/Cube.cpp.i
-
-.PHONY : Include/MyClasses/Cube.i
-
-# target to preprocess a source file
-Include/MyClasses/Cube.cpp.i:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.i
-.PHONY : Include/MyClasses/Cube.cpp.i
-
-Include/MyClasses/Cube.s: Include/MyClasses/Cube.cpp.s
-
-.PHONY : Include/MyClasses/Cube.s
-
-# target to generate assembly for a file
-Include/MyClasses/Cube.cpp.s:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/Cube.cpp.s
-.PHONY : Include/MyClasses/Cube.cpp.s
-
 Include/MyClasses/Enemy.o: Include/MyClasses/Enemy.cpp.o
 
 .PHONY : Include/MyClasses/Enemy.o
@@ -258,6 +231,33 @@ Include/MyClasses/Player.cpp.s:
 	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.s
 .PHONY : Include/MyClasses/Player.cpp.s
 
+Include/MyClasses/World.o: Include/MyClasses/World.cpp.o
+
+.PHONY : Include/MyClasses/World.o
+
+# target to build an object file
+Include/MyClasses/World.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.o
+.PHONY : Include/MyClasses/World.cpp.o
+
+Include/MyClasses/World.i: Include/MyClasses/World.cpp.i
+
+.PHONY : Include/MyClasses/World.i
+
+# target to preprocess a source file
+Include/MyClasses/World.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.i
+.PHONY : Include/MyClasses/World.cpp.i
+
+Include/MyClasses/World.s: Include/MyClasses/World.cpp.s
+
+.PHONY : Include/MyClasses/World.s
+
+# target to generate assembly for a file
+Include/MyClasses/World.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.s
+.PHONY : Include/MyClasses/World.cpp.s
+
 Include/MyFunctions/dealWithCollisions.o: Include/MyFunctions/dealWithCollisions.cpp.o
 
 .PHONY : Include/MyFunctions/dealWithCollisions.o
@@ -284,33 +284,6 @@ Include/MyFunctions/dealWithCollisions.s: Include/MyFunctions/dealWithCollisions
 Include/MyFunctions/dealWithCollisions.cpp.s:
 	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/dealWithCollisions.cpp.s
 .PHONY : Include/MyFunctions/dealWithCollisions.cpp.s
-
-Include/MyFunctions/drawAxis.o: Include/MyFunctions/drawAxis.cpp.o
-
-.PHONY : Include/MyFunctions/drawAxis.o
-
-# target to build an object file
-Include/MyFunctions/drawAxis.cpp.o:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.o
-.PHONY : Include/MyFunctions/drawAxis.cpp.o
-
-Include/MyFunctions/drawAxis.i: Include/MyFunctions/drawAxis.cpp.i
-
-.PHONY : Include/MyFunctions/drawAxis.i
-
-# target to preprocess a source file
-Include/MyFunctions/drawAxis.cpp.i:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.i
-.PHONY : Include/MyFunctions/drawAxis.cpp.i
-
-Include/MyFunctions/drawAxis.s: Include/MyFunctions/drawAxis.cpp.s
-
-.PHONY : Include/MyFunctions/drawAxis.s
-
-# target to generate assembly for a file
-Include/MyFunctions/drawAxis.cpp.s:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/Include/MyFunctions/drawAxis.cpp.s
-.PHONY : Include/MyFunctions/drawAxis.cpp.s
 
 Include/MyFunctions/drawScreen.o: Include/MyFunctions/drawScreen.cpp.o
 
@@ -678,21 +651,18 @@ help:
 	@echo "... Include/MyClasses/Camera.o"
 	@echo "... Include/MyClasses/Camera.i"
 	@echo "... Include/MyClasses/Camera.s"
-	@echo "... Include/MyClasses/Cube.o"
-	@echo "... Include/MyClasses/Cube.i"
-	@echo "... Include/MyClasses/Cube.s"
 	@echo "... Include/MyClasses/Enemy.o"
 	@echo "... Include/MyClasses/Enemy.i"
 	@echo "... Include/MyClasses/Enemy.s"
 	@echo "... Include/MyClasses/Player.o"
 	@echo "... Include/MyClasses/Player.i"
 	@echo "... Include/MyClasses/Player.s"
+	@echo "... Include/MyClasses/World.o"
+	@echo "... Include/MyClasses/World.i"
+	@echo "... Include/MyClasses/World.s"
 	@echo "... Include/MyFunctions/dealWithCollisions.o"
 	@echo "... Include/MyFunctions/dealWithCollisions.i"
 	@echo "... Include/MyFunctions/dealWithCollisions.s"
-	@echo "... Include/MyFunctions/drawAxis.o"
-	@echo "... Include/MyFunctions/drawAxis.i"
-	@echo "... Include/MyFunctions/drawAxis.s"
 	@echo "... Include/MyFunctions/drawScreen.o"
 	@echo "... Include/MyFunctions/drawScreen.i"
 	@echo "... Include/MyFunctions/drawScreen.s"
