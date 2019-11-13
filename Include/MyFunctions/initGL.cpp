@@ -3,6 +3,10 @@
 
 void initGL()
 {
+
+	const GLubyte* version = glGetString(GL_VERSION);
+	std::cout << version << std::endl;
+	//glGetIntegerv(GL_MINOR_VERSION, );
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_LIGHTING);

@@ -1,9 +1,10 @@
-varying vec3 N;
-varying vec3 v;
+//uzywam tego bo w wyzszych wersjach trzeba przekazywac swoje macierze wrrrr....
+#version 140
 
-void main(void)  
-{     
-   v = vec3(gl_ModelViewMatrix * gl_Vertex);       
-   N = normalize(gl_NormalMatrix * gl_Normal);
-   gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;  
+uniform vec3 aPos;
+
+void main()
+{
+    aPos = vec3(0,0.5,1);
+    gl_Position = gl_ProjectionMatrix * gl_ModelViewMatrix * gl_Vertex * vec4(aPos, 1);
 }

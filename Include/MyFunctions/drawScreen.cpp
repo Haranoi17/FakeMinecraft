@@ -21,7 +21,6 @@ void drawDirtBlock()
 	glTexCoord2f(1,1);glVertex3f(0.5f, -0.5f, 0.5f);
 	glTexCoord2f(1,0);glVertex3f(0.5f, 0.5f, 0.5f);
 	glTexCoord2f(0,0);glVertex3f(-0.5f, 0.5f, 0.5f);
-	
 	glEnd();
 	
 	glBegin(GL_QUADS);
@@ -68,13 +67,6 @@ void drawDirtBlock()
 	sf::Texture::bind(NULL);
 }
 
-void initScreen()
-{
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor((GLclampf)0.8, (GLclampf)0.8, (GLclampf)0.8, 1);
-	glLoadIdentity();
-	cam->moveCamera();
-}
 
 void drawLightSphere()
 {
@@ -229,6 +221,14 @@ void drawWorld()
 	}
 }
 
+void initScreen()
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClearColor((GLclampf)0.8, (GLclampf)0.8, (GLclampf)0.8, 1);
+	glLoadIdentity();
+	cam->moveCamera();
+}
+
 void drawScreen()
 {
 	
@@ -249,14 +249,13 @@ void drawScreen()
 	}
 
 	drawTestingStuff();
-	
 	drawPlayer();
 	
 	drawWorld();
 	glUseProgram(0);
 
 	drawAxis();
-	drawCrosshair();
+	//drawCrosshair();
 }
 
 //opacity template for drawing object. Draw thing as LAST! element to ensure proper positioning

@@ -26,10 +26,10 @@ set(
     )
 
 include_directories(
-    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/
-    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/Bullet
-    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses
-    /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions
+    ${CMAKE_CURRENT_SOURCE_DIR}/Include/
+    ${CMAKE_CURRENT_SOURCE_DIR}/Include/Bullet
+    ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyClasses
+    ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyFunctions
 )
 
 link_libraries(

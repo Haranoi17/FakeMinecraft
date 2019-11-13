@@ -58,10 +58,10 @@ int main(int argc, char** argv)
 		update();
 		dealWithCollisions();
 
+		
 		drawScreen();
 		window.display();
 	}
-
 	finishBullet();
 	return 0;
 }

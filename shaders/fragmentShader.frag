@@ -1,13 +1,11 @@
-varying vec3 N;
-varying vec3 v;
+#version 460
 
-void main(void)
+out vec4 FragColor;
+
+uniform vec2 texCoord;
+uniform sampler2D texture;
+
+void main()
 {
-   vec3 L = normalize(gl_LightSource[0].position.xyz - v);   
-   vec4 Idiff = gl_FrontLightProduct[0].diffuse * max(dot(N,L), 0.0);  
-   
-   Idiff = clamp(Idiff, 0, 1);
-
-   
-   gl_FragColor = Idiff;
+   FragColor = texture(texture, texCoord);
 }
