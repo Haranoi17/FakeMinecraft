@@ -2,6 +2,7 @@
 #include <classes.hpp>
 #include <functions.hpp>
 
+
 btDefaultCollisionConfiguration* 	collisionConfiguration;
 btDiscreteDynamicsWorld* 			dynamicsWorld;
 btRigidBody* 						groundRigidBody;
