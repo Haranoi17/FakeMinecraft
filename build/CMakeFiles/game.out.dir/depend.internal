@@ -122,6 +122,8 @@ CMakeFiles/game.out.dir/main.cpp.o
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/classes.hpp
  ../Include/functions.hpp
+ ../Include/glew.h
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
 CMakeFiles/game.out.dir/src/Camera.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -890,6 +892,7 @@ CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o
  ../Include/MyFunctions/dealWithCollisions.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/dealWithCollisions.cpp
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1013,6 +1016,7 @@ CMakeFiles/game.out.dir/src/drawScreen.cpp.o
  ../Include/classes.hpp
  ../Include/externs.hpp
  ../Include/functions.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/drawScreen.cpp
 CMakeFiles/game.out.dir/src/eventHandling.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1136,6 +1140,7 @@ CMakeFiles/game.out.dir/src/eventHandling.cpp.o
  ../Include/classes.hpp
  ../Include/externs.hpp
  ../Include/functions.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/eventHandling.cpp
 CMakeFiles/game.out.dir/src/finishBullet.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1245,6 +1250,7 @@ CMakeFiles/game.out.dir/src/finishBullet.cpp.o
  ../Include/MyFunctions/finishBullet.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/finishBullet.cpp
 CMakeFiles/game.out.dir/src/initBullet.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1354,6 +1360,7 @@ CMakeFiles/game.out.dir/src/initBullet.cpp.o
  ../Include/MyFunctions/initBullet.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/initBullet.cpp
 CMakeFiles/game.out.dir/src/initGL.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1463,6 +1470,7 @@ CMakeFiles/game.out.dir/src/initGL.cpp.o
  ../Include/MyFunctions/initGL.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/initGL.cpp
 CMakeFiles/game.out.dir/src/initValues.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1586,6 +1594,7 @@ CMakeFiles/game.out.dir/src/initValues.cpp.o
  ../Include/classes.hpp
  ../Include/externs.hpp
  ../Include/functions.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/initValues.cpp
 CMakeFiles/game.out.dir/src/mouseHandling.cpp.o
  ../Include/MyFunctions/mouseHandling.hpp
@@ -1698,6 +1707,7 @@ CMakeFiles/game.out.dir/src/playerShoot.cpp.o
  ../Include/MyFunctions/playerShoot.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/playerShoot.cpp
 CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1807,6 +1817,7 @@ CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o
  ../Include/MyFunctions/reshapeScreen.hpp
  ../Include/classes.hpp
  ../Include/externs.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/reshapeScreen.cpp
 CMakeFiles/game.out.dir/src/setMaterial.cpp.o
  ../Include/MyClasses/materials.h
@@ -1933,6 +1944,7 @@ CMakeFiles/game.out.dir/src/update.cpp.o
  ../Include/classes.hpp
  ../Include/externs.hpp
  ../Include/functions.hpp
+ ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/update.cpp
 CMakeFiles/game.out.dir/src/vectorOperations.cpp.o
  ../Include/MyFunctions/vectorOperations.hpp

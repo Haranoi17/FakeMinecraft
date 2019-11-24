@@ -1,3 +1,3 @@
 #pragma once
-
-void drawScreen();
+#include <shader.h>
+void drawScreen(Shader);

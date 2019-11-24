@@ -2,6 +2,7 @@
 
 #include <Headers.hpp>
 #include <classes.hpp>
+#include <shader.h>
 
 extern btDefaultCollisionConfiguration* 	collisionConfiguration;
 extern btDiscreteDynamicsWorld* 			dynamicsWorld;
@@ -13,7 +14,6 @@ extern Player* 							    player;
 extern World								generatedWorld;
 extern std::vector<btRigidBody*> 			bullets;
 extern std::vector<Enemy*> 				    blocks;
-extern std::vector<Enemy*>                  blocksBuffor;
 extern sf::RenderWindow 					window;
 extern sf::Clock 							worldTimer;
 extern sf::Clock							animationTimer;
@@ -32,3 +32,11 @@ extern float                                x;
 extern float                                drawDistance;
 extern GLUquadric*							quad;
 
+
+extern GLuint VAO;
+extern GLuint VBO;
+extern float unitMatrix[16];
+
+extern glm::mat4 view;
+extern glm::mat4 projection;
+extern glm::mat4 model;

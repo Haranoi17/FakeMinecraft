@@ -1,6 +1,14 @@
 #include <externs.hpp>
 #include <functions.hpp> //drawScreen is already here
 
+
+
+
+
+#include <glm/matrix.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <SFML/Graphics/Glsl.hpp>
 void drawDirtBlock()
 {
 	sf::Texture::bind(&grassTopTexture);
@@ -220,34 +228,48 @@ void drawTestingStuff()
 
 void initScreen()
 {
+	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor((GLclampf)0.8, (GLclampf)0.8, (GLclampf)0.8, 1);
 	glLoadIdentity();
-	cam->moveCamera();
+	view = cam->moveCamera();
+	
 }
 
-void drawScreen()
+
+void drawScreen(Shader shaderKurwa)
 {
-	
+	GLuint MVPLoc;
 	initScreen();
 
+	shaderKurwa.use();
+	MVPLoc = glGetUniformLocation(shaderKurwa.ID, "MVP");
+	glUseProgram(0);
 
-	drawGround();
+	 drawGround();
 
 
 	
-	//drawWorld();
+	// //drawWorld();
 	drawAxis();
-	for (auto &block : blocks)
-	{
-		block->RigidBody->getMotionState()->getWorldTransform(trans);
-		btVector3 dist = btVector3(trans.getOrigin().getX() - playerTrans.getOrigin().getX(), trans.getOrigin().getY() - playerTrans.getOrigin().getY(), trans.getOrigin().getZ() - playerTrans.getOrigin().getZ());
 
+	
+	for(auto &block : blocks)
+	{
 		
-		if(dist.length2() < drawDistance * drawDistance)
-		{
-			drawBlock(block);
-		}
+		trans = block->RigidBody->getWorldTransform();
+		
+		model = glm::mat4(1);
+		glm::vec4 temp(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ(), 1);
+		model *= temp;
+		
+		// glUniformMatrix4fv(MVPLoc, 1, GL_FALSE, glm::value_ptr(projection * view * model));
+		shaderKurwa.use();
+		shaderKurwa.setMat4("MVP", projection * view * model);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
+		sf::Shader::bind(NULL);
 	}
 
 	for (auto &bullet : bullets)
@@ -255,7 +277,9 @@ void drawScreen()
 		drawBullet(bullet);
 	}
 
-	drawTestingStuff();
+	//drawTestingStuff();
+	
+	sf::Shader::bind(NULL);
 	drawPlayer();
 	//drawCrosshair();
 }

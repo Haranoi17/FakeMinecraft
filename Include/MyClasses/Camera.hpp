@@ -44,6 +44,6 @@ public:
 	void updateLookDirectionCallback();
 	void updateSideDirectionCallback();
 	//
-	void moveCamera();
+	glm::mat4 moveCamera();
 };
 

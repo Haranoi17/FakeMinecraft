@@ -121,6 +121,8 @@ CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/update.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/vectorOperations.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/functions.hpp
+CMakeFiles/game.out.dir/main.cpp.o: ../Include/glew.h
+CMakeFiles/game.out.dir/main.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/main.cpp.o: ../main.cpp
 
 CMakeFiles/game.out.dir/src/Camera.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -889,6 +891,7 @@ CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o: ../Include/MyClasses/World
 CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
 CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o: ../Include/externs.hpp
+CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o: ../src/dealWithCollisions.cpp
 
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1012,6 +1015,7 @@ CMakeFiles/game.out.dir/src/drawScreen.cpp.o: ../Include/MyFunctions/vectorOpera
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o: ../Include/externs.hpp
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o: ../Include/functions.hpp
+CMakeFiles/game.out.dir/src/drawScreen.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o: ../src/drawScreen.cpp
 
 CMakeFiles/game.out.dir/src/eventHandling.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1135,6 +1139,7 @@ CMakeFiles/game.out.dir/src/eventHandling.cpp.o: ../Include/MyFunctions/vectorOp
 CMakeFiles/game.out.dir/src/eventHandling.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/eventHandling.cpp.o: ../Include/externs.hpp
 CMakeFiles/game.out.dir/src/eventHandling.cpp.o: ../Include/functions.hpp
+CMakeFiles/game.out.dir/src/eventHandling.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/eventHandling.cpp.o: ../src/eventHandling.cpp
 
 CMakeFiles/game.out.dir/src/finishBullet.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1244,6 +1249,7 @@ CMakeFiles/game.out.dir/src/finishBullet.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/src/finishBullet.cpp.o: ../Include/MyFunctions/finishBullet.hpp
 CMakeFiles/game.out.dir/src/finishBullet.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/finishBullet.cpp.o: ../Include/externs.hpp
+CMakeFiles/game.out.dir/src/finishBullet.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/finishBullet.cpp.o: ../src/finishBullet.cpp
 
 CMakeFiles/game.out.dir/src/initBullet.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1353,6 +1359,7 @@ CMakeFiles/game.out.dir/src/initBullet.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/src/initBullet.cpp.o: ../Include/MyFunctions/initBullet.hpp
 CMakeFiles/game.out.dir/src/initBullet.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/initBullet.cpp.o: ../Include/externs.hpp
+CMakeFiles/game.out.dir/src/initBullet.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/initBullet.cpp.o: ../src/initBullet.cpp
 
 CMakeFiles/game.out.dir/src/initGL.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1462,6 +1469,7 @@ CMakeFiles/game.out.dir/src/initGL.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/src/initGL.cpp.o: ../Include/MyFunctions/initGL.hpp
 CMakeFiles/game.out.dir/src/initGL.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/initGL.cpp.o: ../Include/externs.hpp
+CMakeFiles/game.out.dir/src/initGL.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/initGL.cpp.o: ../src/initGL.cpp
 
 CMakeFiles/game.out.dir/src/initValues.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1585,6 +1593,7 @@ CMakeFiles/game.out.dir/src/initValues.cpp.o: ../Include/MyFunctions/vectorOpera
 CMakeFiles/game.out.dir/src/initValues.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/initValues.cpp.o: ../Include/externs.hpp
 CMakeFiles/game.out.dir/src/initValues.cpp.o: ../Include/functions.hpp
+CMakeFiles/game.out.dir/src/initValues.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/initValues.cpp.o: ../src/initValues.cpp
 
 CMakeFiles/game.out.dir/src/mouseHandling.cpp.o: ../Include/MyFunctions/mouseHandling.hpp
@@ -1697,6 +1706,7 @@ CMakeFiles/game.out.dir/src/playerShoot.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/src/playerShoot.cpp.o: ../Include/MyFunctions/playerShoot.hpp
 CMakeFiles/game.out.dir/src/playerShoot.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/playerShoot.cpp.o: ../Include/externs.hpp
+CMakeFiles/game.out.dir/src/playerShoot.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/playerShoot.cpp.o: ../src/playerShoot.cpp
 
 CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o: ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1806,6 +1816,7 @@ CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o: ../Include/MyClasses/World.hpp
 CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o: ../Include/MyFunctions/reshapeScreen.hpp
 CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o: ../Include/externs.hpp
+CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o: ../src/reshapeScreen.cpp
 
 CMakeFiles/game.out.dir/src/setMaterial.cpp.o: ../Include/MyClasses/materials.h
@@ -1932,6 +1943,7 @@ CMakeFiles/game.out.dir/src/update.cpp.o: ../Include/MyFunctions/vectorOperation
 CMakeFiles/game.out.dir/src/update.cpp.o: ../Include/classes.hpp
 CMakeFiles/game.out.dir/src/update.cpp.o: ../Include/externs.hpp
 CMakeFiles/game.out.dir/src/update.cpp.o: ../Include/functions.hpp
+CMakeFiles/game.out.dir/src/update.cpp.o: ../Include/shader.h
 CMakeFiles/game.out.dir/src/update.cpp.o: ../src/update.cpp
 
 CMakeFiles/game.out.dir/src/vectorOperations.cpp.o: ../Include/MyFunctions/vectorOperations.hpp

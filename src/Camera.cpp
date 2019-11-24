@@ -124,7 +124,20 @@ void Camera::updateWalkDirection()
 	this->walkDirection = resultant;
 }
 
-void Camera::moveCamera() 
+glm::mat4 Camera::moveCamera() 
 {
-	gluLookAt(pos.x, pos.y, pos.z, pointToLookAt.x, pointToLookAt.y, pointToLookAt.z, 0, 1, 0);
+	// gluLookAt(pos.x, pos.y, pos.z, pointToLookAt.x, pointToLookAt.y, pointToLookAt.z, 0, 1, 0);
+	// glm::mat4 temp = glm::lookAt(glm::vec3(pos.x, pos.y, pos.z), glm::vec3(pointToLookAt.x, pointToLookAt.y, pointToLookAt.z), glm::vec3(0,1,0));
+	// float buff[16];
+	// int index = 0;
+	// for(int i = 0; i < 4; i++)
+	// {
+	// 	for(int j = 0; j < 4; j++)
+	// 	{
+	// 		buff[index++] = temp[i][j];
+	// 	}
+	// }
+	
+	
+	return glm::lookAt(glm::vec3(pos.x, pos.y, pos.z), glm::vec3(pointToLookAt.x, pointToLookAt.y, pointToLookAt.z), glm::vec3(0,1,0));
 }
