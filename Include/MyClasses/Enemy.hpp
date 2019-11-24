@@ -7,7 +7,7 @@ class Enemy
 {
 public:
 
-	btRigidBody *enemyRigidBody;
+	btRigidBody *RigidBody;
 	btScalar mass;
 	sf::Clock directionChangeTimer;
 

@@ -1,7 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
+#include <vector>
+#include <Bullet/btBulletCollisionCommon.h>
 class World
 {
 public:
@@ -10,8 +11,10 @@ public:
 
     int width;
     int depth;
-    int ***heights;
-    sf::Vector3i ***blockCoords;
+    int **heights;
+    btVector3 ***blockCoords;
+    
+    std::vector<btVector3> positions;
 
 private:
 

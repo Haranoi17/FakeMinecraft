@@ -4,6 +4,7 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Graphics.hpp>
 #include <GL/freeglut.h>
+#include <glm/matrix.hpp>
 #include <iostream>
 #include <math.h>
 

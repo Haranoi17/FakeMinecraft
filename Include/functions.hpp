@@ -13,3 +13,5 @@
 #include <setMaterial.hpp>
 #include <update.hpp>
 #include <vectorOperations.hpp>
+#include <initShaders.hpp>
+#include <initValues.hpp>
