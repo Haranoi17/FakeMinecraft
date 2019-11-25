@@ -38,14 +38,8 @@ void Player::walk(const InputController& input, const Camera& cam)
 {
 	static bool blockSpace = false;
 	btVector3 direction = btVector3(cam.walkDirection.x, cam.walkDirection.y, cam.walkDirection.z);
-
-	if ( input.getKeyW() || input.getKeyS() || input.getKeyA() || input.getKeyD())
-	{
-		trans = RigidBody->getWorldTransform();
-		trans.getOrigin() += direction;
-		RigidBody->setWorldTransform(trans);
-		RigidBody->getMotionState()->setWorldTransform(trans);
-	}
+	trans = RigidBody->getWorldTransform();
+	RigidBody->setLinearVelocity(direction * 20);
 	if ( input.getKeySpace() && !blockSpace)
 	{
 		blockSpace = true;

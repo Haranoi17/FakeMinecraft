@@ -26,7 +26,7 @@ void initBullet()
 	for (auto &block : blocks)
 	{
 		block->RigidBody->setRestitution(0.5);
-		block->RigidBody->setCollisionFlags(btCollisionObject::CF_KINEMATIC_OBJECT | btCollisionObject::CF_STATIC_OBJECT);
+		block->RigidBody->setCollisionFlags(btCollisionObject::CF_KINEMATIC_OBJECT);
 		trans = block->RigidBody->getWorldTransform();
 		trans.getOrigin() = generatedWorld.positions[i];
 		if(i < blocks.size())

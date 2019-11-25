@@ -1,5 +1,6 @@
 #include <InputController.hpp>
 #include <SFML/Graphics.hpp>
+#include <math.h>
 
 InputController::InputController()
 {
@@ -78,8 +79,8 @@ void InputController::updateKeysValues()
 {
     updateDeltaTime();
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)){ W = normalizedInput(W, true);} else{ W = normalizedInput(W, false);}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)){ S = normalizedInput(S, true);} else{ S = normalizedInput(A, false);}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){ A = normalizedInput(A, true);} else{ A = normalizedInput(S, false);}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)){ S = normalizedInput(S, true);} else{ S = normalizedInput(S, false);}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){ A = normalizedInput(A, true);} else{ A = normalizedInput(A, false);}
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)){ D = normalizedInput(D, true);} else{ D = normalizedInput(D, false);}
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E)){ E = true;} else{ E = false;}
@@ -117,7 +118,7 @@ float InputController::normalizedInput(float previousVal, bool pressed)
 
 void InputController::updateDeltaTime()
 {
-    deltaTime = timer.getElapsedTime().asSeconds();
+    deltaTime = timer.getElapsedTime().asSeconds()/100;
 }
 
 int InputController::getMouseDeltaX() const { return mouseDeltaX;}

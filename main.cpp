@@ -115,6 +115,7 @@ int main(int argc, char** argv)
 	initValues();
 	reshapeScreen();
     Shader shaderKurwa("/home/haranoi17/Documents/Projects/OpenGl_SFML/vertexShader.vert","/home/haranoi17/Documents/Projects/OpenGl_SFML/fragmentShader.frag");
+
 	while (window.isOpen())
 	{
 		eventHandling();

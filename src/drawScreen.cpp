@@ -231,21 +231,19 @@ void initScreen()
 	glClearColor((GLclampf)0.8, (GLclampf)0.8, (GLclampf)0.8, 1);
 	glLoadIdentity();
 	view = cam.moveCamera();
+
 	
 }
 
 
 void drawScreen(Shader shaderKurwa)
 {
-	GLuint MVPLoc;
 	initScreen();
 
 	shaderKurwa.use();
-	// glUseProgram(0);
-
-	 drawGround();
-
-
+	shaderKurwa.setMat4("projection", projection);
+	shaderKurwa.setMat4("view", view);
+	
 	
 	// //drawWorld();
 	model = glm::mat4(1);
@@ -253,25 +251,23 @@ void drawScreen(Shader shaderKurwa)
 	drawAxis();
 
 	
-	for(auto &block : blocks)
-	{
+	// for(auto &block : blocks)
+	// {
 		
-		trans = block->RigidBody->getWorldTransform();
+	// 	trans = block->RigidBody->getWorldTransform();
 		
-		model = glm::mat4(1);
-		glm::vec4 temp(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ(), 1);
-		model *= temp;
+	// 	model = glm::mat4(1);
+	// 	glm::vec4 temp(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ(),1);
+	// 	model *= temp;
 		
-		// glUniformMatrix4fv(MVPLoc, 1, GL_FALSE, glm::value_ptr(projection * view * model));
-		shaderKurwa.use();
-		shaderKurwa.setMat4("projection", projection);
-		shaderKurwa.setMat4("view", view);
-		shaderKurwa.setMat4("model", model);
-		// glBindVertexArray(VAO);
-		// glDrawArrays(GL_TRIANGLES, 0, 36);
-		// glBindVertexArray(0);
-		//sf::Shader::bind(NULL);
-	}
+	// 	shaderKurwa.use();
+	
+	// 	shaderKurwa.setMat4("model", model);
+	// 	glBindVertexArray(VAO);
+	// 	glDrawArrays(GL_TRIANGLES, 0, 36);
+	// 	glBindVertexArray(0);
+		
+	// }
 
 	for (auto &bullet : bullets)
 	{
