@@ -3,7 +3,7 @@
 
 void dealWithCollisions() 
 {
-	btBroadphaseProxy *playerProxy = player->playerRigidBody->getBroadphaseProxy();
+	btBroadphaseProxy *playerProxy = player->RigidBody->getBroadphaseProxy();
 
 	for (auto &block : blocks) 
 	{

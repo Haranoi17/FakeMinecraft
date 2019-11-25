@@ -11,7 +11,7 @@ void playerShoot()
 		bullets.push_back(new btRigidBody(btRigidBody::btRigidBodyConstructionInfo(btScalar(0.2), new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
 							btVector3((btScalar)gunPosition.x, (btScalar)(gunPosition.y), (btScalar)gunPosition.z))), new btSphereShape((btScalar)0.2), btVector3(1, 1, 1))));
 
-		bullets.back()->applyCentralImpulse(btVector3(cam->lookDirection.x * 10, cam->lookDirection.y * 10, cam->lookDirection.z * 10));
+		bullets.back()->applyCentralImpulse(btVector3(cam.lookDirection.x * 10, cam.lookDirection.y * 10, cam.lookDirection.z * 10));
 		dynamicsWorld->addRigidBody(bullets.back());
 		blockLeft = true;
 	}

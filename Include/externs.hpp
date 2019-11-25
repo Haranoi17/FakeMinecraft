@@ -4,12 +4,12 @@
 #include <classes.hpp>
 #include <shader.h>
 
+extern InputController                      input;
 extern btDefaultCollisionConfiguration* 	collisionConfiguration;
 extern btDiscreteDynamicsWorld* 			dynamicsWorld;
 extern btRigidBody* 						groundRigidBody;
 extern btTransform 						    trans;
-extern btTransform                          playerTrans;
-extern Camera* 							    cam;
+extern Camera 							    cam;
 extern Player* 							    player;
 extern World								generatedWorld;
 extern std::vector<btRigidBody*> 			bullets;

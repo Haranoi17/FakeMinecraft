@@ -204,6 +204,33 @@ src/Enemy.cpp.s:
 	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/Enemy.cpp.s
 .PHONY : src/Enemy.cpp.s
 
+src/InputController.o: src/InputController.cpp.o
+
+.PHONY : src/InputController.o
+
+# target to build an object file
+src/InputController.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/InputController.cpp.o
+.PHONY : src/InputController.cpp.o
+
+src/InputController.i: src/InputController.cpp.i
+
+.PHONY : src/InputController.i
+
+# target to preprocess a source file
+src/InputController.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/InputController.cpp.i
+.PHONY : src/InputController.cpp.i
+
+src/InputController.s: src/InputController.cpp.s
+
+.PHONY : src/InputController.s
+
+# target to generate assembly for a file
+src/InputController.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/InputController.cpp.s
+.PHONY : src/InputController.cpp.s
+
 src/Player.o: src/Player.cpp.o
 
 .PHONY : src/Player.o
@@ -474,33 +501,6 @@ src/initValues.cpp.s:
 	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/initValues.cpp.s
 .PHONY : src/initValues.cpp.s
 
-src/mouseHandling.o: src/mouseHandling.cpp.o
-
-.PHONY : src/mouseHandling.o
-
-# target to build an object file
-src/mouseHandling.cpp.o:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/mouseHandling.cpp.o
-.PHONY : src/mouseHandling.cpp.o
-
-src/mouseHandling.i: src/mouseHandling.cpp.i
-
-.PHONY : src/mouseHandling.i
-
-# target to preprocess a source file
-src/mouseHandling.cpp.i:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/mouseHandling.cpp.i
-.PHONY : src/mouseHandling.cpp.i
-
-src/mouseHandling.s: src/mouseHandling.cpp.s
-
-.PHONY : src/mouseHandling.s
-
-# target to generate assembly for a file
-src/mouseHandling.cpp.s:
-	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/mouseHandling.cpp.s
-.PHONY : src/mouseHandling.cpp.s
-
 src/playerShoot.o: src/playerShoot.cpp.o
 
 .PHONY : src/playerShoot.o
@@ -654,6 +654,9 @@ help:
 	@echo "... src/Enemy.o"
 	@echo "... src/Enemy.i"
 	@echo "... src/Enemy.s"
+	@echo "... src/InputController.o"
+	@echo "... src/InputController.i"
+	@echo "... src/InputController.s"
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"
@@ -684,9 +687,6 @@ help:
 	@echo "... src/initValues.o"
 	@echo "... src/initValues.i"
 	@echo "... src/initValues.s"
-	@echo "... src/mouseHandling.o"
-	@echo "... src/mouseHandling.i"
-	@echo "... src/mouseHandling.s"
 	@echo "... src/playerShoot.o"
 	@echo "... src/playerShoot.i"
 	@echo "... src/playerShoot.s"

@@ -6,12 +6,12 @@
 #include <shader.h>
 #include <glew.h>
 
+InputController                     input = InputController();
 btDefaultCollisionConfiguration* 	collisionConfiguration;
 btDiscreteDynamicsWorld* 			dynamicsWorld;
 btRigidBody* 						groundRigidBody;
 btTransform 						trans;
-btTransform							playerTrans;
-Camera* 							cam = new Camera();
+Camera 							    cam = Camera(); 
 World								generatedWorld(1);
 Player* 							player = new Player();
 std::vector<btRigidBody*> 			bullets;

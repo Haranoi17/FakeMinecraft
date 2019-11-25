@@ -112,7 +112,7 @@ void drawBullet(btRigidBody *bullet)
 void drawPlayer()
 {
 	glPushMatrix();
-		glTranslatef(playerTrans.getOrigin().getX(), playerTrans.getOrigin().getY(), playerTrans.getOrigin().getZ());
+		glTranslatef(player->trans.getOrigin().getX(), player->trans.getOrigin().getY(), player->trans.getOrigin().getZ());
 		glColor4f(1, player->hp / 100.0f, player->hp / 100.0f, 0.5);
 		glutSolidCube(1);
 	glPopMatrix();  
@@ -120,7 +120,6 @@ void drawPlayer()
 
 void drawAxis()
 {
-	glPushMatrix();
 	
 	glBegin(GL_LINES);
 
@@ -155,7 +154,6 @@ void drawAxis()
 	glVertex3f(0, 0, 0);
 	glEnd();
 	glDisable(GL_LINE_STIPPLE);
-	glPopMatrix();
 }
 
 void drawCrosshair()
@@ -232,7 +230,7 @@ void initScreen()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor((GLclampf)0.8, (GLclampf)0.8, (GLclampf)0.8, 1);
 	glLoadIdentity();
-	view = cam->moveCamera();
+	view = cam.moveCamera();
 	
 }
 
@@ -243,14 +241,15 @@ void drawScreen(Shader shaderKurwa)
 	initScreen();
 
 	shaderKurwa.use();
-	MVPLoc = glGetUniformLocation(shaderKurwa.ID, "MVP");
-	glUseProgram(0);
+	// glUseProgram(0);
 
 	 drawGround();
 
 
 	
 	// //drawWorld();
+	model = glm::mat4(1);
+	shaderKurwa.setMat4("model", model);
 	drawAxis();
 
 	
@@ -265,11 +264,13 @@ void drawScreen(Shader shaderKurwa)
 		
 		// glUniformMatrix4fv(MVPLoc, 1, GL_FALSE, glm::value_ptr(projection * view * model));
 		shaderKurwa.use();
-		shaderKurwa.setMat4("MVP", projection * view * model);
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		glBindVertexArray(0);
-		sf::Shader::bind(NULL);
+		shaderKurwa.setMat4("projection", projection);
+		shaderKurwa.setMat4("view", view);
+		shaderKurwa.setMat4("model", model);
+		// glBindVertexArray(VAO);
+		// glDrawArrays(GL_TRIANGLES, 0, 36);
+		// glBindVertexArray(0);
+		//sf::Shader::bind(NULL);
 	}
 
 	for (auto &bullet : bullets)
@@ -279,8 +280,11 @@ void drawScreen(Shader shaderKurwa)
 
 	//drawTestingStuff();
 	
-	sf::Shader::bind(NULL);
-	drawPlayer();
+	// sf::Shader::bind(NULL);
+	//drawPlayer();
+	model = glm::translate(glm::mat4(1), glm::vec3(player->trans.getOrigin().getX(), player->trans.getOrigin().getY(), player->trans.getOrigin().getZ()));
+	shaderKurwa.setMat4("model", model);
+	glutSolidCube(1);
 	//drawCrosshair();
 }
 

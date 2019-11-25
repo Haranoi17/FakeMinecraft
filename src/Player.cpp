@@ -4,12 +4,12 @@
 
 Player::Player()
 {
-	this->mass = btScalar(1);
-	this->playerRigidBody = new btRigidBody(btRigidBody::btRigidBodyConstructionInfo(this->mass, new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 2, 0))), new btBoxShape(btVector3(0.5,0.5,0.5)), btVector3(1, 1, 1)));
+	mass = btScalar(1);
+	RigidBody = new btRigidBody(btRigidBody::btRigidBodyConstructionInfo(mass, new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1), btVector3(0, 2, 0))), new btBoxShape(btVector3(0.5,0.5,0.5)), btVector3(1, 1, 1)));
 	
-	this->hp = 100;
-	this->dmg = 10;
-	this->immunityTimer = sf::Clock();
+	hp = 100;
+	dmg = 10;
+	immunityTimer = sf::Clock();
 }
 
 
@@ -19,39 +19,38 @@ Player::~Player()
 
 void Player::takeDmg(int dmg) 
 {
-	if (this->immunityTimer.getElapsedTime().asSeconds() > 3) 
+	if (immunityTimer.getElapsedTime().asSeconds() > 3) 
 	{	
-		if (this->hp > 0) 
+		if (hp > 0) 
 		{
-			this->hp -= dmg;
+			hp -= dmg;
 		}
 
-		if (this->hp < 0) 
+		if (hp < 0) 
 		{
-			this->hp = 0;
+			hp = 0;
 		}
-		this->immunityTimer.restart();
+		immunityTimer.restart();
 	}
 }
 
-void Player::walk(btVector3 walkDirection) 
+void Player::walk(const InputController& input, const Camera& cam) 
 {
 	static bool blockSpace = false;
+	btVector3 direction = btVector3(cam.walkDirection.x, cam.walkDirection.y, cam.walkDirection.z);
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+	if ( input.getKeyW() || input.getKeyS() || input.getKeyA() || input.getKeyD())
 	{
-		this->playerRigidBody->applyCentralForce(btVector3(walkDirection.getX() * 20, 0, walkDirection.getZ() * 20));
+		trans = RigidBody->getWorldTransform();
+		trans.getOrigin() += direction;
+		RigidBody->setWorldTransform(trans);
+		RigidBody->getMotionState()->setWorldTransform(trans);
 	}
-	else
+	if ( input.getKeySpace() && !blockSpace)
 	{
-		this->playerRigidBody->applyCentralForce(btVector3(0, 0, 0));
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && !blockSpace)
-	{
-		this->playerRigidBody->applyCentralImpulse(btVector3(0, 8, 0));
 		blockSpace = true;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) && blockSpace)
+	else if ( input.getKeySpace() && blockSpace)
 	{
 		blockSpace = true;
 	}
@@ -59,4 +58,6 @@ void Player::walk(btVector3 walkDirection)
 	{
 		blockSpace = false;
 	}
+
 }
+

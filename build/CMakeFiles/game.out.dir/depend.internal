@@ -104,6 +104,7 @@ CMakeFiles/game.out.dir/main.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
@@ -114,7 +115,6 @@ CMakeFiles/game.out.dir/main.cpp.o
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initShaders.hpp
  ../Include/MyFunctions/initValues.hpp
- ../Include/MyFunctions/mouseHandling.hpp
  ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
  ../Include/MyFunctions/setMaterial.hpp
@@ -226,6 +226,7 @@ CMakeFiles/game.out.dir/src/Camera.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/MyClasses/Camera.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/Camera.cpp
 CMakeFiles/game.out.dir/src/Enemy.cpp.o
@@ -330,6 +331,9 @@ CMakeFiles/game.out.dir/src/Enemy.cpp.o
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/MyClasses/Enemy.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/Enemy.cpp
+CMakeFiles/game.out.dir/src/InputController.cpp.o
+ ../Include/MyClasses/InputController.hpp
+ /home/haranoi17/Documents/Projects/OpenGl_SFML/src/InputController.cpp
 CMakeFiles/game.out.dir/src/Player.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
@@ -430,6 +434,8 @@ CMakeFiles/game.out.dir/src/Player.cpp.o
  ../Include/Bullet/LinearMath/btVector3.h
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
+ ../Include/MyClasses/Camera.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/Player.cpp
 CMakeFiles/game.out.dir/src/World.cpp.o
@@ -887,6 +893,7 @@ CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
@@ -997,6 +1004,7 @@ CMakeFiles/game.out.dir/src/drawScreen.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
@@ -1007,7 +1015,6 @@ CMakeFiles/game.out.dir/src/drawScreen.cpp.o
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initShaders.hpp
  ../Include/MyFunctions/initValues.hpp
- ../Include/MyFunctions/mouseHandling.hpp
  ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
  ../Include/MyFunctions/setMaterial.hpp
@@ -1121,6 +1128,7 @@ CMakeFiles/game.out.dir/src/eventHandling.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
@@ -1131,7 +1139,6 @@ CMakeFiles/game.out.dir/src/eventHandling.cpp.o
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initShaders.hpp
  ../Include/MyFunctions/initValues.hpp
- ../Include/MyFunctions/mouseHandling.hpp
  ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
  ../Include/MyFunctions/setMaterial.hpp
@@ -1245,6 +1252,7 @@ CMakeFiles/game.out.dir/src/finishBullet.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/finishBullet.hpp
@@ -1355,6 +1363,7 @@ CMakeFiles/game.out.dir/src/initBullet.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/initBullet.hpp
@@ -1465,6 +1474,7 @@ CMakeFiles/game.out.dir/src/initGL.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/initGL.hpp
@@ -1575,6 +1585,7 @@ CMakeFiles/game.out.dir/src/initValues.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
@@ -1585,7 +1596,6 @@ CMakeFiles/game.out.dir/src/initValues.cpp.o
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initShaders.hpp
  ../Include/MyFunctions/initValues.hpp
- ../Include/MyFunctions/mouseHandling.hpp
  ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
  ../Include/MyFunctions/setMaterial.hpp
@@ -1596,9 +1606,6 @@ CMakeFiles/game.out.dir/src/initValues.cpp.o
  ../Include/functions.hpp
  ../Include/shader.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/initValues.cpp
-CMakeFiles/game.out.dir/src/mouseHandling.cpp.o
- ../Include/MyFunctions/mouseHandling.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/src/mouseHandling.cpp
 CMakeFiles/game.out.dir/src/playerShoot.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
@@ -1702,6 +1709,7 @@ CMakeFiles/game.out.dir/src/playerShoot.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/playerShoot.hpp
@@ -1812,6 +1820,7 @@ CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
@@ -1925,6 +1934,7 @@ CMakeFiles/game.out.dir/src/update.cpp.o
  ../Include/Headers.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
+ ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/dealWithCollisions.hpp
@@ -1935,7 +1945,6 @@ CMakeFiles/game.out.dir/src/update.cpp.o
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initShaders.hpp
  ../Include/MyFunctions/initValues.hpp
- ../Include/MyFunctions/mouseHandling.hpp
  ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
  ../Include/MyFunctions/setMaterial.hpp

@@ -2,13 +2,16 @@
 
 #include <Bullet/btBulletDynamicsCommon.h>
 #include "SFML/Graphics.hpp"
+#include <InputController.hpp>
+#include <Camera.hpp>
 
 class Player
 {
 public:
 
-	btRigidBody *playerRigidBody;
+	btRigidBody *RigidBody;
 	btScalar mass;
+	btTransform trans;
 
 	sf::Clock immunityTimer;
 	int hp;
@@ -18,6 +21,6 @@ public:
 	~Player();
 
 	void takeDmg(int dmg);
-	void walk(btVector3 walkDirection);
+	void walk(const InputController&, const Camera&);
 };
 

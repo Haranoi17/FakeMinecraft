@@ -96,9 +96,22 @@ CMakeFiles/game.out.dir/src/Enemy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/src/Enemy.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/src/Enemy.cpp -o CMakeFiles/game.out.dir/src/Enemy.cpp.s
 
+CMakeFiles/game.out.dir/src/InputController.cpp.o: CMakeFiles/game.out.dir/flags.make
+CMakeFiles/game.out.dir/src/InputController.cpp.o: ../src/InputController.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game.out.dir/src/InputController.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/InputController.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/InputController.cpp
+
+CMakeFiles/game.out.dir/src/InputController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/src/InputController.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/src/InputController.cpp > CMakeFiles/game.out.dir/src/InputController.cpp.i
+
+CMakeFiles/game.out.dir/src/InputController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/src/InputController.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/src/InputController.cpp -o CMakeFiles/game.out.dir/src/InputController.cpp.s
+
 CMakeFiles/game.out.dir/src/Player.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/Player.cpp.o: ../src/Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game.out.dir/src/Player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game.out.dir/src/Player.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/Player.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/Player.cpp
 
 CMakeFiles/game.out.dir/src/Player.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/game.out.dir/src/Player.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/World.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/World.cpp.o: ../src/World.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game.out.dir/src/World.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.out.dir/src/World.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/World.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/World.cpp
 
 CMakeFiles/game.out.dir/src/World.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/game.out.dir/src/World.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/bullet_src.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/bullet_src.cpp.o: ../src/bullet_src.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.out.dir/src/bullet_src.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.out.dir/src/bullet_src.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/bullet_src.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/bullet_src.cpp
 
 CMakeFiles/game.out.dir/src/bullet_src.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/game.out.dir/src/bullet_src.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o: ../src/dealWithCollisions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/dealWithCollisions.cpp
 
 CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o: ../src/drawScreen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/game.out.dir/src/drawScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/game.out.dir/src/drawScreen.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/drawScreen.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/drawScreen.cpp
 
 CMakeFiles/game.out.dir/src/drawScreen.cpp.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/game.out.dir/src/drawScreen.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/eventHandling.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/eventHandling.cpp.o: ../src/eventHandling.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/game.out.dir/src/eventHandling.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/game.out.dir/src/eventHandling.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/eventHandling.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/eventHandling.cpp
 
 CMakeFiles/game.out.dir/src/eventHandling.cpp.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/game.out.dir/src/eventHandling.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/finishBullet.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/finishBullet.cpp.o: ../src/finishBullet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/game.out.dir/src/finishBullet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/game.out.dir/src/finishBullet.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/finishBullet.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/finishBullet.cpp
 
 CMakeFiles/game.out.dir/src/finishBullet.cpp.i: cmake_force
@@ -189,7 +202,7 @@ CMakeFiles/game.out.dir/src/finishBullet.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/initBullet.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/initBullet.cpp.o: ../src/initBullet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/game.out.dir/src/initBullet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/game.out.dir/src/initBullet.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/initBullet.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/initBullet.cpp
 
 CMakeFiles/game.out.dir/src/initBullet.cpp.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/game.out.dir/src/initBullet.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/initGL.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/initGL.cpp.o: ../src/initGL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/game.out.dir/src/initGL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/game.out.dir/src/initGL.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/initGL.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/initGL.cpp
 
 CMakeFiles/game.out.dir/src/initGL.cpp.i: cmake_force
@@ -215,7 +228,7 @@ CMakeFiles/game.out.dir/src/initGL.cpp.s: cmake_force
 
 CMakeFiles/game.out.dir/src/initValues.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/initValues.cpp.o: ../src/initValues.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/game.out.dir/src/initValues.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/game.out.dir/src/initValues.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/initValues.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/initValues.cpp
 
 CMakeFiles/game.out.dir/src/initValues.cpp.i: cmake_force
@@ -225,19 +238,6 @@ CMakeFiles/game.out.dir/src/initValues.cpp.i: cmake_force
 CMakeFiles/game.out.dir/src/initValues.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/src/initValues.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/src/initValues.cpp -o CMakeFiles/game.out.dir/src/initValues.cpp.s
-
-CMakeFiles/game.out.dir/src/mouseHandling.cpp.o: CMakeFiles/game.out.dir/flags.make
-CMakeFiles/game.out.dir/src/mouseHandling.cpp.o: ../src/mouseHandling.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/haranoi17/Documents/Projects/OpenGl_SFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/game.out.dir/src/mouseHandling.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.out.dir/src/mouseHandling.cpp.o -c /home/haranoi17/Documents/Projects/OpenGl_SFML/src/mouseHandling.cpp
-
-CMakeFiles/game.out.dir/src/mouseHandling.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.out.dir/src/mouseHandling.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/haranoi17/Documents/Projects/OpenGl_SFML/src/mouseHandling.cpp > CMakeFiles/game.out.dir/src/mouseHandling.cpp.i
-
-CMakeFiles/game.out.dir/src/mouseHandling.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.out.dir/src/mouseHandling.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/haranoi17/Documents/Projects/OpenGl_SFML/src/mouseHandling.cpp -o CMakeFiles/game.out.dir/src/mouseHandling.cpp.s
 
 CMakeFiles/game.out.dir/src/playerShoot.cpp.o: CMakeFiles/game.out.dir/flags.make
 CMakeFiles/game.out.dir/src/playerShoot.cpp.o: ../src/playerShoot.cpp
@@ -309,6 +309,7 @@ game_out_OBJECTS = \
 "CMakeFiles/game.out.dir/main.cpp.o" \
 "CMakeFiles/game.out.dir/src/Camera.cpp.o" \
 "CMakeFiles/game.out.dir/src/Enemy.cpp.o" \
+"CMakeFiles/game.out.dir/src/InputController.cpp.o" \
 "CMakeFiles/game.out.dir/src/Player.cpp.o" \
 "CMakeFiles/game.out.dir/src/World.cpp.o" \
 "CMakeFiles/game.out.dir/src/bullet_src.cpp.o" \
@@ -319,7 +320,6 @@ game_out_OBJECTS = \
 "CMakeFiles/game.out.dir/src/initBullet.cpp.o" \
 "CMakeFiles/game.out.dir/src/initGL.cpp.o" \
 "CMakeFiles/game.out.dir/src/initValues.cpp.o" \
-"CMakeFiles/game.out.dir/src/mouseHandling.cpp.o" \
 "CMakeFiles/game.out.dir/src/playerShoot.cpp.o" \
 "CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o" \
 "CMakeFiles/game.out.dir/src/setMaterial.cpp.o" \
@@ -332,6 +332,7 @@ game_out_EXTERNAL_OBJECTS =
 game.out: CMakeFiles/game.out.dir/main.cpp.o
 game.out: CMakeFiles/game.out.dir/src/Camera.cpp.o
 game.out: CMakeFiles/game.out.dir/src/Enemy.cpp.o
+game.out: CMakeFiles/game.out.dir/src/InputController.cpp.o
 game.out: CMakeFiles/game.out.dir/src/Player.cpp.o
 game.out: CMakeFiles/game.out.dir/src/World.cpp.o
 game.out: CMakeFiles/game.out.dir/src/bullet_src.cpp.o
@@ -342,7 +343,6 @@ game.out: CMakeFiles/game.out.dir/src/finishBullet.cpp.o
 game.out: CMakeFiles/game.out.dir/src/initBullet.cpp.o
 game.out: CMakeFiles/game.out.dir/src/initGL.cpp.o
 game.out: CMakeFiles/game.out.dir/src/initValues.cpp.o
-game.out: CMakeFiles/game.out.dir/src/mouseHandling.cpp.o
 game.out: CMakeFiles/game.out.dir/src/playerShoot.cpp.o
 game.out: CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o
 game.out: CMakeFiles/game.out.dir/src/setMaterial.cpp.o

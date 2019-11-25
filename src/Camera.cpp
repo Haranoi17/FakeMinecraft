@@ -4,13 +4,13 @@
 
 Camera::Camera()
 {
-	this->pos = sf::Vector3f(0, 3, -5);
-	this->rot = sf::Vector2f();
-	this->pointToLookAt = pos;
-	this->pointToLookAt.z -= 1;
-	this->lookDirection = this->pointToLookAt - this->pos;
-	this->lookDirectionFlat = this->lookDirection;
-	this->walkDirection = sf::Vector3f();
+	pos = sf::Vector3f(0, 3, -5);
+	rot = sf::Vector2f();
+	pointToLookAt = pos;
+	pointToLookAt.z -= 1;
+	lookDirection = pointToLookAt - pos;
+	lookDirectionFlat = lookDirection;
+	walkDirection = sf::Vector3f();
 }
 
 Camera::~Camera()
@@ -21,28 +21,28 @@ void Camera::updateCameraPosition()
 {
 	static float pi	= (float)3.14159265359;
 	static float r = 2;
-	float alpha = this->rot.x / (2 * pi);
-	float beta	= -this->rot.y / (2 * pi);
+	float alpha = rot.x / (2 * pi);
+	float beta	= -rot.y / (2 * pi);
 
-	this->pos = this->pointToLookAt - this->lookDirection;
+	pos = pointToLookAt - lookDirection;
 
-	this->pos.x += r * cos(alpha)*cos(beta);
-	this->pos.y += r * sin(beta);
-	this->pos.z += r * cos(beta)*sin(alpha);
+	pos.x += r * cos(alpha)*cos(beta);
+	pos.y += r * sin(beta);
+	pos.z += r * cos(beta)*sin(alpha);
 
-	this->updateLookDirectionCallback();
-	this->updateSideDirectionCallback();
+	updateLookDirectionCallback();
+	updateSideDirectionCallback();
 }
 
-void Camera::updateCameraRotation(sf::Vector2i d, float mouseSpeed) 
+void Camera::updateCameraRotation(const InputController &input, float mouseSpeed) 
 {
 	static bool canLookUp = 1;
 	static bool canLookDown = 1;
 	float pi = (float)3.14159265359;
 
-	float radY = this->rot.y / (2 * pi);
+	float radY = rot.y / (2 * pi);
 
-	this->rot.x += (float)d.x * mouseSpeed;
+	rot.x += (float)input.getMouseDeltaX() * mouseSpeed;
 	
 	if (radY > pi/2 - 0.1) //less than pi/2
 	{
@@ -61,83 +61,73 @@ void Camera::updateCameraRotation(sf::Vector2i d, float mouseSpeed)
 		canLookDown = 1;
 	}
 
-	if (canLookUp && d.y > 0)
+	if (canLookUp && input.getMouseDeltaY() > 0)
 	{
-		this->rot.y += (float)d.y * mouseSpeed;
+		rot.y += (float)input.getMouseDeltaY() * mouseSpeed;
 	}
-	if (canLookDown && d.y < 0)
+	if (canLookDown && input.getMouseDeltaY() < 0)
 	{
-		this->rot.y += (float)d.y * mouseSpeed;
+		rot.y += (float)input.getMouseDeltaY() * mouseSpeed;
 	}
 
-	this->updateLookDirectionCallback();
-	this->updateSideDirectionCallback();
+	updateLookDirectionCallback();
+	updateSideDirectionCallback();
 }
 
 void Camera::updateLookDirectionCallback() 
 {
-	this->lookDirection = this->pointToLookAt - this->pos;
-	normalize(&this->lookDirection);
-	this->lookDirectionFlat = this->lookDirection;
-	this->lookDirectionFlat.y = 0;
-	normalize(&this->lookDirectionFlat);
+	lookDirection = pointToLookAt - pos;
+	normalize(lookDirection);
+	lookDirectionFlat = lookDirection;
+	lookDirectionFlat.y = 0;
+	normalize(lookDirectionFlat);
 }
 
 void Camera::updateSideDirectionCallback() 
 {
-	this->sideDirection = sf::Vector3f(-this->lookDirection.z, 0, this->lookDirection.x); //sneaky method all adjacent vectors on plane be like [(a,b), (-b,a)]
-	normalize(&this->sideDirection);
+	sideDirection = sf::Vector3f(-lookDirection.z, 0, lookDirection.x); //sneaky method all adjacent vectors on plane be like [(a,b), (-b,a)]
+	normalize(sideDirection);
 }
 
 void Camera::updatePointToLookAtPosition(sf::Vector3f newPos) 
 {
-	this->pointToLookAt = newPos;
+	pointToLookAt = newPos;
 
-	//some trivial transformations
-	this->pointToLookAt.y += 1;
+	pointToLookAt.y += 1;
 }
 
-void Camera::updateWalkDirection() 
+void Camera::updateWalkDirection(const InputController &input) 
 {
-	sf::Vector3f resultant = sf::Vector3f(0, 0, 0);
+	sf::Vector3f newWalkDir = sf::Vector3f(0, 0, 0);
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+	if (input.getKeyW())
 	{
-		 resultant += lookDirectionFlat;
+		 newWalkDir += lookDirectionFlat * input.getKeyW();
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+	if (input.getKeyS())
 	{
-		resultant -= lookDirectionFlat;
+		newWalkDir -= lookDirectionFlat * input.getKeyS();
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+	if (input.getKeyA())
 	{
-		resultant -= sideDirection;
+		newWalkDir -= sideDirection * input.getKeyA();
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+	if (input.getKeyD())
 	{
-		resultant += sideDirection;
+		newWalkDir += sideDirection * input.getKeyD();
 	}
-	normalize(&resultant);
-	this->walkDirection = resultant;
+	
+	if(vec3Length(newWalkDir.x, newWalkDir.y, newWalkDir.z) > 1)
+	{
+		normalize(newWalkDir);
+	}
+	walkDirection = newWalkDir;
 }
 
 glm::mat4 Camera::moveCamera() 
-{
-	// gluLookAt(pos.x, pos.y, pos.z, pointToLookAt.x, pointToLookAt.y, pointToLookAt.z, 0, 1, 0);
-	// glm::mat4 temp = glm::lookAt(glm::vec3(pos.x, pos.y, pos.z), glm::vec3(pointToLookAt.x, pointToLookAt.y, pointToLookAt.z), glm::vec3(0,1,0));
-	// float buff[16];
-	// int index = 0;
-	// for(int i = 0; i < 4; i++)
-	// {
-	// 	for(int j = 0; j < 4; j++)
-	// 	{
-	// 		buff[index++] = temp[i][j];
-	// 	}
-	// }
-	
-	
+{	
 	return glm::lookAt(glm::vec3(pos.x, pos.y, pos.z), glm::vec3(pointToLookAt.x, pointToLookAt.y, pointToLookAt.z), glm::vec3(0,1,0));
 }

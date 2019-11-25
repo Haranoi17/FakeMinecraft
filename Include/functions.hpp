@@ -7,7 +7,6 @@
 #include <initBullet.hpp>
 #include <initGL.hpp>
 #include <initShaders.hpp>
-#include <mouseHandling.hpp>
 #include <playerShoot.hpp>
 #include <reshapeScreen.hpp>
 #include <setMaterial.hpp>

@@ -903,6 +903,8 @@ iostream
 -
 math.h
 -
+InputController.hpp
+-
 
 ../Include/MyClasses/Enemy.hpp
 Bullet/btBulletDynamicsCommon.h
@@ -910,11 +912,19 @@ Bullet/btBulletDynamicsCommon.h
 SFML/Graphics.hpp
 ../Include/MyClasses/SFML/Graphics.hpp
 
+../Include/MyClasses/InputController.hpp
+SFML/Graphics.hpp
+-
+
 ../Include/MyClasses/Player.hpp
 Bullet/btBulletDynamicsCommon.h
 -
 SFML/Graphics.hpp
 ../Include/MyClasses/SFML/Graphics.hpp
+InputController.hpp
+-
+Camera.hpp
+-
 
 ../Include/MyClasses/World.hpp
 SFML/Graphics.hpp
@@ -944,10 +954,6 @@ GL/gl.h
 
 ../Include/MyFunctions/initValues.hpp
 
-../Include/MyFunctions/mouseHandling.hpp
-SFML/Graphics.hpp
--
-
 ../Include/MyFunctions/playerShoot.hpp
 
 ../Include/MyFunctions/reshapeScreen.hpp
@@ -961,6 +967,8 @@ SFML/Graphics.hpp
 -
 
 ../Include/classes.hpp
+InputController.hpp
+-
 Camera.hpp
 -
 Enemy.hpp
@@ -993,8 +1001,6 @@ initGL.hpp
 -
 initShaders.hpp
 -
-mouseHandling.hpp
--
 playerShoot.hpp
 -
 reshapeScreen.hpp
@@ -1008,20 +1014,6 @@ vectorOperations.hpp
 initShaders.hpp
 -
 initValues.hpp
--
-
-../Include/glew.h
-stddef.h
--
-inttypes.h
--
-stdint.h
--
-inttypes.h
--
-OpenGL/glu.h
--
-GL/glu.h
 -
 
 ../Include/shader.h
@@ -1038,20 +1030,6 @@ sstream
 iostream
 -
 
-/home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
-Headers.hpp
--
-classes.hpp
--
-functions.hpp
--
-glm/matrix.hpp
--
-shader.h
--
-glew.h
--
-
 /home/haranoi17/Documents/Projects/OpenGl_SFML/src/drawScreen.cpp
 externs.hpp
 -
@@ -1064,27 +1042,5 @@ glm/gtc/matrix_transform.hpp
 glm/gtc/type_ptr.hpp
 -
 SFML/Graphics/Glsl.hpp
--
-
-/home/haranoi17/Documents/Projects/OpenGl_SFML/src/eventHandling.cpp
-externs.hpp
--
-functions.hpp
--
-
-/home/haranoi17/Documents/Projects/OpenGl_SFML/src/initValues.cpp
-initValues.hpp
--
-externs.hpp
--
-functions.hpp
--
-
-/home/haranoi17/Documents/Projects/OpenGl_SFML/src/update.cpp
-externs.hpp
--
-functions.hpp
--
-math.h
 -
 
