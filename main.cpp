@@ -6,9 +6,8 @@ btDefaultCollisionConfiguration* 	collisionConfiguration;
 btDiscreteDynamicsWorld* 			dynamicsWorld;
 btRigidBody* 						groundRigidBody;
 btTransform 						trans;
-btTransform							playerTrans;
 Camera* 							cam = new Camera();
-World								generatedWorld(1);
+World								generatedWorld(1, 50, 50);
 Player* 							player = new Player();
 std::vector<btRigidBody*> 			bullets;
 std::vector<Enemy*> 				blocks;
@@ -28,18 +27,19 @@ float 								ambientLight[] = {0.2,0.2,0.2,1};
 float 								fov = 60;
 float 								x = 0;
 float								mouseSpeed = 0.05;
-float								drawDistance = 20;
+float								drawDistance = 10;
 GLUquadric*							quad;
 
 sf::Clock blocksTimer;
 
 void segregateBlocks()
 {
-	std::cout << "dupa";
+	btTransform 						test;
+	//player->trans = player->RigidBody->getWorldTransform();
 	for (auto &block : blocks)
 	{
-		block->RigidBody->getMotionState()->getWorldTransform(trans);
-		btVector3 dist = btVector3(trans.getOrigin().getX() - playerTrans.getOrigin().getX(), trans.getOrigin().getY() - playerTrans.getOrigin().getY(), trans.getOrigin().getZ() - playerTrans.getOrigin().getZ());
+		block->RigidBody->getMotionState()->getWorldTransform(test);
+		btVector3 dist = btVector3(test.getOrigin().getX() - player->trans.getOrigin().getX(), test.getOrigin().getY() - player->trans.getOrigin().getY(), test.getOrigin().getZ() - player->trans.getOrigin().getZ());
 
 		
 		if(dist.length2() > drawDistance * drawDistance)
@@ -51,8 +51,8 @@ void segregateBlocks()
 
 	for (auto &block : blocksBuffor)
 	{
-		block->RigidBody->getMotionState()->getWorldTransform(trans);
-		btVector3 dist = btVector3(trans.getOrigin().getX() - playerTrans.getOrigin().getX(), trans.getOrigin().getY() - playerTrans.getOrigin().getY(), trans.getOrigin().getZ() - playerTrans.getOrigin().getZ());
+		block->RigidBody->getMotionState()->getWorldTransform(test);
+		btVector3 dist = btVector3(test.getOrigin().getX() - player->trans.getOrigin().getX(), test.getOrigin().getY() - player->trans.getOrigin().getY(), test.getOrigin().getZ() - player->trans.getOrigin().getZ());
 
 		
 		if(dist.length2() < drawDistance * drawDistance)
@@ -62,7 +62,15 @@ void segregateBlocks()
 		}
 	}
 }
+void updateLightPos()
+{
+	player->RigidBody->getMotionState()->getWorldTransform(trans);
 
+	lightPos[0] = trans.getOrigin().getX() + 1;
+	lightPos[1] = trans.getOrigin().getY() + 1;
+	lightPos[2] = trans.getOrigin().getZ();
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
+}
 
 int main(int argc, char** argv)
 {
@@ -76,18 +84,15 @@ int main(int argc, char** argv)
 	reshapeScreen();
 
 	segregateBlocks();
-
+	sf::Thread t1(segregateBlocks);
 	while (window.isOpen())
 	{
 		eventHandling();
 		update();
-		dealWithCollisions();
+		t1.launch();
+		updateLightPos();
 
-		if(blocksTimer.getElapsedTime().asSeconds() > 5)
-		{
-			segregateBlocks();
-			blocksTimer.restart();
-		}
+			
 		drawScreen();
 		window.display();
 	}

@@ -104,7 +104,7 @@ void drawBullet(btRigidBody *bullet)
 void drawPlayer()
 {
 	glPushMatrix();
-		glTranslatef(playerTrans.getOrigin().getX(), playerTrans.getOrigin().getY(), playerTrans.getOrigin().getZ());
+		glTranslatef(player->trans.getOrigin().getX(), player->trans.getOrigin().getY(), player->trans.getOrigin().getZ());
 		glColor4f(1, player->hp / 100.0f, player->hp / 100.0f, 0.5);
 		glutSolidCube(1);
 	glPopMatrix();  
@@ -218,20 +218,13 @@ void drawTestingStuff()
 // 	}
 // }
 
-void initScreen()
-{
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glClearColor((GLclampf)0.8, (GLclampf)0.8, (GLclampf)0.8, 1);
-	glLoadIdentity();
-	cam->moveCamera();
-}
+
 
 void drawScreen()
 {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClearColor((GLclampf)0.8, (GLclampf)0.8, (GLclampf)0.8, 1);
 	
-	initScreen();
-
-
 	drawGround();
 
 
@@ -240,14 +233,14 @@ void drawScreen()
 	drawAxis();
 	for (auto &block : blocks)
 	{
-		block->RigidBody->getMotionState()->getWorldTransform(trans);
-		btVector3 dist = btVector3(trans.getOrigin().getX() - playerTrans.getOrigin().getX(), trans.getOrigin().getY() - playerTrans.getOrigin().getY(), trans.getOrigin().getZ() - playerTrans.getOrigin().getZ());
+		 block->RigidBody->getMotionState()->getWorldTransform(trans);
+		 btVector3 dist = btVector3(trans.getOrigin().getX() - player->trans.getOrigin().getX(), trans.getOrigin().getY() - player->trans.getOrigin().getY(), trans.getOrigin().getZ() - player->trans.getOrigin().getZ());
 
 		
-		if(dist.length2() < drawDistance * drawDistance)
-		{
+		// if(dist.length2() < drawDistance * drawDistance)
+		// {
 			drawBlock(block);
-		}
+		// }
 	}
 
 	for (auto &bullet : bullets)

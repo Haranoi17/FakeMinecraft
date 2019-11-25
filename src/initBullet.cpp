@@ -18,8 +18,10 @@ void initBullet()
 	groundRigidBody->setFriction(0);
 	dynamicsWorld->setGravity(btVector3(0, -10, 0));
 	dynamicsWorld->addRigidBody(groundRigidBody);
-	dynamicsWorld->addRigidBody(player->playerRigidBody);
-	
+	dynamicsWorld->addRigidBody(player->RigidBody);
+	//player->RigidBody->setCollisionFlags(btCollisionObject::CF_KINEMATIC_OBJECT | btCollisionObject::CF_STATIC_OBJECT);
+
+	player->trans = player->RigidBody->getWorldTransform();	
 
 
 	int i = 0;

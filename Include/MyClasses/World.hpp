@@ -6,7 +6,7 @@
 class World
 {
 public:
-    World(int seed);
+    World(int seed, int widthParam, int depthParam);
     ~World();
 
     int width;

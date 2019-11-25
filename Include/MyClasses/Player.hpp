@@ -7,7 +7,8 @@ class Player
 {
 public:
 
-	btRigidBody *playerRigidBody;
+	btRigidBody *RigidBody;
+	btTransform	 trans;
 	btScalar mass;
 
 	sf::Clock immunityTimer;

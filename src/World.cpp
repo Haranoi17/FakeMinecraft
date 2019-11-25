@@ -2,11 +2,11 @@
 #include <random>
 #include <iostream>
 
-World::World(int seed)
+World::World(int seed, int widthParam, int depthParam)
 {
     std::cout << "Generating blocks" << std::endl;
-    width = 40;
-    depth = 40;
+    width = widthParam;
+    depth = depthParam;
     std::srand(seed);
 
     heights = new int*[width]; //tablica wskaznikow

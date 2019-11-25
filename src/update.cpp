@@ -2,15 +2,7 @@
 #include <functions.hpp> //update.hpp is already here
 #include <math.h>
 
-void updateLightPos()
-{
-	player->playerRigidBody->getMotionState()->getWorldTransform(trans);
 
-	lightPos[0] = trans.getOrigin().getX() + 1;
-	lightPos[1] = trans.getOrigin().getY() + 1;
-	lightPos[2] = trans.getOrigin().getZ();
-	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
-}
 
 void updateGunPosition()
 {
@@ -35,17 +27,19 @@ void update()
 	player->walk(btVector3(cam->walkDirection.x, cam->walkDirection.y, cam->walkDirection.z));
 	playerShoot();
 
-	dynamicsWorld->stepSimulation(worldTimer.getElapsedTime().asSeconds());
+	dynamicsWorld->stepSimulation(worldTimer.getElapsedTime().asSeconds(),3);
 	worldTimer.restart();
 
-	player->playerRigidBody->getMotionState()->getWorldTransform(playerTrans);
-	cam->updatePointToLookAtPosition(sf::Vector3f((float)playerTrans.getOrigin().getX(), (float)(playerTrans.getOrigin().getY() + 0.5), (float)playerTrans.getOrigin().getZ()));
+	player->RigidBody->getMotionState()->getWorldTransform(player->trans);
+	cam->updatePointToLookAtPosition(sf::Vector3f((float)player->trans.getOrigin().getX(), (float)(player->trans.getOrigin().getY() + 0.5), (float)player->trans.getOrigin().getZ()));
 	cam->updateCameraPosition();
 
-	updateLightPos();
+	// updateLightPos();
 	updateGunPosition();
 	updateCrosshairPosition();
+	dealWithCollisions();
 
-
+	glLoadIdentity();
+	cam->moveCamera();
 }
 
