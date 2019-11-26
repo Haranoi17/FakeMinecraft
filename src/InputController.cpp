@@ -77,7 +77,6 @@ void InputController::updateMouseValues()
 
 void InputController::updateKeysValues()
 {
-    updateDeltaTime();
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)){ W = normalizedInput(W, true);} else{ W = normalizedInput(W, false);}
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)){ S = normalizedInput(S, true);} else{ S = normalizedInput(S, false);}
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){ A = normalizedInput(A, true);} else{ A = normalizedInput(A, false);}
@@ -98,7 +97,7 @@ float InputController::normalizedInput(float previousVal, bool pressed)
 {
     if(pressed)
     {
-        previousVal += deltaTime;
+        previousVal += timer.getElapsedTime().asSeconds();
         if(previousVal >= 1)
         {
             previousVal = 1;
@@ -106,7 +105,7 @@ float InputController::normalizedInput(float previousVal, bool pressed)
     }
     else
     {
-        previousVal -= deltaTime;
+        previousVal -= timer.getElapsedTime().asSeconds();
         if(previousVal <= 0)
         {
            previousVal = 0; 
@@ -114,11 +113,6 @@ float InputController::normalizedInput(float previousVal, bool pressed)
     }
 
     return previousVal;
-}
-
-void InputController::updateDeltaTime()
-{
-    deltaTime = timer.getElapsedTime().asSeconds()/100;
 }
 
 int InputController::getMouseDeltaX() const { return mouseDeltaX;}

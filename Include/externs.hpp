@@ -2,7 +2,7 @@
 
 #include <Headers.hpp>
 #include <classes.hpp>
-#include <shader.h>
+
 
 extern InputController                      input;
 extern btDefaultCollisionConfiguration* 	collisionConfiguration;
@@ -31,7 +31,9 @@ extern float								mouseSpeed;
 extern float                                x;
 extern float                                drawDistance;
 extern GLUquadric*							quad;
-
+extern GLuint                               projectionLoc;
+extern GLuint                               viewLoc;
+extern GLuint                               modelLoc;
 
 extern GLuint VAO;
 extern GLuint VBO;

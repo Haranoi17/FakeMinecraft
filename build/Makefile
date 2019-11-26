@@ -258,6 +258,33 @@ src/Player.cpp.s:
 	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
 
+src/Shader.o: src/Shader.cpp.o
+
+.PHONY : src/Shader.o
+
+# target to build an object file
+src/Shader.cpp.o:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/Shader.cpp.o
+.PHONY : src/Shader.cpp.o
+
+src/Shader.i: src/Shader.cpp.i
+
+.PHONY : src/Shader.i
+
+# target to preprocess a source file
+src/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/Shader.cpp.i
+.PHONY : src/Shader.cpp.i
+
+src/Shader.s: src/Shader.cpp.s
+
+.PHONY : src/Shader.s
+
+# target to generate assembly for a file
+src/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles/game.out.dir/build.make CMakeFiles/game.out.dir/src/Shader.cpp.s
+.PHONY : src/Shader.cpp.s
+
 src/World.o: src/World.cpp.o
 
 .PHONY : src/World.o
@@ -660,6 +687,9 @@ help:
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"
+	@echo "... src/Shader.o"
+	@echo "... src/Shader.i"
+	@echo "... src/Shader.s"
 	@echo "... src/World.o"
 	@echo "... src/World.i"
 	@echo "... src/World.s"

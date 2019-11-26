@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.out.dir/src/Enemy.cpp.o"
   "CMakeFiles/game.out.dir/src/InputController.cpp.o"
   "CMakeFiles/game.out.dir/src/Player.cpp.o"
+  "CMakeFiles/game.out.dir/src/Shader.cpp.o"
   "CMakeFiles/game.out.dir/src/World.cpp.o"
   "CMakeFiles/game.out.dir/src/bullet_src.cpp.o"
   "CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o"

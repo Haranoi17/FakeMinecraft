@@ -123,7 +123,7 @@ void Camera::updateWalkDirection(const InputController &input)
 	{
 		normalize(newWalkDir);
 	}
-	std::cout << walkDirection.x << "   "<< walkDirection.y<< "    " << walkDirection.z<<std::endl;
+	//std::cout << walkDirection.x << "   "<< walkDirection.y<< "    " << walkDirection.z<<std::endl;
 	walkDirection = newWalkDir;
 }
 

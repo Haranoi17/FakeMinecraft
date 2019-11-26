@@ -28,10 +28,8 @@ public:
 private:
 
     sf::Clock timer;
-    float deltaTime;
 
     float normalizedInput(float, bool);
-    void updateDeltaTime();
 
     int mouseDeltaX;
     int mouseDeltaY;

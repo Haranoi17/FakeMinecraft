@@ -3,7 +3,6 @@
 #include <functions.hpp>
 
 #include <glm/matrix.hpp>
-#include <shader.h>
 #include <glew.h>
 
 InputController                     input = InputController();
@@ -33,6 +32,9 @@ float 								x = 0;
 float								mouseSpeed = 0.05;
 float								drawDistance = 20;
 GLUquadric*							quad;
+GLuint                              projectionLoc;
+GLuint                              viewLoc;
+GLuint                              modelLoc;
 
 GLuint VAO;
 GLuint VBO;
@@ -107,23 +109,35 @@ void initVO()
 
 int main(int argc, char** argv)
 {
-	//window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
+	window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
 	glutInit(&argc, argv);
 	glewInit();
 	initBullet();
 	initGL();
 	initValues();
 	reshapeScreen();
-    Shader shaderKurwa("/home/haranoi17/Documents/Projects/OpenGl_SFML/vertexShader.vert","/home/haranoi17/Documents/Projects/OpenGl_SFML/fragmentShader.frag");
-
+    
+    Shader shader("/home/haranoi17/Documents/Projects/OpenGl_SFML/vertexShader.vert","/home/haranoi17/Documents/Projects/OpenGl_SFML/fragmentShader.frag");
+    projectionLoc = glGetUniformLocation(shader.getID(), "projection");
+    viewLoc = glGetUniformLocation(shader.getID(), "view");
+    modelLoc = glGetUniformLocation(shader.getID(), "model");
+    sf::Clock fpsTimer = sf::Clock();
+    int i = 0;
 	while (window.isOpen())
 	{
 		eventHandling();
 		update();
 		dealWithCollisions();
 
-		drawScreen(shaderKurwa);
+		drawScreen(shader);
 		window.display();
+        i++;
+        if(fpsTimer.getElapsedTime().asSeconds() >= 1)
+        {
+            std::cout << i << " klatek w " << fpsTimer.getElapsedTime().asSeconds() << "s to: " << (float)i/fpsTimer.getElapsedTime().asSeconds() << "FPS" << std::endl;
+            i = 0;
+            fpsTimer.restart();
+        }
 	}
 	finishBullet();
 	return 0;
