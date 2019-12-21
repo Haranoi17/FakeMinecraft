@@ -2,6 +2,7 @@
 #include <classes.hpp>
 #include <functions.hpp>
 
+<<<<<<< HEAD
 btDefaultCollisionConfiguration* 	collisionConfiguration;
 btDiscreteDynamicsWorld* 			dynamicsWorld;
 btRigidBody* 						groundRigidBody;
@@ -12,8 +13,15 @@ Player* 							player = new Player();
 std::vector<btRigidBody*> 			bullets;
 std::vector<Enemy*> 				blocks;
 std::vector<Enemy*>					blocksBuffor;
+=======
+#include <glm/matrix.hpp>
+#include <glew.h>
+
+InputController                     input = InputController();
+World								generatedWorld(1);
+Player 							    player = Player();
+>>>>>>> dev
 sf::RenderWindow 					window(sf::VideoMode(800, 600), "SfmlOpenGl", 7U, sf::ContextSettings(24, 8, 2));
-sf::Vector3f						gunPosition;
 sf::Vector3f 						crosshairPos;
 sf::Clock 							worldTimer = sf::Clock();
 sf::Clock							animationTimer = sf::Clock();
@@ -30,10 +38,15 @@ float								mouseSpeed = 0.05;
 float								drawDistance = 10;
 GLUquadric*							quad;
 
-sf::Clock blocksTimer;
+Shader playerShader;
+Shader blocksShader;
 
-void segregateBlocks()
+GLuint VAO;
+GLuint VBO[2];
+
+float unitMatrix[16] = 
 {
+<<<<<<< HEAD
 	btTransform 						test;
 	//player->trans = player->RigidBody->getWorldTransform();
 	for (auto &block : blocks)
@@ -61,6 +74,79 @@ void segregateBlocks()
 			blocksBuffor.erase(std::remove(blocksBuffor.begin(), blocksBuffor.end(), block), blocksBuffor.end());
 		}
 	}
+=======
+	1,0,0,0,
+	0,1,0,0,
+	0,0,1,0,
+	0,0,0,1
+};
+float cubeData[288] = {
+    //positions        //texCoords  //normals  
+    -1.0f,-1.0f, 1.0f,     0.0f, 1.0f,        0.0f, 0.0f, 1.0f,
+     1.0f,-1.0f, 1.0f,     1.0f, 1.0f,        0.0f, 0.0f, 1.0f,
+     1.0f, 1.0f, 1.0f,     1.0f, 0.0f,        0.0f, 0.0f, 1.0f,  
+    -1.0f,-1.0f, 1.0f,     0.0f, 1.0f,        0.0f, 0.0f, 1.0f,
+     1.0f, 1.0f, 1.0f,     1.0f, 0.0f,        0.0f, 0.0f, 1.0f,
+    -1.0f, 1.0f, 1.0f,     0.0f, 0.0f,        0.0f, 0.0f, 1.0f,
+    -1.0f,-1.0f,-1.0f,     0.0f, 1.0f,        0.0f, 0.0f,-1.0f,
+     1.0f,-1.0f,-1.0f,     1.0f, 1.0f,        0.0f, 0.0f,-1.0f,
+     1.0f, 1.0f,-1.0f,     1.0f, 0.0f,        0.0f, 0.0f,-1.0f,
+    -1.0f,-1.0f,-1.0f,     0.0f, 1.0f,        0.0f, 0.0f,-1.0f,
+     1.0f, 1.0f,-1.0f,     1.0f, 0.0f,        0.0f, 0.0f,-1.0f,
+    -1.0f, 1.0f,-1.0f,     0.0f, 0.0f,        0.0f, 0.0f,-1.0f,
+    -1.0f,-1.0f,-1.0f,     0.0f, 1.0f,        0.0f,-1.0f, 0.0f,
+     1.0f,-1.0f,-1.0f,     1.0f, 1.0f,        0.0f,-1.0f, 0.0f,
+     1.0f,-1.0f, 1.0f,     1.0f, 0.0f,        0.0f,-1.0f, 0.0f,
+    -1.0f,-1.0f,-1.0f,     0.0f, 1.0f,        0.0f,-1.0f, 0.0f,
+     1.0f,-1.0f, 1.0f,     1.0f, 0.0f,        0.0f,-1.0f, 0.0f,
+    -1.0f,-1.0f, 1.0f,     0.0f, 0.0f,        0.0f,-1.0f, 0.0f,
+    -1.0f, 1.0f, 1.0f,     0.0f, 1.0f,        0.0f, 1.0f, 0.0f,
+     1.0f, 1.0f, 1.0f,     1.0f, 1.0f,        0.0f, 1.0f, 0.0f,
+     1.0f, 1.0f,-1.0f,     1.0f, 0.0f,        0.0f, 1.0f, 0.0f,
+    -1.0f, 1.0f, 1.0f,     0.0f, 1.0f,        0.0f, 1.0f, 0.0f,
+     1.0f, 1.0f,-1.0f,     1.0f, 0.0f,        0.0f, 1.0f, 0.0f,
+    -1.0f, 1.0f,-1.0f,     0.0f, 0.0f,        0.0f, 1.0f, 0.0f,  
+    -1.0f,-1.0f,-1.0f,     0.0f, 1.0f,       -1.0f, 0.0f, 0.0f,
+    -1.0f,-1.0f, 1.0f,     1.0f, 1.0f,       -1.0f, 0.0f, 0.0f,
+    -1.0f, 1.0f, 1.0f,     1.0f, 0.0f,       -1.0f, 0.0f, 0.0f,
+    -1.0f,-1.0f,-1.0f,     0.0f, 1.0f,       -1.0f, 0.0f, 0.0f,
+    -1.0f, 1.0f, 1.0f,     1.0f, 0.0f,       -1.0f, 0.0f, 0.0f,
+    -1.0f, 1.0f,-1.0f,     0.0f, 0.0f,       -1.0f, 0.0f, 0.0f,
+     1.0f,-1.0f, 1.0f,     0.0f, 1.0f,        1.0f, 0.0f, 0.0f,
+     1.0f,-1.0f,-1.0f,     1.0f, 1.0f,        1.0f, 0.0f, 0.0f,
+     1.0f, 1.0f,-1.0f,     1.0f, 0.0f,        1.0f, 0.0f, 0.0f,
+     1.0f,-1.0f, 1.0f,     0.0f, 1.0f,        1.0f, 0.0f, 0.0f,
+     1.0f, 1.0f,-1.0f,     1.0f, 0.0f,        1.0f, 0.0f, 0.0f,
+     1.0f, 1.0f, 1.0f,     0.0f, 0.0f,        1.0f, 0.0f, 0.0f,
+     
+};
+glm::mat4 view = glm::mat4(1);
+glm::mat4 projection = glm::mat4(1);
+glm::mat4 model = glm::mat4(1);
+
+
+
+
+
+
+bool fpsCtr()
+{
+    static sf::Clock fpsTimer = sf::Clock();
+    static int i;
+    i++;
+    if(fpsTimer.getElapsedTime().asSeconds() >= 1)
+    {
+        std::cout << i << " klatek w " << fpsTimer.getElapsedTime().asSeconds() << "s to: " << (float)i/fpsTimer.getElapsedTime().asSeconds() << "FPS" << std::endl;
+        if((float)i/fpsTimer.getElapsedTime().asSeconds() < 2)
+        {
+            std::cout << "Low FPS probably errors" << std::endl;
+            return true;
+        }
+        i = 0;
+        fpsTimer.restart();
+    }
+    return false;
+>>>>>>> dev
 }
 void updateLightPos()
 {
@@ -72,30 +158,44 @@ void updateLightPos()
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
 }
 
+
 int main(int argc, char** argv)
 {
-	
 	//window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
 	glutInit(&argc, argv);
 	glewInit();
-	initBullet();
-	initGL();
 	initValues();
+	initGL();
+    initVO();
 	reshapeScreen();
 
+<<<<<<< HEAD
 	segregateBlocks();
 	sf::Thread t1(segregateBlocks);
+=======
+  
+
+>>>>>>> dev
 	while (window.isOpen())
 	{
 		eventHandling();
 		update();
+<<<<<<< HEAD
 		t1.launch();
 		updateLightPos();
 
 			
 		drawScreen();
+=======
+        placingAndRemovingBlocks();
+		drawScreen(blocksShader, playerShader);
+>>>>>>> dev
 		window.display();
+        if(fpsCtr())
+        {
+            window.close();
+        }
 	}
-	finishBullet();
+
 	return 0;
 }
