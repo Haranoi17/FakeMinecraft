@@ -8,7 +8,6 @@
 
 void drawAxis()
 {
-	
 	glBegin(GL_LINES);
 
 	glColor3f(1, 0, 0);
