@@ -35,7 +35,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClass
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClasses/Player.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClasses/Shader.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClasses/World.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/initGL.hpp
@@ -60,7 +59,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyCl
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/Player.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/Shader.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/World.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/initGL.hpp
@@ -111,7 +109,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyClass
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyClasses/Player.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyClasses/Shader.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyClasses/World.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyFunctions/initGL.hpp
@@ -176,7 +173,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/I
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/Player.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/Shader.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/World.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/initGL.hpp
@@ -204,7 +200,6 @@ CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyClasses/InputController.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyClasses/Player.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyClasses/Shader.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyClasses/World.hpp
-CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/dealWithCollisions.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/drawScreen.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/eventHandling.hpp
 CMakeFiles/game.out.dir/main.cpp.o: ../Include/MyFunctions/initGL.hpp

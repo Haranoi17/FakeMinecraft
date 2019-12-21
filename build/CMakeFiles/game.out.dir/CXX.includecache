@@ -59,6 +59,8 @@ sstream
 -
 fstream
 -
+filesystem
+-
 
 ../Include/MyClasses/World.hpp
 SFML/Graphics.hpp
@@ -67,8 +69,6 @@ vector
 -
 Block.hpp
 -
-
-../Include/MyFunctions/dealWithCollisions.hpp
 
 ../Include/MyFunctions/drawScreen.hpp
 Shader.hpp
@@ -126,9 +126,13 @@ World.hpp
 Shader.hpp
 -
 
-../Include/general/functions.hpp
-dealWithCollisions.hpp
+../Include/general/externs.hpp
+Headers.hpp
 -
+classes.hpp
+-
+
+../Include/general/functions.hpp
 drawScreen.hpp
 -
 eventHandling.hpp
@@ -152,29 +156,13 @@ vectorOperations.hpp
 initValues.hpp
 -
 
-../Include/general/glew.h
-stddef.h
+/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initValues.cpp
+initValues.hpp
 -
-inttypes.h
--
-stdint.h
--
-inttypes.h
--
-OpenGL/glu.h
--
-GL/glu.h
--
-
-/home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
-Headers.hpp
--
-classes.hpp
+externs.hpp
 -
 functions.hpp
 -
-glm/matrix.hpp
--
-glew.h
+filesystem
 -
 
