@@ -3,13 +3,6 @@
 
 void initGL()
 {
-
-	const GLubyte* version = glGetString(GL_VERSION);
-	std::cout << version << std::endl;
-	int i;
-	glGetIntegerv(GL_MINOR_VERSION, &i);
-	std::cout << i << std::endl;
-
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_TEXTURE_2D);
 
@@ -20,7 +13,6 @@ void initGL()
 	glLineWidth(3);
 	glBlendEquation(GL_ONE_MINUS_SRC_ALPHA);
 	glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA);
-	quad = gluNewQuadric();
 
 	glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, grassTopTexture.getNativeHandle());

@@ -23,7 +23,6 @@ extern float 								fov;
 extern float								mouseSpeed;
 extern float                                x;
 extern float                                drawDistance;
-extern GLUquadric*							quad;
 
 extern Shader playerShader;
 extern Shader blocksShader;
