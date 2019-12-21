@@ -2,25 +2,12 @@
 #include <classes.hpp>
 #include <functions.hpp>
 
-<<<<<<< HEAD
-btDefaultCollisionConfiguration* 	collisionConfiguration;
-btDiscreteDynamicsWorld* 			dynamicsWorld;
-btRigidBody* 						groundRigidBody;
-btTransform 						trans;
-Camera* 							cam = new Camera();
-World								generatedWorld(1, 50, 50);
-Player* 							player = new Player();
-std::vector<btRigidBody*> 			bullets;
-std::vector<Enemy*> 				blocks;
-std::vector<Enemy*>					blocksBuffor;
-=======
 #include <glm/matrix.hpp>
 #include <glew.h>
 
 InputController                     input = InputController();
 World								generatedWorld(1);
 Player 							    player = Player();
->>>>>>> dev
 sf::RenderWindow 					window(sf::VideoMode(800, 600), "SfmlOpenGl", 7U, sf::ContextSettings(24, 8, 2));
 sf::Vector3f 						crosshairPos;
 sf::Clock 							worldTimer = sf::Clock();
@@ -46,35 +33,6 @@ GLuint VBO[2];
 
 float unitMatrix[16] = 
 {
-<<<<<<< HEAD
-	btTransform 						test;
-	//player->trans = player->RigidBody->getWorldTransform();
-	for (auto &block : blocks)
-	{
-		block->RigidBody->getMotionState()->getWorldTransform(test);
-		btVector3 dist = btVector3(test.getOrigin().getX() - player->trans.getOrigin().getX(), test.getOrigin().getY() - player->trans.getOrigin().getY(), test.getOrigin().getZ() - player->trans.getOrigin().getZ());
-
-		
-		if(dist.length2() > drawDistance * drawDistance)
-		{
-			blocksBuffor.push_back(block);
-			blocks.erase(std::remove(blocks.begin(), blocks.end(), block), blocks.end());
-		}
-	}
-
-	for (auto &block : blocksBuffor)
-	{
-		block->RigidBody->getMotionState()->getWorldTransform(test);
-		btVector3 dist = btVector3(test.getOrigin().getX() - player->trans.getOrigin().getX(), test.getOrigin().getY() - player->trans.getOrigin().getY(), test.getOrigin().getZ() - player->trans.getOrigin().getZ());
-
-		
-		if(dist.length2() < drawDistance * drawDistance)
-		{
-			blocks.push_back(block);
-			blocksBuffor.erase(std::remove(blocksBuffor.begin(), blocksBuffor.end(), block), blocksBuffor.end());
-		}
-	}
-=======
 	1,0,0,0,
 	0,1,0,0,
 	0,0,1,0,
@@ -146,7 +104,6 @@ bool fpsCtr()
         fpsTimer.restart();
     }
     return false;
->>>>>>> dev
 }
 void updateLightPos()
 {
@@ -169,27 +126,14 @@ int main(int argc, char** argv)
     initVO();
 	reshapeScreen();
 
-<<<<<<< HEAD
-	segregateBlocks();
-	sf::Thread t1(segregateBlocks);
-=======
   
 
->>>>>>> dev
 	while (window.isOpen())
 	{
 		eventHandling();
 		update();
-<<<<<<< HEAD
-		t1.launch();
-		updateLightPos();
-
-			
-		drawScreen();
-=======
         placingAndRemovingBlocks();
 		drawScreen(blocksShader, playerShader);
->>>>>>> dev
 		window.display();
         if(fpsCtr())
         {
