@@ -1,6 +1,11 @@
 #include <Shader.hpp>
 #include <iostream>
 
+Shader::Shader()
+{
+    
+}
+
 Shader::Shader(const char* vertexShaderPath, const char* fragmentShaderPath)
 {
     programID = glCreateProgram();
@@ -108,6 +113,11 @@ void Shader::use() const
 void Shader::setMat4(const GLuint &location, const glm::mat4 &mat) const
 {
     glUniformMatrix4fv(location, 1, GL_FALSE, &mat[0][0]);
+}
+
+void Shader::setFloat(const GLuint &location, const float num) const
+{
+    glUniform1f(location, num);
 }
 
 GLuint Shader::getID() const

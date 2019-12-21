@@ -14,6 +14,8 @@ public:
 
     int getMouseDeltaX() const;
     int getMouseDeltaY() const;
+    bool getMouseLeft() const;
+    bool getMouseRight() const;
     float getKeyW() const;
     float getKeyS() const;
     float getKeyA() const;
@@ -29,10 +31,14 @@ private:
 
     sf::Clock timer;
 
-    float normalizedInput(float, bool);
+    float normalizedInput(float, bool, float);
 
     int mouseDeltaX;
     int mouseDeltaY;
+    
+    bool mouseLeft;
+    bool mouseRight;
+
     float W;
     float S;
     float A;

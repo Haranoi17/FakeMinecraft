@@ -9,7 +9,7 @@ void initBullet()
 	btScalar 					mass = 1;
 	btVector3 					fallInertia(1, 1, 1);
 	
-	for (int i = 0; i < generatedWorld.positions.size(); i++)
+	for (int i = 0; i < generatedWorld.ammountToDraw; i++)
 	{
 		blocks.push_back(new Enemy());
 	}
@@ -28,7 +28,7 @@ void initBullet()
 		block->RigidBody->setRestitution(0.5);
 		block->RigidBody->setCollisionFlags(btCollisionObject::CF_KINEMATIC_OBJECT);
 		trans = block->RigidBody->getWorldTransform();
-		trans.getOrigin() = generatedWorld.positions[i];
+		trans.getOrigin() = generatedWorld.blocksToDraw[i].position;
 		if(i < blocks.size())
 		{
 			i++;

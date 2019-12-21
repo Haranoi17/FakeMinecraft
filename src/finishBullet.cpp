@@ -4,7 +4,6 @@
 void finishBullet()
 {
 	for (auto &block : blocks) dynamicsWorld->removeRigidBody(block->RigidBody);
-	
 	dynamicsWorld->removeRigidBody(groundRigidBody);
 
 	delete groundRigidBody->getMotionState();

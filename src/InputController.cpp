@@ -1,7 +1,7 @@
 #include <InputController.hpp>
 #include <SFML/Graphics.hpp>
 #include <math.h>
-
+#include <iostream>
 InputController::InputController()
 {
     timer = sf::Clock();
@@ -9,6 +9,9 @@ InputController::InputController()
     mouseDeltaX = 0;
     mouseDeltaY = 0;
     
+    mouseLeft = false;
+    mouseRight = false;
+
     W = 0;
     S = 0;
     A = 0;
@@ -73,14 +76,19 @@ void InputController::updateMouseValues()
 
     mouseDeltaX = d.x;
     mouseDeltaY = d.y;
+
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)){ mouseLeft = true;} else {mouseLeft = false;}
+    if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Right)){ mouseRight = true;} else {mouseRight = false;}
 }
 
 void InputController::updateKeysValues()
 {
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)){ W = normalizedInput(W, true);} else{ W = normalizedInput(W, false);}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)){ S = normalizedInput(S, true);} else{ S = normalizedInput(S, false);}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){ A = normalizedInput(A, true);} else{ A = normalizedInput(A, false);}
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)){ D = normalizedInput(D, true);} else{ D = normalizedInput(D, false);}
+    float elapsed = timer.getElapsedTime().asSeconds()*3;
+    timer.restart();
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)){ W = normalizedInput(W, true, elapsed);} else{ W = normalizedInput(W, false, elapsed);}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)){ S = normalizedInput(S, true, elapsed);} else{ S = normalizedInput(S, false, elapsed);}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){ A = normalizedInput(A, true, elapsed);} else{ A = normalizedInput(A, false, elapsed);}
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)){ D = normalizedInput(D, true, elapsed);} else{ D = normalizedInput(D, false, elapsed);}
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E)){ E = true;} else{ E = false;}
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q)){ Q = true;} else{ Q = false;}
@@ -93,11 +101,11 @@ void InputController::updateKeysValues()
     
 }
 
-float InputController::normalizedInput(float previousVal, bool pressed)
+float InputController::normalizedInput(float previousVal, bool pressed, float elapsedTime)
 {
     if(pressed)
     {
-        previousVal += timer.getElapsedTime().asSeconds();
+        previousVal += elapsedTime;
         if(previousVal >= 1)
         {
             previousVal = 1;
@@ -105,7 +113,7 @@ float InputController::normalizedInput(float previousVal, bool pressed)
     }
     else
     {
-        previousVal -= timer.getElapsedTime().asSeconds();
+        previousVal -= elapsedTime;
         if(previousVal <= 0)
         {
            previousVal = 0; 
@@ -117,6 +125,8 @@ float InputController::normalizedInput(float previousVal, bool pressed)
 
 int InputController::getMouseDeltaX() const { return mouseDeltaX;}
 int InputController::getMouseDeltaY() const { return mouseDeltaY;}
+bool InputController::getMouseLeft() const  { return mouseLeft;}
+bool InputController::getMouseRight() const { return mouseRight;}
 float InputController::getKeyW() const      { return W;}
 float InputController::getKeyS() const      { return S;}
 float InputController::getKeyA() const      { return A;}

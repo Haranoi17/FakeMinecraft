@@ -102,6 +102,7 @@ CMakeFiles/game.out.dir/main.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -124,6 +125,80 @@ CMakeFiles/game.out.dir/main.cpp.o
  ../Include/functions.hpp
  ../Include/glew.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
+CMakeFiles/game.out.dir/src/Block.cpp.o
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btDbvt.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btDispatcher.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btQuantizedBvh.h
+ ../Include/Bullet/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionConfiguration.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionCreateFunc.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionDispatcher.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionObject.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionWorld.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btManifoldResult.h
+ ../Include/Bullet/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btBoxShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btCapsuleShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btCollisionMargin.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btCollisionShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btCompoundShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btConcaveShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btConeShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btConvexHullShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btConvexInternalShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btConvexShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btCylinderShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btEmptyShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btMultiSphereShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btOptimizedBvh.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btSphereShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btStaticPlaneShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btTetrahedronShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleCallback.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleInfoMap.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleMesh.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleMeshShape.h
+ ../Include/Bullet/BulletCollision/CollisionShapes/btUniformScalingShape.h
+ ../Include/Bullet/BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h
+ ../Include/Bullet/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h
+ ../Include/Bullet/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h
+ ../Include/Bullet/LinearMath/btAabbUtil2.h
+ ../Include/Bullet/LinearMath/btAlignedAllocator.h
+ ../Include/Bullet/LinearMath/btAlignedObjectArray.h
+ ../Include/Bullet/LinearMath/btDefaultMotionState.h
+ ../Include/Bullet/LinearMath/btHashMap.h
+ ../Include/Bullet/LinearMath/btIDebugDraw.h
+ ../Include/Bullet/LinearMath/btMatrix3x3.h
+ ../Include/Bullet/LinearMath/btMinMax.h
+ ../Include/Bullet/LinearMath/btMotionState.h
+ ../Include/Bullet/LinearMath/btQuadWord.h
+ ../Include/Bullet/LinearMath/btQuaternion.h
+ ../Include/Bullet/LinearMath/btQuickprof.h
+ ../Include/Bullet/LinearMath/btScalar.h
+ ../Include/Bullet/LinearMath/btSerializer.h
+ ../Include/Bullet/LinearMath/btTransform.h
+ ../Include/Bullet/LinearMath/btTransformUtil.h
+ ../Include/Bullet/LinearMath/btVector3.h
+ ../Include/Bullet/btBulletCollisionCommon.h
+ ../Include/MyClasses/Block.hpp
+ /home/haranoi17/Documents/Projects/OpenGl_SFML/src/Block.cpp
 CMakeFiles/game.out.dir/src/Camera.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
@@ -433,6 +508,7 @@ CMakeFiles/game.out.dir/src/Player.cpp.o
  ../Include/Bullet/LinearMath/btVector3.h
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/InputController.hpp
  ../Include/MyClasses/Player.hpp
@@ -512,6 +588,7 @@ CMakeFiles/game.out.dir/src/World.cpp.o
  ../Include/Bullet/LinearMath/btTransformUtil.h
  ../Include/Bullet/LinearMath/btVector3.h
  ../Include/Bullet/btBulletCollisionCommon.h
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/World.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/World.cpp
 CMakeFiles/game.out.dir/src/bullet_src.cpp.o
@@ -793,115 +870,6 @@ CMakeFiles/game.out.dir/src/bullet_src.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/bullet_src.cpp
 CMakeFiles/game.out.dir/src/dealWithCollisions.cpp.o
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3Internal.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btDbvt.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btDispatcher.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btQuantizedBvh.h
- ../Include/Bullet/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionConfiguration.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionCreateFunc.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionDispatcher.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionObject.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btCollisionWorld.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btManifoldResult.h
- ../Include/Bullet/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btBoxShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btCapsuleShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btCollisionMargin.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btCollisionShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btCompoundShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btConcaveShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btConeShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btConvexHullShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btConvexInternalShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btConvexShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btCylinderShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btEmptyShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btMultiSphereShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btOptimizedBvh.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btSphereShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btStaticPlaneShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btTetrahedronShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleCallback.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleInfoMap.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleMesh.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btTriangleMeshShape.h
- ../Include/Bullet/BulletCollision/CollisionShapes/btUniformScalingShape.h
- ../Include/Bullet/BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h
- ../Include/Bullet/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h
- ../Include/Bullet/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btConstraintSolver.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btFixedConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btGearConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpring2Constraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btSliderConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btSolverBody.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h
- ../Include/Bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.h
- ../Include/Bullet/BulletDynamics/Dynamics/btActionInterface.h
- ../Include/Bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h
- ../Include/Bullet/BulletDynamics/Dynamics/btDynamicsWorld.h
- ../Include/Bullet/BulletDynamics/Dynamics/btRigidBody.h
- ../Include/Bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h
- ../Include/Bullet/BulletDynamics/Vehicle/btRaycastVehicle.h
- ../Include/Bullet/BulletDynamics/Vehicle/btVehicleRaycaster.h
- ../Include/Bullet/BulletDynamics/Vehicle/btWheelInfo.h
- ../Include/Bullet/LinearMath/btAabbUtil2.h
- ../Include/Bullet/LinearMath/btAlignedAllocator.h
- ../Include/Bullet/LinearMath/btAlignedObjectArray.h
- ../Include/Bullet/LinearMath/btDefaultMotionState.h
- ../Include/Bullet/LinearMath/btHashMap.h
- ../Include/Bullet/LinearMath/btIDebugDraw.h
- ../Include/Bullet/LinearMath/btMatrix3x3.h
- ../Include/Bullet/LinearMath/btMinMax.h
- ../Include/Bullet/LinearMath/btMotionState.h
- ../Include/Bullet/LinearMath/btQuadWord.h
- ../Include/Bullet/LinearMath/btQuaternion.h
- ../Include/Bullet/LinearMath/btQuickprof.h
- ../Include/Bullet/LinearMath/btScalar.h
- ../Include/Bullet/LinearMath/btSerializer.h
- ../Include/Bullet/LinearMath/btThreads.h
- ../Include/Bullet/LinearMath/btTransform.h
- ../Include/Bullet/LinearMath/btTransformUtil.h
- ../Include/Bullet/LinearMath/btVector3.h
- ../Include/Bullet/btBulletCollisionCommon.h
- ../Include/Bullet/btBulletDynamicsCommon.h
- ../Include/Headers.hpp
- ../Include/MyClasses/Camera.hpp
- ../Include/MyClasses/Enemy.hpp
- ../Include/MyClasses/InputController.hpp
- ../Include/MyClasses/Player.hpp
- ../Include/MyClasses/Shader.hpp
- ../Include/MyClasses/World.hpp
- ../Include/MyFunctions/dealWithCollisions.hpp
- ../Include/classes.hpp
- ../Include/externs.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/src/dealWithCollisions.cpp
 CMakeFiles/game.out.dir/src/drawScreen.cpp.o
  ../Include/Bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h
@@ -1004,6 +972,7 @@ CMakeFiles/game.out.dir/src/drawScreen.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -1127,6 +1096,7 @@ CMakeFiles/game.out.dir/src/eventHandling.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -1250,6 +1220,7 @@ CMakeFiles/game.out.dir/src/finishBullet.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -1361,6 +1332,7 @@ CMakeFiles/game.out.dir/src/initBullet.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -1472,6 +1444,7 @@ CMakeFiles/game.out.dir/src/initGL.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -1583,6 +1556,7 @@ CMakeFiles/game.out.dir/src/initValues.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -1706,6 +1680,7 @@ CMakeFiles/game.out.dir/src/playerShoot.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -1817,6 +1792,7 @@ CMakeFiles/game.out.dir/src/reshapeScreen.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp
@@ -1931,6 +1907,7 @@ CMakeFiles/game.out.dir/src/update.cpp.o
  ../Include/Bullet/btBulletCollisionCommon.h
  ../Include/Bullet/btBulletDynamicsCommon.h
  ../Include/Headers.hpp
+ ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
  ../Include/MyClasses/Enemy.hpp
  ../Include/MyClasses/InputController.hpp

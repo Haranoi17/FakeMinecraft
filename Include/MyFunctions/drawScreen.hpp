@@ -1,4 +1,4 @@
 #pragma once
 #include <Shader.hpp>
 
-void drawScreen(Shader);
+void drawScreen(Shader, Shader);

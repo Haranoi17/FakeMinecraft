@@ -48,61 +48,70 @@ void drawAxis()
 void initScreen()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	glClearColor((GLclampf)0.6, (GLclampf)0.6, (GLclampf)0.6, 1);
-	//glLoadIdentity();
+	glLoadIdentity();
 	view = cam.moveCamera();
 }
 
 
-void drawScreen(Shader shader)
+void drawScreen(Shader blocksShader, Shader playerShader)
 {
 	initScreen();
 
-	shader.use();
-	shader.setMat4(projectionLoc, projection);
-	shader.setMat4(viewLoc, view);
-	
+	playerShader.use();
+	playerShader.setMat4(playerShader.viewLoc, view);
+	playerShader.setMat4(playerShader.projectionLoc, projection);
 	
 	model = glm::mat4(1);
-	shader.setMat4(modelLoc, model);
+	playerShader.setMat4(playerShader.modelLoc, model);
 	drawAxis();
 
-	
-	for(auto &block : blocks)
-	{
-		
-		trans = block->RigidBody->getWorldTransform();
-		
-		model = glm::mat4(1);
-		model = glm::translate(glm::mat4(1), glm::vec3(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ()));
-
-		
-	
-		shader.setMat4(modelLoc, model);
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		glBindVertexArray(0);
-		
-	}
-
-	for (auto &bullet : bullets)
-	{
-		trans = bullet->getWorldTransform();
-		model = glm::translate(glm::mat4(1), glm::vec3(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ()));
-		glutSolidCube(0.2);
-	}
-
-	model = glm::translate(glm::mat4(1), glm::vec3(gunPosition.x, gunPosition.y, gunPosition.z));
-	shader.setMat4(modelLoc, model);
-	gluSphere(quad, 0.2, 10, 10);
-
 	model = glm::translate(glm::mat4(1), glm::vec3(player->trans.getOrigin().getX(), player->trans.getOrigin().getY(), player->trans.getOrigin().getZ()));
-	shader.setMat4(modelLoc, model);
-	glutSolidCube(1);
+	playerShader.setMat4(playerShader.modelLoc, model);
+	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
+
+	glBindVertexArray(VAO);
+	glDrawArrays(GL_TRIANGLES, 0, 36);
+	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(gunPosition.x, gunPosition.y, gunPosition.z))); 
+	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "gunScale"), 0.2);
+	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 1);
+
+	glDrawArrays(GL_TRIANGLES, 0, 36);
+	glBindVertexArray(0);
 	
-	model = glm::translate(glm::mat4(1), glm::vec3(lightPos[0], lightPos[1], lightPos[2]));
-	gluSphere(quad,0.2,20,20);
-	window.display();
+
+	blocksShader.use();
+	blocksShader.setMat4(blocksShader.viewLoc, view);
+	blocksShader.setMat4(blocksShader.projectionLoc, projection);
+
+	glBindVertexArray(VAO);
+	glDrawArraysInstanced(GL_TRIANGLES, 0, 36, generatedWorld.ammountToDraw);
+
+	glUseProgram(0);
+
+	// for(auto &block : blocks)
+	// {
+	// 	glBindVertexArray(VAO);
+	// 	glDrawArrays(GL_TRIANGLES, 0, 36);
+	// 	glBindVertexArray(0);	
+	// }
+
+	// for (auto &bullet : bullets)
+	// {
+	// 	trans = bullet->getWorldTransform();
+	// 	model = glm::translate(glm::mat4(1), glm::vec3(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ()));
+	// 	glutSolidCube(0.2);
+	// }
+
+	// model = glm::translate(glm::mat4(1), glm::vec3(gunPosition.x, gunPosition.y, gunPosition.z));
+	// blocksShader.setMat4(modelLoc, model);
+	// gluSphere(quad, 0.2, 10, 10);
+
+	
+	// model = glm::translate(glm::mat4(1), glm::vec3(lightPos[0], lightPos[1], lightPos[2]));
+	// gluSphere(quad,0.2,20,20);
+	
 }
 
 //opacity template for drawing object. Draw thing as LAST! element to ensure proper positioning

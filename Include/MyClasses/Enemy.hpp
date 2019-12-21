@@ -20,7 +20,7 @@ public:
 	~Enemy();
 
 	void takeDmg(int dmg);
-	bool searchForPlayer(btRigidBody *playerRigidBody);
+	bool searchForPlayer(const btRigidBody *playerRigidBody);
 	void walk();
 };
 

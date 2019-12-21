@@ -892,6 +892,10 @@ glm/gtc/matrix_transform.hpp
 glm/gtc/type_ptr.hpp
 -
 
+../Include/MyClasses/Block.hpp
+Bullet/btBulletCollisionCommon.h
+-
+
 ../Include/MyClasses/Camera.hpp
 Bullet/btBulletDynamicsCommon.h
 -
@@ -929,6 +933,10 @@ InputController.hpp
 -
 Camera.hpp
 -
+vector
+-
+Block.hpp
+-
 
 ../Include/MyClasses/Shader.hpp
 vector
@@ -950,6 +958,8 @@ SFML/Graphics.hpp
 vector
 -
 Bullet/btBulletCollisionCommon.h
+-
+Block.hpp
 -
 
 ../Include/MyFunctions/dealWithCollisions.hpp

@@ -31,12 +31,12 @@ extern float								mouseSpeed;
 extern float                                x;
 extern float                                drawDistance;
 extern GLUquadric*							quad;
-extern GLuint                               projectionLoc;
-extern GLuint                               viewLoc;
-extern GLuint                               modelLoc;
+
+extern Shader playerShader;
+extern Shader blocksShader;
 
 extern GLuint VAO;
-extern GLuint VBO;
+extern GLuint VBO[2];
 extern float unitMatrix[16];
 
 extern glm::mat4 view;

@@ -3,19 +3,21 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <Bullet/btBulletCollisionCommon.h>
+#include <Block.hpp>
+
 class World
 {
-public:
-    World(int seed);
+    public:
+    World(int);
     ~World();
+    void alocateMemory();
+    void fillBlockTypes();
+    void prepareToDraw();
 
-    int width;
-    int depth;
-    int **heights;
-    btVector3 ***blockCoords;
-    
-    std::vector<btVector3> positions;
+    bool checkAir(btVector3);
+    btVector3 dimentions;
+    Block ***blocks;
 
-private:
-
+    std::vector<Block> blocksToDraw;
+    int ammountToDraw;
 };

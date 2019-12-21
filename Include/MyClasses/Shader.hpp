@@ -10,14 +10,19 @@ class Shader
 {
 public:
 
+    Shader();
     Shader(const char*, const char*);
     ~Shader();
 
     void use() const;
     void setMat4(const GLuint&, const glm::mat4&) const;
-    
+    void setFloat(const GLuint&, const float) const;
+ 
     GLuint getID() const;
 
+    GLuint projectionLoc;
+    GLuint viewLoc;
+    GLuint modelLoc;
 private:
 
     void checkCompilationVertexShader() const;
