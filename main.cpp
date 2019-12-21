@@ -105,15 +105,7 @@ bool fpsCtr()
     }
     return false;
 }
-void updateLightPos()
-{
-	player->RigidBody->getMotionState()->getWorldTransform(trans);
 
-	lightPos[0] = trans.getOrigin().getX() + 1;
-	lightPos[1] = trans.getOrigin().getY() + 1;
-	lightPos[2] = trans.getOrigin().getZ();
-	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
-}
 
 
 int main(int argc, char** argv)
