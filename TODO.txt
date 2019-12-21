@@ -1,5 +1,0 @@
-1.  Zrobić input controller taki jak w unity, żeby w trakcie 
-    trzymania klawisza wartość rosła w czasie od 0 do 1 a po
-    po puszczeniu spadała do 0;
-
-2. Zrobić shader Controller.
