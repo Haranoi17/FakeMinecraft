@@ -1,5 +1,5 @@
 #pragma once
-#include <Bullet/btBulletCollisionCommon.h>
+#include <SFML/Graphics.hpp>
 
 enum blockType
 {
@@ -12,8 +12,8 @@ class Block
 {
     public:
     Block();
-    Block(btVector3, blockType);
+    Block(sf::Vector3f, blockType);
 
     blockType type;
-    btVector3 position;
+    sf::Vector3f position;
 };

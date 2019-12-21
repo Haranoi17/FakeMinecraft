@@ -1,6 +1,5 @@
 #pragma once
 
-#include <Bullet/btBulletDynamicsCommon.h>
 #include "SFML/Graphics.hpp"
 #include <InputController.hpp>
 #include <Camera.hpp>
@@ -11,10 +10,8 @@ class Player
 {
 public:
 
-	btRigidBody *RigidBody;
-	btScalar mass;
-	btTransform trans;
-	btVector3 pos;
+	sf::Vector3f pos;
+	sf::Vector3f gunPos;
 
 	sf::Clock immunityTimer;
 	sf::Clock generalTimer;
@@ -22,11 +19,13 @@ public:
 	int dmg;
 
 	std::vector<blockType> slots;
+	Camera cam;
 
 	Player();
 	~Player();
 
 	void takeDmg(int dmg);
-	void walk(const InputController&, const Camera&);
+	void walk(const InputController&);
+	void updateGunPos();
 };
 

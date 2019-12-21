@@ -1,26 +1,23 @@
 #pragma once
 
-#include <Bullet/btBulletDynamicsCommon.h>
 #include "SFML/Graphics.hpp"
 
 class Enemy
 {
 public:
 
-	btRigidBody *RigidBody;
-	btScalar mass;
+	sf::Vector3f position;
 	sf::Clock directionChangeTimer;
 
 	int hp;
 	int dmg;
 	float speed;
-	btVector3 walkDir;
+	sf::Vector3f walkDir;
 
 	Enemy();
 	~Enemy();
 
 	void takeDmg(int dmg);
-	bool searchForPlayer(const btRigidBody *playerRigidBody);
 	void walk();
 };
 

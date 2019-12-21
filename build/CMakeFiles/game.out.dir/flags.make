@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/haranoi17/Documents/Projects/OpenGl_SFML/Include -I/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/Bullet -I/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses -I/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions 
+CXX_INCLUDES = -I/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/general -I/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses -I/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions 
 

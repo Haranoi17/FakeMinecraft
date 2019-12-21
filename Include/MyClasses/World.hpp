@@ -2,7 +2,6 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include <Bullet/btBulletCollisionCommon.h>
 #include <Block.hpp>
 
 class World
@@ -14,8 +13,8 @@ class World
     void fillBlockTypes();
     void prepareToDraw();
 
-    bool checkAir(btVector3);
-    btVector3 dimentions;
+    bool checkAir(sf::Vector3f);
+    sf::Vector3f dimentions;
     Block ***blocks;
 
     std::vector<Block> blocksToDraw;

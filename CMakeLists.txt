@@ -27,18 +27,19 @@ project(game)
 
 set(CMAKE_BUILD_TYPE Debug)
 include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/Include/
-    ${CMAKE_CURRENT_SOURCE_DIR}/Include/Bullet
+    ${CMAKE_CURRENT_SOURCE_DIR}/Include/general
     ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyClasses
     ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyFunctions
     )
     
-AUX_SOURCE_DIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/src/ SourceFiles)
+AUX_SOURCE_DIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/Include/MyClasses SourceFilesClasses)
+AUX_SOURCE_DIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/Include/MyFunctions SourceFilesFunctions)
 
 set(
     SRC
     ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
-    ${SourceFiles}
+    ${SourceFilesClasses}
+    ${SourceFilesFunctions}
 )
 
 link_libraries(

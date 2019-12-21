@@ -13,7 +13,7 @@ void main()
 {
     if(drawGun == 1)
     {
-        gl_Position = projection * view * model * vec4((aPos.xyz)*gunScale, 1);
+        gl_Position = projection * view * model * vec4((aPos.x - 5)*gunScale,(aPos.y - 5)*gunScale, (aPos.z - 5)*gunScale, 1);
     }
     else
     {
