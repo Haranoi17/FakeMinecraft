@@ -84,11 +84,7 @@ Shader.hpp
 
 ../Include/MyFunctions/placingAndRemovingBlocks.hpp
 
-../Include/MyFunctions/playerShoot.hpp
-
 ../Include/MyFunctions/reshapeScreen.hpp
-
-../Include/MyFunctions/setMaterial.hpp
 
 ../Include/MyFunctions/update.hpp
 
@@ -143,17 +139,39 @@ initVO.hpp
 -
 placingAndRemovingBlocks.hpp
 -
-playerShoot.hpp
--
 reshapeScreen.hpp
--
-setMaterial.hpp
 -
 update.hpp
 -
 vectorOperations.hpp
 -
 initValues.hpp
+-
+
+../Include/general/glew.h
+stddef.h
+-
+inttypes.h
+-
+stdint.h
+-
+inttypes.h
+-
+OpenGL/glu.h
+-
+GL/glu.h
+-
+
+/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp
+externs.hpp
+-
+functions.hpp
+-
+
+/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/eventHandling.cpp
+externs.hpp
+-
+functions.hpp
 -
 
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initValues.cpp
@@ -164,5 +182,25 @@ externs.hpp
 functions.hpp
 -
 filesystem
+-
+
+/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/update.cpp
+externs.hpp
+-
+functions.hpp
+-
+math.h
+-
+
+/home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
+Headers.hpp
+-
+classes.hpp
+-
+functions.hpp
+-
+glm/matrix.hpp
+-
+glew.h
 -
 

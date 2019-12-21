@@ -42,9 +42,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
@@ -66,9 +64,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
@@ -116,9 +112,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
@@ -180,9 +174,7 @@ CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
@@ -207,9 +199,7 @@ CMakeFiles/game.out.dir/main.cpp.o
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
