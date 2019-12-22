@@ -59,6 +59,8 @@ sstream
 -
 fstream
 -
+filesystem
+-
 
 ../Include/MyClasses/World.hpp
 SFML/Graphics.hpp
@@ -67,8 +69,6 @@ vector
 -
 Block.hpp
 -
-
-../Include/MyFunctions/dealWithCollisions.hpp
 
 ../Include/MyFunctions/drawScreen.hpp
 Shader.hpp
@@ -84,13 +84,14 @@ Shader.hpp
 
 ../Include/MyFunctions/placingAndRemovingBlocks.hpp
 
+<<<<<<< HEAD
 ../Include/MyFunctions/playerShoot.hpp
 
 ../Include/MyFunctions/reRenderWorld.hpp
 
+=======
+>>>>>>> dev
 ../Include/MyFunctions/reshapeScreen.hpp
-
-../Include/MyFunctions/setMaterial.hpp
 
 ../Include/MyFunctions/update.hpp
 
@@ -132,11 +133,16 @@ Shader.hpp
 Headers.hpp
 -
 classes.hpp
+<<<<<<< HEAD
 -
 
 ../Include/general/functions.hpp
 dealWithCollisions.hpp
+=======
+>>>>>>> dev
 -
+
+../Include/general/functions.hpp
 drawScreen.hpp
 -
 eventHandling.hpp
@@ -147,11 +153,7 @@ initVO.hpp
 -
 placingAndRemovingBlocks.hpp
 -
-playerShoot.hpp
--
 reshapeScreen.hpp
--
-setMaterial.hpp
 -
 update.hpp
 -
@@ -174,6 +176,7 @@ OpenGL/glu.h
 GL/glu.h
 -
 
+<<<<<<< HEAD
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
 Block.hpp
 -
@@ -250,6 +253,8 @@ random
 iostream
 -
 
+=======
+>>>>>>> dev
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp
 externs.hpp
 -
@@ -262,6 +267,7 @@ externs.hpp
 functions.hpp
 -
 
+<<<<<<< HEAD
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initGL.cpp
 externs.hpp
 -
@@ -274,6 +280,8 @@ initVO.hpp
 externs.hpp
 -
 
+=======
+>>>>>>> dev
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initValues.cpp
 initValues.hpp
 -
@@ -281,6 +289,7 @@ externs.hpp
 -
 functions.hpp
 -
+<<<<<<< HEAD
 
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/placingAndRemovingBlocks.cpp
 placingAndRemovingBlocks.hpp
@@ -302,6 +311,9 @@ externs.hpp
 reshapeScreen.hpp
 -
 glm/gtc/matrix_transform.hpp
+=======
+filesystem
+>>>>>>> dev
 -
 
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/update.cpp
@@ -312,12 +324,15 @@ functions.hpp
 math.h
 -
 
+<<<<<<< HEAD
 /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/vectorOperations.cpp
 vectorOperations.hpp
 -
 math.h
 -
 
+=======
+>>>>>>> dev
 /home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
 Headers.hpp
 -

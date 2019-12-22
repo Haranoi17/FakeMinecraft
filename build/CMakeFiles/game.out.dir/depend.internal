@@ -36,16 +36,13 @@ CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/Shader.hpp
  ../Include/MyClasses/World.hpp
- ../Include/MyFunctions/dealWithCollisions.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
@@ -61,16 +58,13 @@ CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/Shader.hpp
  ../Include/MyClasses/World.hpp
- ../Include/MyFunctions/dealWithCollisions.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
@@ -112,16 +106,13 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/Shader.hpp
  ../Include/MyClasses/World.hpp
- ../Include/MyFunctions/dealWithCollisions.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
@@ -177,16 +168,13 @@ CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/Shader.hpp
  ../Include/MyClasses/World.hpp
- ../Include/MyFunctions/dealWithCollisions.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
@@ -205,16 +193,13 @@ CMakeFiles/game.out.dir/main.cpp.o
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/Shader.hpp
  ../Include/MyClasses/World.hpp
- ../Include/MyFunctions/dealWithCollisions.hpp
  ../Include/MyFunctions/drawScreen.hpp
  ../Include/MyFunctions/eventHandling.hpp
  ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initVO.hpp
  ../Include/MyFunctions/initValues.hpp
  ../Include/MyFunctions/placingAndRemovingBlocks.hpp
- ../Include/MyFunctions/playerShoot.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/setMaterial.hpp
  ../Include/MyFunctions/update.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp

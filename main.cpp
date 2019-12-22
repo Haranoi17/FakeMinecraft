@@ -23,7 +23,6 @@ float 								fov = 60;
 float 								x = 0;
 float								mouseSpeed = 0.05;
 float								drawDistance = 20;
-GLUquadric*							quad;
 
 Shader playerShader;
 Shader blocksShader;

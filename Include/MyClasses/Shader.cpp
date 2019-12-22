@@ -1,12 +1,13 @@
 #include <Shader.hpp>
 #include <iostream>
 
+
 Shader::Shader()
 {
     
 }
 
-Shader::Shader(const char* vertexShaderPath, const char* fragmentShaderPath)
+Shader::Shader(const std::filesystem::path vertexShaderPath, const std::filesystem::path fragmentShaderPath)
 {
     programID = glCreateProgram();
     vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
@@ -16,18 +17,18 @@ Shader::Shader(const char* vertexShaderPath, const char* fragmentShaderPath)
     std::ifstream vertexShaderFile;
     std::stringstream vertexShaderStream;
 
-    vertexShaderFile.open(vertexShaderPath);
+    vertexShaderFile.open(vertexShaderPath.c_str());
     vertexShaderStream << vertexShaderFile.rdbuf();
     vertexShaderFile.close();
 
     vertexShaderSRC = vertexShaderStream.str();
     const char* vertexSrc = vertexShaderSRC.c_str();
 
-     std::string fragmentShaderSRC;
+    std::string fragmentShaderSRC;
     std::ifstream fragmentShaderFile;
     std::stringstream fragmentShaderStream;
 
-    fragmentShaderFile.open(fragmentShaderPath);
+    fragmentShaderFile.open(fragmentShaderPath.c_str());
     fragmentShaderStream << fragmentShaderFile.rdbuf();
     fragmentShaderFile.close();
 

@@ -1,11 +1,6 @@
 #include <externs.hpp>
 #include <functions.hpp> //drawScreen is already here
 
-
-
-
-
-
 void drawAxis()
 {
 	glBegin(GL_LINES);
@@ -88,35 +83,4 @@ void drawScreen(Shader blocksShader, Shader playerShader)
 	glDrawArraysInstanced(GL_TRIANGLES, 0, 36, generatedWorld.ammountToDraw);
 
 	glUseProgram(0);
-
-	// for(auto &block : blocks)
-	// {
-	// 	glBindVertexArray(VAO);
-	// 	glDrawArrays(GL_TRIANGLES, 0, 36);
-	// 	glBindVertexArray(0);	
-	// }
-
-	// for (auto &bullet : bullets)
-	// {
-	// 	trans = bullet->getWorldTransform();
-	// 	model = glm::translate(glm::mat4(1), glm::vec3(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ()));
-	// 	glutSolidCube(0.2);
-	// }
-
-	// model = glm::translate(glm::mat4(1), glm::vec3(gunPosition.x, gunPosition.y, gunPosition.z));
-	// blocksShader.setMat4(modelLoc, model);
-	// gluSphere(quad, 0.2, 10, 10);
-
-	
-	// model = glm::translate(glm::mat4(1), glm::vec3(lightPos[0], lightPos[1], lightPos[2]));
-	// gluSphere(quad,0.2,20,20);
-	
 }
-
-//opacity template for drawing object. Draw thing as LAST! element to ensure proper positioning
-
-	// glEnable(GL_BLEND);
-	// __glewBlendEquation(GL_ONE_MINUS_SRC_ALPHA);
-	// glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA);
-	// here draw your stuff
-	// glDisable(GL_BLEND);
