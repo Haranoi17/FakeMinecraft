@@ -13,7 +13,7 @@ class World
     void fillBlockTypes();
     void prepareToDraw();
 
-    bool checkAir(sf::Vector3f);
+    bool checkAir(const sf::Vector3f&) const;
     sf::Vector3f dimentions;
     Block ***blocks;
 

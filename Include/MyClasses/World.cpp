@@ -116,7 +116,7 @@ void World::prepareToDraw()
     ammountToDraw = ammount;
 }
 
-bool World::checkAir(sf::Vector3f pos)
+bool World::checkAir(const sf::Vector3f &pos) const
 {
     int x = pos.x;
     int y = pos.y;
