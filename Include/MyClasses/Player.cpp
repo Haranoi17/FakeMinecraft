@@ -3,9 +3,10 @@
 
 
 
-Player::Player()
-	:hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallTimer(sf::Clock()), pos(sf::Vector3f(10,20,10)),
-	 cam(Camera()), movePossibilityNegative(sf::Vector3f(1,1,1)), movePossibilityPositive(sf::Vector3f(1,1,1)) 
+Player::Player(const World& world)
+	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallTimer(sf::Clock()), 
+		pos(sf::Vector3f(world.dimentions.x/2, world.dimentions.y/2,world.dimentions.z/2)),
+	 	cam(Camera()), movePossibilityNegative(sf::Vector3f(1,1,1)), movePossibilityPositive(sf::Vector3f(1,1,1)) 
 {
 }
 
@@ -95,8 +96,8 @@ void Player::checkMovePossibility(const World& world)
 	{
     	if(world.blocks[x-1][y][z].type == blockType::air){ movePossibilityNegative.x = 1;} else { movePossibilityNegative.x = 0;}
     	if(world.blocks[x][y-1][z].type == blockType::air){ movePossibilityNegative.y = 1;} else { movePossibilityNegative.y = 0;}
-    	if(world.blocks[x][y][z-1].type == blockType::air){ movePossibilityNegative.z = 1;} else { movePossibilityNegative.z = 0;} // weird thingy with indices
-    	if(world.blocks[x+1][y][z].type == blockType::air){ movePossibilityPositive.x = 1;} else { movePossibilityPositive.x = 0;} // weird thingy with indices
+    	if(world.blocks[x][y][z-1].type == blockType::air){ movePossibilityNegative.z = 1;} else { movePossibilityNegative.z = 0;}
+    	if(world.blocks[x+1][y][z].type == blockType::air){ movePossibilityPositive.x = 1;} else { movePossibilityPositive.x = 0;}
     	if(world.blocks[x][y+1][z].type == blockType::air){ movePossibilityPositive.y = 1;} else { movePossibilityPositive.y = 0;}
     	if(world.blocks[x][y][z+1].type == blockType::air){ movePossibilityPositive.z = 1;} else { movePossibilityPositive.z = 0;}
 	}

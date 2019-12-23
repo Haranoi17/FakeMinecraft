@@ -3,27 +3,9 @@
 #include <math.h>
 #include <iostream>
 InputController::InputController()
+    :   timer(sf::Clock()), mouseDeltaX(0), mouseDeltaY(0), mouseLeft(false), mouseRight(false), W(0), S(0), A(0), D(0),
+        E(false), Q(false), Shift(false), Space(false), ESC(false), EMERGENCY_EXIT(false)
 {
-    timer = sf::Clock();
-
-    mouseDeltaX = 0;
-    mouseDeltaY = 0;
-    
-    mouseLeft = false;
-    mouseRight = false;
-
-    W = 0;
-    S = 0;
-    A = 0;
-    D = 0;
-
-    E = false;
-    Q = false;
-
-    Shift = false;
-    Space = false;
-    ESC = false;
-    EMERGENCY_EXIT = false;
 }
 
 InputController::~InputController()

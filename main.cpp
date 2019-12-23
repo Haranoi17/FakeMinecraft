@@ -6,7 +6,7 @@
 
 InputController                     input = InputController();
 World								generatedWorld(1);
-Player 							    player = Player();
+Player 							    player = Player(generatedWorld);
 sf::RenderWindow 					window(sf::VideoMode(800, 600), "SfmlOpenGl", 7U, sf::ContextSettings(24, 8, 2));
 sf::Vector3f 						crosshairPos;
 sf::Clock 							worldTimer = sf::Clock();
@@ -108,7 +108,7 @@ bool fpsCtr()
 
 int main(int argc, char** argv)
 {
-	window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
+	//window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
 	glutInit(&argc, argv);
 	glewInit();
 	initValues();
@@ -116,14 +116,12 @@ int main(int argc, char** argv)
     initVO();
 	reshapeScreen();
 
-  
-
 	while (window.isOpen())
 	{
 		eventHandling();
 		update();
         placingAndRemovingBlocks();
-		drawScreen(blocksShader, playerShader);
+        drawScreen(blocksShader, playerShader);
 		window.display();
         if(fpsCtr())
         {

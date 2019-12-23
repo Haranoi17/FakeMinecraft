@@ -27,7 +27,7 @@ public:
 	Camera cam;
 
 
-	Player();
+	Player(const World&);
 	~Player();
 
  	void checkMovePossibility(const World&);

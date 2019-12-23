@@ -158,6 +158,16 @@ OpenGL/glu.h
 GL/glu.h
 -
 
+/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/InputController.cpp
+InputController.hpp
+-
+SFML/Graphics.hpp
+-
+math.h
+-
+iostream
+-
+
 /home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
 Headers.hpp
 -

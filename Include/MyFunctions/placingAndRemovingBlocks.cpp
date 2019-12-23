@@ -1,49 +1,54 @@
 #include <placingAndRemovingBlocks.hpp>
 #include <externs.hpp>
 #include <reRenderWorld.hpp>
+#include <math.h>
+
+bool checkplacePossibility(const int &x, const int &y, const int &z)
+{
+
+    
+    if( generatedWorld.blocks[x][y][z].type == blockType::air && (
+        generatedWorld.blocks[x-1][y][z].type != blockType::air || 
+        generatedWorld.blocks[x][y-1][z].type != blockType::air || 
+        generatedWorld.blocks[x][y][z-1].type != blockType::air || 
+        generatedWorld.blocks[x+1][y][z].type != blockType::air ||
+        generatedWorld.blocks[x][y+1][z].type != blockType::air || 
+        generatedWorld.blocks[x][y][z+1].type != blockType::air))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 
 void placingAndRemovingBlocks()
 {
+    int x = player.gunPos.x + 0.25;
+    int y = player.gunPos.y + 0.25;
+    int z = player.gunPos.z + 0.25;
     if(input.getMouseLeft())
     {
-        if(player.gunPos.x > 0 && player.gunPos.x < generatedWorld.dimentions.x)
+        if(generatedWorld.blocks[x][y][z].type != blockType::air)
         {
-            if(player.gunPos.y > 0 && player.gunPos.y < generatedWorld.dimentions.y)
-            {
-                if(player.gunPos.z > 0 && player.gunPos.z < generatedWorld.dimentions.z)
-                {
-                    if(generatedWorld.blocks[(int)(player.gunPos.x + 0.25)][(int)(player.gunPos.y + 0.25)][(int)(player.gunPos.z + 0.25)].type != blockType::air)
-                    {
-                        player.slots.push_back(generatedWorld.blocks[(int)(player.gunPos.x + 0.25)][(int)(player.gunPos.y + 0.25)][(int)(player.gunPos.z + 0.25)].type);
-                    }
-                    generatedWorld.blocks[(int)(player.gunPos.x + 0.25)][(int)(player.gunPos.y + 0.25)][(int)(player.gunPos.z + 0.25)].type = blockType::air;
-                    reRenderWorld();
-                }
-            }
+            player.slots.push_back(generatedWorld.blocks[x][y][z].type);
+            generatedWorld.blocks[x][y][z].type = blockType::air;
+            reRenderWorld();
         }
     }
+
     if(input.getMouseRight())
     {
-        if(player.gunPos.x > 0 && player.gunPos.x < generatedWorld.dimentions.x)
+        if(checkplacePossibility(x, y, z))
         {
-            if(player.gunPos.y > 0 && player.gunPos.y < generatedWorld.dimentions.y)
+            std::cout << player.slots.size() << std::endl;
+            if(player.slots.size())
             {
-                if(player.gunPos.z > 0 && player.gunPos.z < generatedWorld.dimentions.z)
-                {
-                    
-                    if(generatedWorld.blocks[(int)(player.gunPos.x + 0.25)][(int)(player.gunPos.y + 0.25)][(int)(player.gunPos.z + 0.25)].type == blockType::air)
-                    {
-
-                        blockType tempType = player.slots.back();
-                        if(player.slots.size())
-                        {
-                            player.slots.pop_back();
-                        }
-                        generatedWorld.blocks[(int)(player.gunPos.x + 0.25)][(int)(player.gunPos.y + 0.25)][(int)(player.gunPos.z + 0.25)].type = tempType;
-                        reRenderWorld();
-                    }
-                    
-                }
+                blockType tempType = player.slots.back();
+                player.slots.pop_back();
+                generatedWorld.blocks[x][y][z].type = tempType;
+                reRenderWorld();
             }
         }
     }
