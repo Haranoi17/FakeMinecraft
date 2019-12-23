@@ -49,7 +49,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/general
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/general/externs.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/general/functions.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyClasses/Block.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o: ../Include/MyFunctions/drawScreen.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/Block.hpp
@@ -72,7 +71,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/gene
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/general/externs.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/general/functions.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyClasses/Block.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o: ../Include/MyFunctions/eventHandling.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyClasses/Block.hpp
@@ -86,7 +84,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyFunctions
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/general/Headers.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/general/externs.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyClasses/Block.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o: ../Include/MyFunctions/initGL.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyClasses/Block.hpp
@@ -100,7 +97,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/general/Headers.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/general/externs.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyClasses/Block.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/initVO.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyClasses/Block.hpp
@@ -123,7 +119,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/general
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/general/externs.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/general/functions.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyClasses/Block.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyFunctions/initValues.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o: ../Include/MyClasses/Block.hpp
@@ -138,7 +133,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o: ../I
 CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o: ../Include/general/Headers.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o: ../Include/general/externs.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o: ../Include/MyClasses/Block.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o: ../Include/MyFunctions/placingAndRemovingBlocks.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o: ../Include/MyClasses/Block.hpp
@@ -152,7 +146,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o: ../Include/MyFu
 CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o: ../Include/general/Headers.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o: ../Include/general/externs.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o: ../Include/MyClasses/Block.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o: ../Include/MyFunctions/reRenderWorld.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyClasses/Block.hpp
@@ -162,22 +155,11 @@ CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyCl
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyClasses/Player.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyClasses/Shader.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyClasses/World.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/drawScreen.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/eventHandling.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/initGL.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/initVO.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/initValues.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/placingAndRemovingBlocks.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/reshapeScreen.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/update.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/vectorOperations.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/general/Headers.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/general/externs.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/general/functions.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/reshapeScreen.cpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/update.cpp
-CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o: ../Include/MyFunctions/vectorOperations.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/Block.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/Camera.hpp
@@ -199,7 +181,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/general/Hea
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/general/externs.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/general/functions.hpp
-CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyClasses/Block.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o: ../Include/MyFunctions/update.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o: ../Include/MyFunctions/vectorOperations.hpp

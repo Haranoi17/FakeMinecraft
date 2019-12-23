@@ -50,7 +50,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/drawScreen.cpp.o
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
  ../Include/general/functions.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o
  ../Include/MyClasses/Block.hpp
@@ -73,7 +72,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/eventHandling.cpp.o
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
  ../Include/general/functions.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/eventHandling.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o
  ../Include/MyClasses/Block.hpp
@@ -87,7 +85,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initGL.cpp.o
  ../Include/general/Headers.hpp
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initGL.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o
  ../Include/MyClasses/Block.hpp
@@ -101,7 +98,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o
  ../Include/general/Headers.hpp
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initVO.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o
  ../Include/MyClasses/Block.hpp
@@ -124,7 +120,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
  ../Include/general/functions.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initValues.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o
  ../Include/MyClasses/Block.hpp
@@ -139,7 +134,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/placingAndRemovingBlocks.cpp.o
  ../Include/general/Headers.hpp
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/placingAndRemovingBlocks.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o
  ../Include/MyClasses/Block.hpp
@@ -153,7 +147,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/reRenderWorld.cpp.o
  ../Include/general/Headers.hpp
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/reRenderWorld.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o
  ../Include/MyClasses/Block.hpp
@@ -163,22 +156,11 @@ CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/Shader.hpp
  ../Include/MyClasses/World.hpp
- ../Include/MyFunctions/drawScreen.hpp
- ../Include/MyFunctions/eventHandling.hpp
- ../Include/MyFunctions/initGL.hpp
- ../Include/MyFunctions/initVO.hpp
- ../Include/MyFunctions/initValues.hpp
- ../Include/MyFunctions/placingAndRemovingBlocks.hpp
  ../Include/MyFunctions/reshapeScreen.hpp
- ../Include/MyFunctions/update.hpp
- ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
- ../Include/general/functions.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/reshapeScreen.cpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/update.cpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/vectorOperations.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o
  ../Include/MyClasses/Block.hpp
  ../Include/MyClasses/Camera.hpp
@@ -200,7 +182,6 @@ CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
  ../Include/general/functions.hpp
- /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Block.cpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/update.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o
  ../Include/MyFunctions/vectorOperations.hpp
