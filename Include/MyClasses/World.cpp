@@ -3,7 +3,7 @@
 #include <iostream>
 
 World::World(int seed)
-    :dimentions(sf::Vector3f(20,10,20))
+    :dimentions(sf::Vector3f(20,40,20))
 {
     alocateMemory();
     fillBlockTypes();
@@ -77,7 +77,7 @@ void World::fillBlockTypes()
 
     for(int i = 1; i < x - 1; i++)
     {
-        for(int j = 1; j < y - 1; j++)
+        for(int j = 1; j < y/2; j++)
         {
             for(int k = 1; k < z - 1; k++)
             {

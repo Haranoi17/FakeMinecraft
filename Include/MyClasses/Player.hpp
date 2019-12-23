@@ -19,6 +19,7 @@ public:
 
 	sf::Clock immunityTimer;
 	sf::Clock generalTimer;
+	sf::Clock fallTimer;
 	int hp;
 	int dmg;
 
