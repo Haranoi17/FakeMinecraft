@@ -1,11 +1,12 @@
 #include <reRenderWorld.hpp>
 #include <externs.hpp>
 
-void reRenderWorld()
+void prepareMatrices()
 {
-    generatedWorld.prepareToDraw();
+    matricesReady = false;
+    generatedWorld.prepareToDraw(player.pos);
     
-    glm::mat4 *matrices = new glm::mat4[generatedWorld.ammountToDraw];
+    matrices = new glm::mat4[generatedWorld.ammountToDraw];
     int iterator = 0;
     for(Block &block : generatedWorld.blocksToDraw)
     {
@@ -16,6 +17,11 @@ void reRenderWorld()
             iterator++;
         }
     }
+    matricesReady = true;
+}
+
+void reRenderWorld()
+{
     glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
     glBufferData(GL_ARRAY_BUFFER, generatedWorld.ammountToDraw * sizeof(glm::mat4), matrices, GL_STREAM_DRAW);
     glEnableVertexAttribArray(3);
@@ -35,4 +41,5 @@ void reRenderWorld()
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
     delete[] matrices;
+    matricesReady = false;
 }

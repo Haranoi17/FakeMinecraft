@@ -9,7 +9,7 @@ void initValues()
 	dirtTexture.loadFromFile(std::filesystem::current_path() += "/../textures/dirt.jpg");
 	grassTexture.loadFromFile(std::filesystem::current_path() += "/../textures/grass.jpg");
 	grassTopTexture.loadFromFile(std::filesystem::current_path() += "/../textures/grassTop.png");
-	
+	skyboxTexture.loadFromFile(std::filesystem::current_path() += "/../textures/skybox.jpeg");
 	
     blocksShader = Shader(std::filesystem::current_path() += "/../shaders/blocksShader.vert", std::filesystem::current_path() += "/../shaders/blocksShader.frag");
     blocksShader.projectionLoc = glGetUniformLocation(blocksShader.getID(), "projection");
@@ -25,6 +25,7 @@ void initValues()
     
     texLoc = glGetUniformLocation(blocksShader.getID(), "tex2");
     glUniform1i(texLoc, 2);
+    
 
     glUseProgram(0);
 	
@@ -32,6 +33,12 @@ void initValues()
 	playerShader.viewLoc = glGetUniformLocation(playerShader.getID(), "view");
     playerShader.modelLoc = glGetUniformLocation(playerShader.getID(), "model");
     playerShader.projectionLoc = glGetUniformLocation(playerShader.getID(), "projection");
+    playerShader.use();
+    texLoc = glGetUniformLocation(playerShader.getID(), "tex0");
+    glUniform1i(texLoc, 3);
+
+    glUseProgram(0);
+    
 	window.setMouseCursorVisible(false);
 
 }

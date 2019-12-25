@@ -21,7 +21,7 @@ void initVO()
     glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
 
 
-    glm::mat4 *matrices = new glm::mat4[generatedWorld.ammountToDraw];
+    matrices = new glm::mat4[generatedWorld.ammountToDraw];
     
     int iterator = 0;
     for(Block &block : generatedWorld.blocksToDraw)

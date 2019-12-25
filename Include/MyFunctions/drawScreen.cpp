@@ -39,6 +39,15 @@ void drawAxis()
 }
 
 
+void drawSkybox()
+{
+	glDisable(GL_DEPTH_TEST);
+
+	
+
+	glEnable(GL_DEPTH_TEST);
+}
+
 void initScreen()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -52,21 +61,28 @@ void initScreen()
 void drawScreen(Shader blocksShader, Shader playerShader)
 {
 	initScreen();
+	drawSkybox();
+	//skybox
 
 	playerShader.use();
 	playerShader.setMat4(playerShader.viewLoc, view);
 	playerShader.setMat4(playerShader.projectionLoc, projection);
-	
-	model = glm::mat4(1);
-	playerShader.setMat4(playerShader.modelLoc, model);
-	drawAxis();
 
-	model = glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z));
-	playerShader.setMat4(playerShader.modelLoc, model);
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
+	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.cam.pos.x, player.cam.pos.y, player.cam.pos.z)));
 
+	glDisable(GL_DEPTH_TEST);
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 36);
+	glEnable(GL_DEPTH_TEST);
+	
+	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z))); 
+	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
+	glBindVertexArray(VAO);
+	glDrawArrays(GL_TRIANGLES, 0, 36);
+
+
+	model = glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z));
 	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.gunPos.x, player.gunPos.y, player.gunPos.z))); 
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "gunScale"), 0.05);
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 1);

@@ -16,6 +16,7 @@ sf::Texture 						crosshairTexture;
 sf::Texture							dirtTexture;
 sf::Texture							grassTexture;
 sf::Texture							grassTopTexture;
+sf::Texture                         skyboxTexture;
 float 								lightPos[] = { 0, 3, 0, 1 };
 float 								ambientLight[] = {0.2,0.2,0.2,1};
 float 								fov = 60;
@@ -79,7 +80,8 @@ float cubeData[288] = {
 glm::mat4 view = glm::mat4(1);
 glm::mat4 projection = glm::mat4(1);
 glm::mat4 model = glm::mat4(1);
-
+glm::mat4 *matrices;
+bool matricesReady;
 
 
 
@@ -108,19 +110,32 @@ bool fpsCtr()
 
 int main(int argc, char** argv)
 {
-	//window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
+	window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
 	glutInit(&argc, argv);
 	glewInit();
 	initValues();
 	initGL();
     initVO();
 	reshapeScreen();
+    sf::Clock reRenderTimer = sf::Clock();
+    sf::Thread t = sf::Thread(prepareMatrices);
 
 	while (window.isOpen())
 	{
 		eventHandling();
 		update();
         placingAndRemovingBlocks();
+        
+        if(reRenderTimer.getElapsedTime().asSeconds() > 1)
+        {
+            t.launch();
+            reRenderTimer.restart();
+        }
+        if(matricesReady)
+        {
+            reRenderWorld();
+        }
+        
         drawScreen(blocksShader, playerShader);
 		window.display();
         if(fpsCtr())

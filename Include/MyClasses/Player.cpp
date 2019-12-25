@@ -5,9 +5,10 @@
 
 Player::Player(const World& world)
 	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallTimer(sf::Clock()), 
-		pos(sf::Vector3f(world.dimentions.x/2, world.dimentions.y/2,world.dimentions.z/2)),
+		pos(sf::Vector3f(world.dimentions.x/2, 0, world.dimentions.z/2)),
 	 	cam(Camera()), movePossibilityNegative(sf::Vector3f(1,1,1)), movePossibilityPositive(sf::Vector3f(1,1,1)) 
 {
+	pos.y = world.heights[(int)pos.x][(int)pos.z] + 1;
 }
 
 

@@ -20,4 +20,6 @@ void initGL()
     glBindTexture(GL_TEXTURE_2D, grassTexture.getNativeHandle());
     glActiveTexture(GL_TEXTURE2);
     glBindTexture(GL_TEXTURE_2D, dirtTexture.getNativeHandle());
+	glActiveTexture(GL_TEXTURE3);
+	glBindTexture(GL_TEXTURE_2D, skyboxTexture.getNativeHandle());
 }

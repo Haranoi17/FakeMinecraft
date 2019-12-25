@@ -34,7 +34,6 @@ void placingAndRemovingBlocks()
         {
             player.slots.push_back(generatedWorld.blocks[x][y][z].type);
             generatedWorld.blocks[x][y][z].type = blockType::air;
-            reRenderWorld();
         }
     }
 
@@ -48,7 +47,6 @@ void placingAndRemovingBlocks()
                 blockType tempType = player.slots.back();
                 player.slots.pop_back();
                 generatedWorld.blocks[x][y][z].type = tempType;
-                reRenderWorld();
             }
         }
     }

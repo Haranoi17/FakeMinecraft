@@ -86,6 +86,8 @@ Shader.hpp
 
 ../Include/MyFunctions/placingAndRemovingBlocks.hpp
 
+../Include/MyFunctions/reRenderWorld.hpp
+
 ../Include/MyFunctions/reshapeScreen.hpp
 
 ../Include/MyFunctions/update.hpp
@@ -124,6 +126,12 @@ World.hpp
 Shader.hpp
 -
 
+../Include/general/externs.hpp
+Headers.hpp
+-
+classes.hpp
+-
+
 ../Include/general/functions.hpp
 drawScreen.hpp
 -
@@ -135,6 +143,8 @@ initVO.hpp
 -
 placingAndRemovingBlocks.hpp
 -
+reRenderWorld.hpp
+-
 reshapeScreen.hpp
 -
 update.hpp
@@ -144,39 +154,9 @@ vectorOperations.hpp
 initValues.hpp
 -
 
-../Include/general/glew.h
-stddef.h
--
-inttypes.h
--
-stdint.h
--
-inttypes.h
--
-OpenGL/glu.h
--
-GL/glu.h
--
-
-/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/InputController.cpp
-InputController.hpp
--
-SFML/Graphics.hpp
--
-math.h
--
-iostream
--
-
-/home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
-Headers.hpp
--
-classes.hpp
+/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp
+externs.hpp
 -
 functions.hpp
--
-glm/matrix.hpp
--
-glew.h
 -
 
