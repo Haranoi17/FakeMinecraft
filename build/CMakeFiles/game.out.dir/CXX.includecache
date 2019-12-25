@@ -126,12 +126,6 @@ World.hpp
 Shader.hpp
 -
 
-../Include/general/externs.hpp
-Headers.hpp
--
-classes.hpp
--
-
 ../Include/general/functions.hpp
 drawScreen.hpp
 -
@@ -154,9 +148,29 @@ vectorOperations.hpp
 initValues.hpp
 -
 
-/home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/drawScreen.cpp
-externs.hpp
+../Include/general/glew.h
+stddef.h
+-
+inttypes.h
+-
+stdint.h
+-
+inttypes.h
+-
+OpenGL/glu.h
+-
+GL/glu.h
+-
+
+/home/haranoi17/Documents/Projects/OpenGl_SFML/main.cpp
+Headers.hpp
+-
+classes.hpp
 -
 functions.hpp
+-
+glm/matrix.hpp
+-
+glew.h
 -
 
