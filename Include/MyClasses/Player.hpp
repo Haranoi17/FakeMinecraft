@@ -19,7 +19,10 @@ public:
 
 	sf::Clock immunityTimer;
 	sf::Clock generalTimer;
-	sf::Clock fallTimer;
+	float fallingTime;
+	float jumpingTime;
+	bool jump;
+	bool jumpPrev;
 	int hp;
 	int dmg;
 

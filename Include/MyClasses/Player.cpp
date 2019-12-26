@@ -4,7 +4,7 @@
 
 
 Player::Player(const World& world)
-	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallTimer(sf::Clock()), 
+	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallingTime(0), jumpingTime(0), jump(false), jumpPrev(false),
 		pos(sf::Vector3f(world.dimentions.x/2, 0, world.dimentions.z/2)),
 	 	cam(Camera()), movePossibilityNegative(sf::Vector3f(1,1,1)), movePossibilityPositive(sf::Vector3f(1,1,1)) 
 {
@@ -55,20 +55,34 @@ void Player::walk(const InputController& input)
 	}
 	
 	//jumping
-	if(input.getKeySpace() && movePossibilityPositive.y)
+	//popraw to skakanie bo bieda straszna
+	if(input.getKeySpace())
 	{
-		pos.y += 10*generalTimer.getElapsedTime().asSeconds();
+		jump = true;
 	}
 
-	//falling
-	if(movePossibilityNegative.y == 0)
+	if(jump && movePossibilityPositive.y)
 	{
-		fallTimer.restart();
+		jumpingTime += generalTimer.getElapsedTime().asSeconds()/1000;
+		pos.y += 1/(50 + 100000*jumpingTime);
 	}
 	else
 	{
-		pos.y -= 0.05 * fallTimer.getElapsedTime().asSeconds() * fallTimer.getElapsedTime().asSeconds();
+		jumpingTime = 0;
 	}
+
+	//falling
+	if(movePossibilityNegative.y)
+	{
+		fallingTime += generalTimer.getElapsedTime().asSeconds();
+		pos.y -= 0.05 * pow(fallingTime, 2);
+	}              
+	else
+	{
+		jump = false;
+		fallingTime = 0;
+	}
+	jumpPrev = jump;
 	generalTimer.restart();
 }
 
