@@ -3,6 +3,7 @@
 layout (location = 0) in vec3 aPos;
 layout (location = 1) in vec2 atexCoords;
 
+
 uniform mat4 projection;
 uniform mat4 view;
 uniform mat4 model;
@@ -10,10 +11,12 @@ uniform mat4 model;
 uniform float gunScale;
 uniform float drawGun;
 
+
 out vec2 texCoords;
 
 void main()
 {
+    
     texCoords = atexCoords;
     if(drawGun == 1)
     {

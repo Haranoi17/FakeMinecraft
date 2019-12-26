@@ -96,10 +96,20 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyClasses/I
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyClasses/Player.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyClasses/Shader.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyClasses/World.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/drawScreen.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/eventHandling.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/initGL.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/initVO.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/initValues.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/placingAndRemovingBlocks.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/reRenderWorld.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/reshapeScreen.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/update.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/vectorOperations.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/general/Headers.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/general/classes.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/general/externs.hpp
+CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/general/functions.hpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o: ../Include/MyFunctions/initVO.cpp
 
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o: ../Include/MyClasses/Block.hpp

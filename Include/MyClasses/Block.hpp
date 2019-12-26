@@ -6,6 +6,8 @@ enum blockType
     air,
     dirt,
     stone,
+    wood,
+    leaves
 };
 
 class Block

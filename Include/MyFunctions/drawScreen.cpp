@@ -38,16 +38,6 @@ void drawAxis()
 	glDisable(GL_LINE_STIPPLE);
 }
 
-
-void drawSkybox()
-{
-	glDisable(GL_DEPTH_TEST);
-
-	
-
-	glEnable(GL_DEPTH_TEST);
-}
-
 void initScreen()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -58,11 +48,9 @@ void initScreen()
 }
 
 
-void drawScreen(Shader blocksShader, Shader playerShader)
+void drawScreen()
 {
 	initScreen();
-	drawSkybox();
-	//skybox
 
 	playerShader.use();
 	playerShader.setMat4(playerShader.viewLoc, view);
@@ -79,7 +67,7 @@ void drawScreen(Shader blocksShader, Shader playerShader)
 	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z))); 
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
 	glBindVertexArray(VAO);
-	glDrawArrays(GL_TRIANGLES, 0, 36);
+	//glDrawArrays(GL_TRIANGLES, 0, 36);
 
 
 	model = glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z));

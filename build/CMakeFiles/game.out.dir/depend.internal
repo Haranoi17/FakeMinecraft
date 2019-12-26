@@ -97,10 +97,20 @@ CMakeFiles/game.out.dir/Include/MyFunctions/initVO.cpp.o
  ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/Shader.hpp
  ../Include/MyClasses/World.hpp
+ ../Include/MyFunctions/drawScreen.hpp
+ ../Include/MyFunctions/eventHandling.hpp
+ ../Include/MyFunctions/initGL.hpp
  ../Include/MyFunctions/initVO.hpp
+ ../Include/MyFunctions/initValues.hpp
+ ../Include/MyFunctions/placingAndRemovingBlocks.hpp
+ ../Include/MyFunctions/reRenderWorld.hpp
+ ../Include/MyFunctions/reshapeScreen.hpp
+ ../Include/MyFunctions/update.hpp
+ ../Include/MyFunctions/vectorOperations.hpp
  ../Include/general/Headers.hpp
  ../Include/general/classes.hpp
  ../Include/general/externs.hpp
+ ../Include/general/functions.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyFunctions/initVO.cpp
 CMakeFiles/game.out.dir/Include/MyFunctions/initValues.cpp.o
  ../Include/MyClasses/Block.hpp

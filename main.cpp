@@ -17,6 +17,9 @@ sf::Texture							dirtTexture;
 sf::Texture							grassTexture;
 sf::Texture							grassTopTexture;
 sf::Texture                         skyboxTexture;
+sf::Texture                         stoneTexture;
+sf::Texture                         woodTexture;
+sf::Texture                         leavesTexture;
 float 								lightPos[] = { 0, 3, 0, 1 };
 float 								ambientLight[] = {0.2,0.2,0.2,1};
 float 								fov = 60;
@@ -28,7 +31,7 @@ Shader playerShader;
 Shader blocksShader;
 
 GLuint VAO;
-GLuint VBO[2];
+GLuint VBO[3];
 
 float unitMatrix[16] = 
 {
@@ -81,10 +84,10 @@ glm::mat4 view = glm::mat4(1);
 glm::mat4 projection = glm::mat4(1);
 glm::mat4 model = glm::mat4(1);
 glm::mat4 *matrices;
+float *blockTypes;
 bool matricesReady;
-
-
-
+sf::Thread matricePreparationThread = sf::Thread(prepareMatrices);
+sf::Thread updateThread = sf::Thread(update);
 
 
 bool fpsCtr()
@@ -118,25 +121,26 @@ int main(int argc, char** argv)
     initVO();
 	reshapeScreen();
     sf::Clock reRenderTimer = sf::Clock();
-    sf::Thread t = sf::Thread(prepareMatrices);
 
-	while (window.isOpen())
+    sf::Vector3f renderPoint = player.pos;
+
+	while(window.isOpen())
 	{
 		eventHandling();
-		update();
+		//updateThread.launch();
+        update();
         placingAndRemovingBlocks();
-        
-        if(reRenderTimer.getElapsedTime().asSeconds() > 1)
+
+        if(vec3Length(player.pos.x - renderPoint.x, player.pos.y - renderPoint.y, player.pos.z - renderPoint.z) > 50)
         {
-            t.launch();
-            reRenderTimer.restart();
+            matricePreparationThread.launch();
+            renderPoint = player.pos;
         }
         if(matricesReady)
         {
-            reRenderWorld();
+           reRenderWorld();
         }
-        
-        drawScreen(blocksShader, playerShader);
+        drawScreen();
 		window.display();
         if(fpsCtr())
         {

@@ -11,6 +11,7 @@ class World
     ~World();
     void alocateMemory();
     void generateTerrain();
+    void generateTrees();
     void fillBlockTypes();
     void prepareToDraw(const sf::Vector3f &);
 

@@ -10,6 +10,7 @@ World::World(int seed)
 {
     alocateMemory();
     generateTerrain();
+    generateTrees();
     fillBlockTypes();
     prepareToDraw(sf::Vector3f(dimentions.x/2, heights[(int)dimentions.x/2][(int)dimentions.z/2], dimentions.z/2));
 }
@@ -101,6 +102,58 @@ void World::generateTerrain()
     }
 }
 
+void World::generateTrees()
+{
+    int x = dimentions.x;
+    int z = dimentions.z;
+
+    for(int i = 10; i < x-10; i++)
+    {
+        for(int j = 10; j < z-10; j++)
+        {
+            if(i%20 == 0 && j %50 == 0)
+            {
+                int k = (int)heights[i][j];
+                //pien
+                blocks[i][k][j].type =  blockType::wood;
+                blocks[i][k+1][j].type = blockType::wood;
+                blocks[i][k+2][j].type = blockType::wood;
+                blocks[i][k+3][j].type = blockType::wood;
+                blocks[i][k+4][j].type = blockType::wood;
+                //liscie
+                blocks[i][k+5][j].type = blockType::leaves;
+                blocks[i-1][k+5][j].type = blockType::leaves;
+                blocks[i-1][k+5][j-1].type = blockType::leaves;
+                blocks[i-1][k+5][j+1].type = blockType::leaves;
+                blocks[i+1][k+5][j].type = blockType::leaves;
+                blocks[i+1][k+5][j-1].type = blockType::leaves;
+                blocks[i+1][k+5][j+1].type = blockType::leaves;
+                blocks[i][k+5][j+1].type = blockType::leaves;
+                blocks[i][k+5][j-1].type = blockType::leaves;
+                
+                blocks[i-1][k+4][j].type = blockType::leaves;
+                blocks[i-1][k+4][j-1].type = blockType::leaves;
+                blocks[i-1][k+4][j+1].type = blockType::leaves;
+                blocks[i+1][k+4][j-1].type = blockType::leaves;
+                blocks[i+1][k+4][j+1].type = blockType::leaves;
+                blocks[i+1][k+4][j].type = blockType::leaves;
+                blocks[i][k+4][j-1].type = blockType::leaves;
+                blocks[i][k+4][j+1].type = blockType::leaves;
+
+                 
+                blocks[i-1][k+3][j].type = blockType::leaves;
+                blocks[i-1][k+3][j-1].type = blockType::leaves;
+                blocks[i-1][k+3][j+1].type = blockType::leaves;
+                blocks[i+1][k+3][j-1].type = blockType::leaves;
+                blocks[i+1][k+3][j+1].type = blockType::leaves;
+                blocks[i+1][k+3][j].type = blockType::leaves;
+                blocks[i][k+3][j-1].type = blockType::leaves;
+                blocks[i][k+3][j+1].type = blockType::leaves;
+            }
+        }
+    }
+}
+
 void World::fillBlockTypes()
 {
     int x = dimentions.x;
@@ -112,13 +165,25 @@ void World::fillBlockTypes()
     {
         for(int k = 1; k < z; k++)
         {
-            for(int j = 1; j < heights[i][k]; j++)
+            for(int j = 1; j < heights[i][k]/2; j++)
+            {
+                blocks[i][j][k].type = blockType::stone;
+            }
+        }
+    }
+
+    for(int i = 1; i < x - 1; i++)
+    {
+        for(int k = 1; k < z; k++)
+        {
+            for(int j = heights[i][k]/2; j < heights[i][k]; j++)
             {
                 blocks[i][j][k].type = blockType::dirt;
             }
         }
     }
 }
+
 
 void World::prepareToDraw(const sf::Vector3f &playerPos)
 {
@@ -140,7 +205,7 @@ void World::prepareToDraw(const sf::Vector3f &playerPos)
     int frontBound;
     int backBound;
 
-    int r = 50;
+    int r = 75;
     if(playerPos.x - r <= 1){leftBound = 0;} else {leftBound = playerPos.x - r;}
     if(playerPos.y - r <= 1){bottomBound = 0;} else {bottomBound = playerPos.y - r;}
     if(playerPos.z - r <= 1){backBound = 0;} else {backBound = playerPos.z - r;}
@@ -158,7 +223,7 @@ void World::prepareToDraw(const sf::Vector3f &playerPos)
                 if(checkAir(blocks[i][j][k].position))
                 {
                     distanceVector = sf::Vector3f(i, j, k) - playerPos;
-                    if(vec3Length(distanceVector.x, distanceVector.y, distanceVector.z) < 50)
+                    if(vec3Length(distanceVector.x, distanceVector.y, distanceVector.z) < r)
                     {
                         blocksToDraw.push_back(blocks[i][j][k]);
                         ammount++;

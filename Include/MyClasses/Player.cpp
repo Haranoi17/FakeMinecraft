@@ -5,7 +5,7 @@
 
 Player::Player(const World& world)
 	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallingTime(0), jumpingTime(0), jump(false), jumpPrev(false),
-		pos(sf::Vector3f(world.dimentions.x/2, 0, world.dimentions.z/2)),
+		pos(sf::Vector3f(world.dimentions.x/2 + 20, 0, world.dimentions.z/2)),
 	 	cam(Camera()), movePossibilityNegative(sf::Vector3f(1,1,1)), movePossibilityPositive(sf::Vector3f(1,1,1)) 
 {
 	pos.y = world.heights[(int)pos.x][(int)pos.z] + 1;
@@ -63,8 +63,8 @@ void Player::walk(const InputController& input)
 
 	if(jump && movePossibilityPositive.y)
 	{
-		jumpingTime += generalTimer.getElapsedTime().asSeconds()/1000;
-		pos.y += 1/(50 + 100000*jumpingTime);
+		jumpingTime += generalTimer.getElapsedTime().asSeconds();
+		pos.y += 1/(10 + jumpingTime);
 	}
 	else
 	{
@@ -75,7 +75,7 @@ void Player::walk(const InputController& input)
 	if(movePossibilityNegative.y)
 	{
 		fallingTime += generalTimer.getElapsedTime().asSeconds();
-		pos.y -= 0.05 * pow(fallingTime, 2);
+		pos.y -= pow(fallingTime, 2);
 	}              
 	else
 	{
@@ -91,10 +91,11 @@ void Player::updateGunPos()
 	static float pi	= (float)3.14159265359;
 	float alpha = cam.rot.x / (2 * pi);
 	float beta	= -cam.rot.y / (2 * pi);
+	float r = 2.1;
 	gunPos = cam.pointToLookAt;
-	gunPos.x += 0.25 + 3 * -cos(alpha)*cos(beta);
-	gunPos.y += 0.25 + 3 * -sin(beta);
-	gunPos.z += 0.25 + 3 * -cos(beta)*sin(alpha);
+	gunPos.x += 0.25 + r * -cos(alpha)*cos(beta);
+	gunPos.y += 0.25 + r * -sin(beta);
+	gunPos.z += 0.25 + r * -cos(beta)*sin(alpha);
 }
 
 void Player::checkMovePossibility(const World& world)

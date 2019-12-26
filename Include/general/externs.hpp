@@ -18,6 +18,9 @@ extern sf::Texture							dirtTexture;
 extern sf::Texture							grassTexture;
 extern sf::Texture							grassTopTexture;
 extern sf::Texture                          skyboxTexture;
+extern sf::Texture                          stoneTexture;
+extern sf::Texture                          woodTexture;
+extern sf::Texture                          leavesTexture;
 extern float 								lightPos[4];
 extern float 								ambientLight[4];
 extern float 								fov;
@@ -29,7 +32,7 @@ extern Shader playerShader;
 extern Shader blocksShader;
 
 extern GLuint VAO;
-extern GLuint VBO[2];
+extern GLuint VBO[3];
 extern float unitMatrix[16];
 extern float cubeData[288];
 
@@ -37,4 +40,6 @@ extern glm::mat4 view;
 extern glm::mat4 projection;
 extern glm::mat4 model;
 extern glm::mat4 *matrices;
+extern float *blockTypes;
 extern bool matricesReady;
+extern sf::Thread matricePreparationThread;

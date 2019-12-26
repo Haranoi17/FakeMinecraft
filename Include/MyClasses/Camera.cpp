@@ -20,11 +20,11 @@ Camera::~Camera()
 void Camera::updateCameraPosition() 
 {
 	static float pi	= (float)3.14159265359;
-	static float r = 2;
+	static float r = 0.1;
 	float alpha = rot.x / (2 * pi);
 	float beta	= -rot.y / (2 * pi);
 
-	pos = pointToLookAt - lookDirection;
+	pos = pointToLookAt;
 
 	pos.x += r * cos(alpha)*cos(beta);
 	pos.y += r * sin(beta);
@@ -93,7 +93,7 @@ void Camera::updatePointToLookAtPosition(sf::Vector3f newPos)
 {
 	pointToLookAt = newPos;
 
-	pointToLookAt.y += 1;
+	pointToLookAt.y += 0.5;
 }
 
 void Camera::updateWalkDirection(const InputController &input) 
