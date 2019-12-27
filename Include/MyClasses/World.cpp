@@ -6,12 +6,14 @@
 #include <vectorOperations.hpp>
 
 World::World(int seed)
-    :dimentions(sf::Vector3f(1000,100,1000))
+    :dimentions(sf::Vector3f(100,100,100))
 {
     alocateMemory();
     generateTerrain();
     generateTrees();
     fillBlockTypes();
+    preparePossibleToDraw();
+    std::cout << ammountPossibleToDraw << std::endl;
     prepareToDraw(sf::Vector3f(dimentions.x/2, heights[(int)dimentions.x/2][(int)dimentions.z/2], dimentions.z/2));
 }
 
@@ -184,6 +186,34 @@ void World::fillBlockTypes()
     }
 }
 
+void World::preparePossibleToDraw()
+{
+    int x = dimentions.x;
+    int y = dimentions.y;
+    int z = dimentions.z;
+
+    int ammount = 0;
+    if(possibleToDraw.size())
+    {
+        possibleToDraw.clear();
+    }
+
+    for(int i = 5; i < dimentions.x-5; i++)
+    {
+        for(int j = 5; j < dimentions.y-5; j++)
+        {
+            for(int k = 5; k < dimentions.z-5; k++)
+            {
+                if(checkAir(blocks[i][j][k].position))
+                {
+                    possibleToDraw.push_back(&blocks[i][j][k]);
+                    ammount++;
+                }
+            }
+        }
+    }
+    ammountPossibleToDraw = ammount;
+}
 
 void World::prepareToDraw(const sf::Vector3f &playerPos)
 {
@@ -205,7 +235,7 @@ void World::prepareToDraw(const sf::Vector3f &playerPos)
     int frontBound;
     int backBound;
 
-    int r = 75;
+    int r = 100;
     if(playerPos.x - r <= 1){leftBound = 0;} else {leftBound = playerPos.x - r;}
     if(playerPos.y - r <= 1){bottomBound = 0;} else {bottomBound = playerPos.y - r;}
     if(playerPos.z - r <= 1){backBound = 0;} else {backBound = playerPos.z - r;}
@@ -214,20 +244,16 @@ void World::prepareToDraw(const sf::Vector3f &playerPos)
     if(playerPos.y + r >= dimentions.y - 1){topBound = dimentions.y;} else {topBound = playerPos.y + r;}
     if(playerPos.z + r >= dimentions.z - 1){frontBound = dimentions.z;} else {frontBound = playerPos.z + r;}
 
-    for(int i = leftBound; i < rightBound; i++)
+
+    for(Block *block : possibleToDraw)
     {
-        for(int j = bottomBound; j < topBound; j++)
+        if(block->position.x > leftBound && block->position.x < rightBound)
         {
-            for(int k = backBound; k < frontBound; k++)
+            if(block->position.y > bottomBound && block->position.y < topBound)
             {
-                if(checkAir(blocks[i][j][k].position))
+                if(block->position.z < frontBound && block->position.z > backBound)
                 {
-                    distanceVector = sf::Vector3f(i, j, k) - playerPos;
-                    if(vec3Length(distanceVector.x, distanceVector.y, distanceVector.z) < r)
-                    {
-                        blocksToDraw.push_back(blocks[i][j][k]);
-                        ammount++;
-                    }
+                    blocksToDraw.push_back(block);
                 }
             }
         }

@@ -55,7 +55,6 @@ void Player::walk(const InputController& input)
 	}
 	
 	//jumping
-	//popraw to skakanie bo bieda straszna
 	if(input.getKeySpace())
 	{
 		jump = true;
@@ -63,8 +62,8 @@ void Player::walk(const InputController& input)
 
 	if(jump && movePossibilityPositive.y)
 	{
-		jumpingTime += generalTimer.getElapsedTime().asSeconds();
-		pos.y += 1/(10 + jumpingTime);
+		jumpingTime += deltaTime;
+		pos.y += 1/(40 + jumpingTime);
 	}
 	else
 	{
@@ -74,7 +73,7 @@ void Player::walk(const InputController& input)
 	//falling
 	if(movePossibilityNegative.y)
 	{
-		fallingTime += generalTimer.getElapsedTime().asSeconds();
+		fallingTime += deltaTime;
 		pos.y -= pow(fallingTime, 2);
 	}              
 	else

@@ -44,34 +44,47 @@ bool checkDestroyPossibility(const int &x, const int &y, const int &z)
 
 void placingAndRemovingBlocks()
 {
+    static sf::Clock destroyTimer = sf::Clock();
+    static float timePassed = 0;
+
     int x = player.gunPos.x + 0.25;
     int y = player.gunPos.y + 0.25;
     int z = player.gunPos.z + 0.25;
+    
     if(input.getMouseLeft())
     {
         if(checkDestroyPossibility(x, y, z))
         {
-            if(generatedWorld.blocks[x][y][z].type != blockType::air)
+            timePassed += destroyTimer.getElapsedTime().asSeconds();
+            timePassed=2;
+            if(!matricesReady && generatedWorld.blocks[x][y][z].type != blockType::air && timePassed > 1)
             {
                 player.slots.push_back(generatedWorld.blocks[x][y][z].type);
                 generatedWorld.blocks[x][y][z].type = blockType::air;
-                matricePreparationThread.launch();
+                //matricePreparationThread.launch();
+                prepareMatrices();
+                timePassed = 0;
             }
         }
+    }
+    else
+    {
+        timePassed = 0;
     }
 
     if(input.getMouseRight())
     {
         if(checkPlacePossibility(x, y, z))
         {
-            std::cout << player.slots.size() << std::endl;
             if(player.slots.size())
             {
                 blockType tempType = player.slots.back();
                 player.slots.pop_back();
                 generatedWorld.blocks[x][y][z].type = tempType;
-                matricePreparationThread.launch();
+                //matricePreparationThread.launch();
+                prepareMatrices();
             }
         }
     }
+    destroyTimer.restart();
 }

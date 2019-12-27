@@ -120,20 +120,19 @@ int main(int argc, char** argv)
 	initGL();
     initVO();
 	reshapeScreen();
+
     sf::Clock reRenderTimer = sf::Clock();
-
     sf::Vector3f renderPoint = player.pos;
-
 	while(window.isOpen())
 	{
 		eventHandling();
-		//updateThread.launch();
         update();
         placingAndRemovingBlocks();
 
-        if(vec3Length(player.pos.x - renderPoint.x, player.pos.y - renderPoint.y, player.pos.z - renderPoint.z) > 50)
+        if(vec3Length(player.pos.x - renderPoint.x, player.pos.y - renderPoint.y, player.pos.z - renderPoint.z) > 1)
         {
             matricePreparationThread.launch();
+            //prepareMatrices();
             renderPoint = player.pos;
         }
         if(matricesReady)
