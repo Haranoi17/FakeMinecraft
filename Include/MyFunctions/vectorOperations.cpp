@@ -13,7 +13,7 @@ void normalize(sf::Vector3f& vec)
 	}
 }
 
-float vec3Length(float x, float y, float z)
+float vec3Length(const sf::Vector3f &a)
 {
-	return sqrt(x*x + y*y + z*z);
+	return sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
 }

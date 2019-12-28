@@ -3,6 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <Block.hpp>
+#include <Player.hpp>
+
+class Player;
 
 class World
 {
@@ -13,17 +16,14 @@ class World
     void generateTerrain();
     void generateTrees();
     void fillBlockTypes();
-    void prepareToDraw(const sf::Vector3f &);
-    void preparePossibleToDraw();
+    void prepareToDraw(const Player &);
 
     bool checkAir(const sf::Vector3f&) const;
     sf::Vector3f dimentions;
     float **heights;
     Block ***blocks;
 
-    std::vector<Block*> possibleToDraw;
     std::vector<Block*> blocksToDraw;
 
     int ammountToDraw;
-    int ammountPossibleToDraw;
 };

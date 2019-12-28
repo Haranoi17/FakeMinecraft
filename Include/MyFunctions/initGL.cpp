@@ -7,9 +7,13 @@ void initGL()
 	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_COLOR_MATERIAL);
 	glEnable(GL_NORMALIZE);
-	glLineWidth(3);
-	glBlendEquation(GL_ONE_MINUS_SRC_ALPHA);
-	glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA);
+
+	// glFrontFace(GL_CCW);
+	// glCullFace(GL_BACK);
+
+	// glBlendEquation(GL_ONE_MINUS_SRC_ALPHA);
+	// glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA);
+	// glEnable( GL_BLEND );
 
 	glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, grassTopTexture.getNativeHandle());

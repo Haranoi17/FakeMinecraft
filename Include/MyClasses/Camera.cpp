@@ -119,11 +119,10 @@ void Camera::updateWalkDirection(const InputController &input)
 	{
 		newWalkDir += sideDirection * input.getKeyD();
 	}
-	if(vec3Length(newWalkDir.x, newWalkDir.y, newWalkDir.z) > 1)
+	if(vec3Length(newWalkDir) > 1)
 	{
 		normalize(newWalkDir);
 	}
-	//std::cout << walkDirection.x << "   "<< walkDirection.y<< "    " << walkDirection.z<<std::endl;
 	walkDirection = newWalkDir;
 }
 

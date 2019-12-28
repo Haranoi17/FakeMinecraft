@@ -20,44 +20,48 @@ void main()
     if(blockType > 1.5 && blockType < 2.5){type = 2;}
     if(blockType > 2.5 && blockType < 3.5){type = 3;} 
     if(blockType > 3.5 && blockType < 4.5){type = 4;}
-    
+
+    vec4 texColor;
+
     switch(type)
     {
         case 1:
         {
             if(normal.y > 0)
             {
-                FragColor = texture(grassTop, texCoords);
+                texColor = texture(grassTop, texCoords);
             }
             if(normal.x != 0 || normal.z != 0)
             {
-                FragColor = texture(grassSide, texCoords);
+                texColor = texture(grassSide, texCoords);
             }
             if(normal.y < 0)
             {
-                FragColor = texture(dirt, texCoords);
+                texColor = texture(dirt, texCoords);
             }
             break;
         }
         case 2:
         {
-            FragColor = texture(stone, texCoords);
+            texColor = texture(stone, texCoords);
             break;
         }
         case 3:
         {
-            FragColor = texture(wood, texCoords);
+            texColor = texture(wood, texCoords);
             break;
         }
         case 4:
         {
-            FragColor = texture(leaves, texCoords);
+            texColor = texture(leaves, texCoords);
             break;
         }
         default:
         {
-            FragColor = vec4(1,1,1,1);
+            texColor = vec4(1,1,1,1);
             break;
         }
     }
+    //texColor.a = 1; 
+    FragColor = texColor;
 } 

@@ -27,6 +27,9 @@ CMakeFiles/game.out.dir/Include/MyClasses/Shader.cpp.o
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/Shader.cpp
 CMakeFiles/game.out.dir/Include/MyClasses/World.cpp.o
  ../Include/MyClasses/Block.hpp
+ ../Include/MyClasses/Camera.hpp
+ ../Include/MyClasses/InputController.hpp
+ ../Include/MyClasses/Player.hpp
  ../Include/MyClasses/World.hpp
  ../Include/MyFunctions/vectorOperations.hpp
  /home/haranoi17/Documents/Projects/OpenGl_SFML/Include/MyClasses/World.cpp

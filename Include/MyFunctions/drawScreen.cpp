@@ -43,7 +43,6 @@ void initScreen()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glClearColor((GLclampf)0.6, (GLclampf)0.6, (GLclampf)0.6, 1);
-	glLoadIdentity();
 	view = player.cam.moveCamera();
 }
 
@@ -64,20 +63,19 @@ void drawScreen()
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 	glEnable(GL_DEPTH_TEST);
 	
-	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z))); 
-	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
-	glBindVertexArray(VAO);
-	//glDrawArrays(GL_TRIANGLES, 0, 36);
+	// playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z))); 
+	// playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
+	// glBindVertexArray(VAO);
+	// glDrawArrays(GL_TRIANGLES, 0, 36);
 
 
-	model = glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z));
+	//model = glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z));
 	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.gunPos.x, player.gunPos.y, player.gunPos.z))); 
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "gunScale"), 0.05);
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 1);
 
+	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 36);
-	glBindVertexArray(0);
-	
 
 	blocksShader.use();
 	blocksShader.setMat4(blocksShader.viewLoc, view);
@@ -87,4 +85,5 @@ void drawScreen()
 	glDrawArraysInstanced(GL_TRIANGLES, 0, 36, generatedWorld.ammountToDraw);
 
 	glUseProgram(0);
+	glBindVertexArray(0);
 }

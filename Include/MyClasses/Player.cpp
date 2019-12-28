@@ -11,6 +11,12 @@ Player::Player(const World& world)
 	pos.y = world.heights[(int)pos.x][(int)pos.z] + 1;
 }
 
+Player::Player()
+	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallingTime(0), jumpingTime(0), jump(false), jumpPrev(false),
+		pos(sf::Vector3f(10,10,10)),
+	 	cam(Camera()), movePossibilityNegative(sf::Vector3f(1,1,1)), movePossibilityPositive(sf::Vector3f(1,1,1)) 
+{
+}
 
 Player::~Player()
 {
@@ -33,10 +39,9 @@ void Player::takeDmg(int dmg)
 	}
 }
 
-void Player::walk(const InputController& input) 
+void Player::walk(const InputController& input, float deltaTime) 
 {
 	//moving 
-	float deltaTime = generalTimer.getElapsedTime().asSeconds();
 	if(cam.walkDirection.x > 0 && movePossibilityPositive.x)
 	{
 		pos.x += cam.walkDirection.x * deltaTime * 10.0f;
@@ -63,7 +68,7 @@ void Player::walk(const InputController& input)
 	if(jump && movePossibilityPositive.y)
 	{
 		jumpingTime += deltaTime;
-		pos.y += 1/(40 + jumpingTime);
+		pos.y += 1/(20 + jumpingTime);
 	}
 	else
 	{
@@ -79,6 +84,7 @@ void Player::walk(const InputController& input)
 	else
 	{
 		jump = false;
+		jumpingTime = 0;
 		fallingTime = 0;
 	}
 	jumpPrev = jump;

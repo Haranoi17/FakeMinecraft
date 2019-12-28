@@ -19,7 +19,7 @@ void initVO()
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8*sizeof(float), (void*)(5 * sizeof(float)));
     
-    glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     matrices = new glm::mat4[1];
     blockTypes = new float[1];

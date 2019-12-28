@@ -7,6 +7,8 @@
 #include <Block.hpp>
 #include <World.hpp>
 
+class World;
+
 class Player
 {
 public:
@@ -29,13 +31,13 @@ public:
 	std::vector<blockType> slots;
 	Camera cam;
 
-
+	Player();
 	Player(const World&);
 	~Player();
 
  	void checkMovePossibility(const World&);
 	void takeDmg(int dmg);
-	void walk(const InputController&);
+	void walk(const InputController&, float);
 	void updateGunPos();
 };
 

@@ -1,6 +1,6 @@
 #include <Headers.hpp>
-#include <classes.hpp>
 #include <functions.hpp>
+#include <classes.hpp>
 #include <glm/matrix.hpp>
 #include <glew.h>
 
@@ -85,9 +85,10 @@ glm::mat4 projection = glm::mat4(1);
 glm::mat4 model = glm::mat4(1);
 glm::mat4 *matrices;
 float *blockTypes;
-bool matricesReady;
+bool matricesReady = false;
+bool preparingMatrices = false;
 sf::Thread matricePreparationThread = sf::Thread(prepareMatrices);
-sf::Thread updateThread = sf::Thread(update);
+sf::Clock updateClock = sf::Clock();
 
 
 bool fpsCtr()
@@ -101,7 +102,7 @@ bool fpsCtr()
         if((float)i/fpsTimer.getElapsedTime().asSeconds() < 2)
         {
             std::cout << "Low FPS probably errors" << std::endl;
-            return true;
+            //return true;
         }
         i = 0;
         fpsTimer.restart();
@@ -123,22 +124,28 @@ int main(int argc, char** argv)
 
     sf::Clock reRenderTimer = sf::Clock();
     sf::Vector3f renderPoint = player.pos;
+
 	while(window.isOpen())
 	{
 		eventHandling();
         update();
         placingAndRemovingBlocks();
 
-        if(vec3Length(player.pos.x - renderPoint.x, player.pos.y - renderPoint.y, player.pos.z - renderPoint.z) > 1)
+        if(!input.getMouseLeft() && !input.getMouseRight() && !matricesReady && reRenderTimer.getElapsedTime().asSeconds() > 0.3)
         {
+            sf::Clock test;
             matricePreparationThread.launch();
-            //prepareMatrices();
-            renderPoint = player.pos;
+            std::cout << test.getElapsedTime().asMicroseconds() << std::endl;
+            reRenderTimer.restart();
         }
+
         if(matricesReady)
         {
-           reRenderWorld();
+            // up to 2 miliseconds its not performance issue
+            reRenderWorld();
+           
         }
+    
         drawScreen();
 		window.display();
         if(fpsCtr())

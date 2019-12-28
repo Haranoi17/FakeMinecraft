@@ -4,4 +4,4 @@
 
 void normalize(sf::Vector3f& vec);
 
-float vec3Length(float, float, float);
+float vec3Length(const sf::Vector3f &);
