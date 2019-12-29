@@ -59,8 +59,12 @@ void drawScreen()
 	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.cam.pos.x, player.cam.pos.y, player.cam.pos.z)));
 
 	glDisable(GL_DEPTH_TEST);
+	glDisable(GL_CULL_FACE);
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 36);
+	glEnable(GL_CULL_FACE);
+	glFrontFace(GL_CW);
+	glCullFace(GL_BACK);
 	glEnable(GL_DEPTH_TEST);
 	
 	// playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.pos.x, player.pos.y, player.pos.z))); 

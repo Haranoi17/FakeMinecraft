@@ -62,6 +62,5 @@ void main()
             break;
         }
     }
-    //texColor.a = 1; 
     FragColor = texColor;
 } 

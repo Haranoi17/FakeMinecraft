@@ -8,8 +8,9 @@ void initGL()
 	glEnable(GL_COLOR_MATERIAL);
 	glEnable(GL_NORMALIZE);
 
-	// glFrontFace(GL_CCW);
-	// glCullFace(GL_BACK);
+	glEnable(GL_CULL_FACE);
+	glFrontFace(GL_CW);
+	glCullFace(GL_BACK);
 
 	// glBlendEquation(GL_ONE_MINUS_SRC_ALPHA);
 	// glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA);
