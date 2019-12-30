@@ -37,7 +37,7 @@ public:
 
  	void checkMovePossibility(const World&);
 	void takeDmg(int dmg);
-	void walk(const InputController&, float);
+	void walk(const InputController&, const World&, float);
 	void updateGunPos();
 };
 

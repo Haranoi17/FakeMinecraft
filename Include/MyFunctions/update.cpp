@@ -8,8 +8,7 @@ void update()
 	player.cam.updateCameraRotation(input, mouseSpeed);
 	
 	player.cam.updateWalkDirection(input);
-	player.checkMovePossibility(generatedWorld);
-	player.walk(input, updateClock.getElapsedTime().asSeconds());
+	player.walk(input, generatedWorld, updateClock.getElapsedTime().asSeconds());
 	updateClock.restart();
 
 	player.cam.updatePointToLookAtPosition(player.pos);

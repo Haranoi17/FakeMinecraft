@@ -4,6 +4,7 @@ out vec4 FragColor;
 
 in vec2 texCoords;
 in vec3 normal;
+in vec3 position;
 in float blockType;
 
 int type;
@@ -14,14 +15,21 @@ uniform sampler2D stone;
 uniform sampler2D wood;
 uniform sampler2D leaves;
 
+uniform float lightX;
+uniform float lightY;
+uniform float lightZ;
+
 void main()
 {
+    vec4 texColor;
+    vec3 lightPos = vec3(lightX, lightY, lightZ);
+    vec3 toLight = lightPos - position;
+    vec3 toLightNorm = normalize(lightPos - position);
     if(blockType > 0.5 && blockType < 1.5){type = 1;}
     if(blockType > 1.5 && blockType < 2.5){type = 2;}
     if(blockType > 2.5 && blockType < 3.5){type = 3;} 
     if(blockType > 3.5 && blockType < 4.5){type = 4;}
 
-    vec4 texColor;
 
     switch(type)
     {
@@ -62,5 +70,7 @@ void main()
             break;
         }
     }
+
+    texColor.rgb *= (1 + dot(toLightNorm, normal))/(2 + length(toLight)/10);
     FragColor = texColor;
 } 

@@ -79,6 +79,9 @@ void drawScreen()
 	blocksShader.use();
 	blocksShader.setMat4(blocksShader.viewLoc, view);
 	blocksShader.setMat4(blocksShader.projectionLoc, projection);
+	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightX"), player.pos.x);
+	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightY"), player.pos.y);
+	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightZ"), player.pos.z);
 
 	glBindVertexArray(VAO);
 	glDrawArraysInstanced(GL_TRIANGLES, 0, 36, generatedWorld.ammountToDraw);

@@ -19,6 +19,7 @@ CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyClasses/Blo
 CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyClasses/Camera.hpp
 CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyClasses/InputController.hpp
 CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyClasses/World.hpp
+CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyFunctions/vectorOperations.hpp
 CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyClasses/Player.cpp
 CMakeFiles/game.out.dir/Include/MyClasses/Player.cpp.o: ../Include/MyClasses/Player.hpp
 

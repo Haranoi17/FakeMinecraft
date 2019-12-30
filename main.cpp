@@ -44,18 +44,18 @@ float unitMatrix[16] =
 };
 float cubeData[288] = {
     //positions        //texCoords  //normals  
-    -0.5f,-0.5f,-0.5f,    0.0f, 1.0f,        0.0f, 0.0f, 1.0f,      
-     0.5f,-0.5f,-0.5f,    1.0f, 1.0f,        0.0f, 0.0f, 1.0f,
-     0.5f, 0.5f,-0.5f,    1.0f, 0.0f,        0.0f, 0.0f, 1.0f,
-    -0.5f,-0.5f,-0.5f,    0.0f, 1.0f,        0.0f, 0.0f, 1.0f,
-     0.5f, 0.5f,-0.5f,    1.0f, 0.0f,        0.0f, 0.0f, 1.0f,
-    -0.5f, 0.5f,-0.5f,    0.0f, 0.0f,        0.0f, 0.0f, 1.0f,
-     0.5f,-0.5f, 0.5f,    0.0f, 1.0f,        0.0f, 0.0f,-1.0f,
-    -0.5f,-0.5f, 0.5f,    1.0f, 1.0f,        0.0f, 0.0f,-1.0f,
-    -0.5f, 0.5f, 0.5f,    1.0f, 0.0f,        0.0f, 0.0f,-1.0f,
-     0.5f,-0.5f, 0.5f,    0.0f, 1.0f,        0.0f, 0.0f,-1.0f,
-    -0.5f, 0.5f, 0.5f,    1.0f, 0.0f,        0.0f, 0.0f,-1.0f,
-     0.5f, 0.5f, 0.5f,    0.0f, 0.0f,        0.0f, 0.0f,-1.0f,
+    -0.5f,-0.5f,-0.5f,    0.0f, 1.0f,        0.0f, 0.0f,-1.0f,      
+     0.5f,-0.5f,-0.5f,    1.0f, 1.0f,        0.0f, 0.0f,-1.0f,
+     0.5f, 0.5f,-0.5f,    1.0f, 0.0f,        0.0f, 0.0f,-1.0f,
+    -0.5f,-0.5f,-0.5f,    0.0f, 1.0f,        0.0f, 0.0f,-1.0f,
+     0.5f, 0.5f,-0.5f,    1.0f, 0.0f,        0.0f, 0.0f,-1.0f,
+    -0.5f, 0.5f,-0.5f,    0.0f, 0.0f,        0.0f, 0.0f,-1.0f,
+     0.5f,-0.5f, 0.5f,    0.0f, 1.0f,        0.0f, 0.0f, 1.0f,
+    -0.5f,-0.5f, 0.5f,    1.0f, 1.0f,        0.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.5f,    1.0f, 0.0f,        0.0f, 0.0f, 1.0f,
+     0.5f,-0.5f, 0.5f,    0.0f, 1.0f,        0.0f, 0.0f, 1.0f,
+    -0.5f, 0.5f, 0.5f,    1.0f, 0.0f,        0.0f, 0.0f, 1.0f,
+     0.5f, 0.5f, 0.5f,    0.0f, 0.0f,        0.0f, 0.0f, 1.0f,
     -0.5f,-0.5f, 0.5f,    0.0f, 1.0f,        0.0f,-1.0f, 0.0f,
      0.5f,-0.5f, 0.5f,    1.0f, 1.0f,        0.0f,-1.0f, 0.0f,
      0.5f,-0.5f,-0.5f,    1.0f, 0.0f,        0.0f,-1.0f, 0.0f,
@@ -118,7 +118,7 @@ bool fpsCtr()
 
 int main(int argc, char** argv)
 {
-	//window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
+	window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
 	glutInit(&argc, argv);
 	glewInit();
     XInitThreads();
