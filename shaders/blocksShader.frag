@@ -71,6 +71,6 @@ void main()
         }
     }
 
-    texColor.rgb *= (1 + dot(toLightNorm, normal))/(2 + length(toLight)/10);
+    texColor.rgb *= (1 + dot(toLightNorm, normal))/(5 + length(toLight)/8);
     FragColor = texColor;
 } 
