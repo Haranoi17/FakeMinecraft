@@ -13,6 +13,7 @@ void prepareMatrices()
         matrices = new glm::mat4[generatedWorld.ammountToDraw];
         blockTypes = new float[generatedWorld.ammountToDraw];
         int iterator = 0;
+        sf::Clock test;
         for(Block *block : generatedWorld.blocksToDraw)
         {
             if(block->type != blockType::air)
@@ -22,6 +23,7 @@ void prepareMatrices()
                 iterator++;
             }
         }
+        std::cout << test.getElapsedTime().asMilliseconds() << std::endl;
         matricesReady = true;
         preparingMatrices = false;
     }
@@ -33,7 +35,7 @@ void reRenderWorld()
     {
         glBindVertexArray(VAO);
         glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
-        glBufferData(GL_ARRAY_BUFFER, generatedWorld.ammountToDraw * sizeof(glm::mat4), matrices, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, generatedWorld.ammountToDraw * sizeof(glm::mat4), matrices, GL_DYNAMIC_DRAW);
         glEnableVertexAttribArray(3);
         glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(glm::vec4), (void*)0);
         glEnableVertexAttribArray(4);
@@ -44,7 +46,7 @@ void reRenderWorld()
         glVertexAttribPointer(6, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(glm::vec4), (void*)(3*sizeof(glm::vec4)));
         
         glBindBuffer(GL_ARRAY_BUFFER, VBO[2]);
-        glBufferData(GL_ARRAY_BUFFER, generatedWorld.ammountToDraw * sizeof(float), blockTypes, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, generatedWorld.ammountToDraw * sizeof(float), blockTypes, GL_DYNAMIC_DRAW);
         glEnableVertexAttribArray(7);
         glVertexAttribPointer(7, 1, GL_FLOAT, GL_FALSE, sizeof(float), (void*)0);
 

@@ -60,8 +60,6 @@ void placingAndRemovingBlocks()
             {
                 player.slots.push_back(generatedWorld.blocks[x][y][z].type);
                 generatedWorld.blocks[x][y][z].type = blockType::air;
-                matricePreparationThread.launch();
-                //prepareMatrices();
                 timePassed = 0;
             }
         }
@@ -77,8 +75,6 @@ void placingAndRemovingBlocks()
                 blockType tempType = player.slots.back();
                 player.slots.pop_back();
                 generatedWorld.blocks[x][y][z].type = tempType;
-                //prepareMatrices();
-                matricePreparationThread.launch();
                 timePassed = 0;
             }
         }

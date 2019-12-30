@@ -3,6 +3,8 @@
 #include <classes.hpp>
 #include <glm/matrix.hpp>
 #include <glew.h>
+#include <X11/Xlib.h>
+#include <thread>
 
 InputController                     input = InputController();
 World								generatedWorld(1);
@@ -87,7 +89,9 @@ glm::mat4 *matrices;
 float *blockTypes;
 bool matricesReady = false;
 bool preparingMatrices = false;
-sf::Thread matricePreparationThread = sf::Thread(prepareMatrices);
+sf::Thread matricePreparationThread = sf::Thread(&prepareMatrices);
+sf::Thread drawThread = sf::Thread(&drawScreen);
+
 sf::Clock updateClock = sf::Clock();
 
 
@@ -117,6 +121,7 @@ int main(int argc, char** argv)
 	//window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
 	glutInit(&argc, argv);
 	glewInit();
+    XInitThreads();
 	initValues();
 	initGL();
     initVO();
@@ -125,29 +130,25 @@ int main(int argc, char** argv)
     sf::Clock reRenderTimer = sf::Clock();
     sf::Vector3f renderPoint = player.pos;
 
+
 	while(window.isOpen())
 	{
 		eventHandling();
         update();
         placingAndRemovingBlocks();
+        
+        std::thread matricePreparationThreadtest(prepareMatrices);
+        matricePreparationThreadtest.detach();
 
-        if(!input.getMouseLeft() && !input.getMouseRight() && !matricesReady && reRenderTimer.getElapsedTime().asSeconds() > 0.3)
-        {
-            matricePreparationThread.launch();
-            reRenderTimer.restart();
-        }
-
-        if(matricesReady)
-        {
-            reRenderWorld();  
-        }
-    
+        reRenderWorld();
         drawScreen();
-		window.display();
+        window.display();
+        
         if(fpsCtr())
         {
             window.close();
         }
+    
 	}
 
 	return 0;

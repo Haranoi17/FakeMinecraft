@@ -4,6 +4,8 @@ project(game)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Debug)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/Include/general
     ${CMAKE_CURRENT_SOURCE_DIR}/Include/MyClasses
@@ -19,7 +21,6 @@ set(
     ${SourceFilesClasses}
     ${SourceFilesFunctions}
 )
-
 link_libraries(
     sfml-graphics
     sfml-window
@@ -28,6 +29,7 @@ link_libraries(
     GLU
     glut    
     GLEW 
+    X11
 )
 
 add_executable(game.out ${SRC})

@@ -43,5 +43,8 @@ extern glm::mat4 *matrices;
 extern float *blockTypes;
 extern bool matricesReady;
 extern bool preparingMatrices;
+extern bool preparingBlocks;
+extern bool blocksPrepared;
 extern sf::Thread matricePreparationThread;
+extern sf::Thread drawThread;
 extern sf::Clock updateClock;

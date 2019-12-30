@@ -38,18 +38,13 @@ void drawAxis()
 	glDisable(GL_LINE_STIPPLE);
 }
 
-void initScreen()
+
+void drawScreen()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glClearColor((GLclampf)0.6, (GLclampf)0.6, (GLclampf)0.6, 1);
 	view = player.cam.moveCamera();
-}
-
-
-void drawScreen()
-{
-	initScreen();
 
 	playerShader.use();
 	playerShader.setMat4(playerShader.viewLoc, view);

@@ -206,7 +206,7 @@ void World::prepareToDraw(const Player &player)
     int frontBound;
     int backBound;
 
-    int r = 100;
+    int r = 150;
     if(player.pos.x - r <= 1){leftBound = 0;} else {leftBound = player.pos.x - r;}
     if(player.pos.y - r <= 1){bottomBound = 0;} else {bottomBound = player.pos.y - r;}
     if(player.pos.z - r <= 1){backBound = 0;} else {backBound = player.pos.z - r;}
@@ -225,7 +225,7 @@ void World::prepareToDraw(const Player &player)
             {
                 distanceVector = blocks[i][j][k].position - player.pos;
                 signOfCosinus = (player.cam.lookDirectionFlat.x * distanceVector.x + player.cam.lookDirectionFlat.z * distanceVector.z) >= -2; 
-                if(checkAir(blocks[i][j][k].position) && signOfCosinus && distanceVector.y > -40)
+                if(checkAir(blocks[i][j][k].position) && distanceVector.y > -40)
                 {
                     blocksToDraw.push_back(&blocks[i][j][k]);
                     ammount++;
