@@ -74,8 +74,8 @@ void Player::walk(const InputController& input, const World& world, float deltaT
 
 	if(jump && movePossibilityPositive.y)
 	{
-		jumpingTime += deltaTime/3;
-		pos.y += 1/(20 + jumpingTime);
+		jumpingTime += deltaTime/20;
+		pos.y += 1/(30 + jumpingTime);
 	}
 	else
 	{
@@ -85,8 +85,8 @@ void Player::walk(const InputController& input, const World& world, float deltaT
 	//falling
 	if(movePossibilityNegative.y)
 	{
-		fallingTime += deltaTime/3;
-		pos.y -= pow(fallingTime, 2);
+		fallingTime += deltaTime/20;
+		pos.y -= pow(fallingTime*5, 2);
 	}              
 	else
 	{

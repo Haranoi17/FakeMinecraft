@@ -16,14 +16,17 @@ class World
     void generateTerrain();
     void generateTrees();
     void fillBlockTypes();
-    void prepareToDraw(const Player &);
+    void prepareBlocksWithAirTouch(const Player&);
+    void prepareToDraw(const Player&);
 
     bool checkAir(const sf::Vector3f&) const;
     sf::Vector3f dimentions;
     float **heights;
     Block ***blocks;
 
+    std::vector<Block*> blocksWithAirTouch;
     std::vector<Block*> blocksToDraw;
+    std::vector<Block*> blocksNextToPlayer;
 
     int ammountToDraw;
 };

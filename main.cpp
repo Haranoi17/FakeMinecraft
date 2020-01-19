@@ -89,8 +89,9 @@ glm::mat4 *matrices;
 float *blockTypes;
 bool matricesReady = false;
 bool preparingMatrices = false;
-sf::Thread matricePreparationThread = sf::Thread(&prepareMatrices);
-sf::Thread drawThread = sf::Thread(&drawScreen);
+bool preparingBlocks = false;
+bool usingPreparedBlocks = false;
+bool needToRefreshBlocks = false;
 
 sf::Clock updateClock = sf::Clock();
 
@@ -115,13 +116,18 @@ bool fpsCtr()
 }
 
 
-
+void test()
+{
+    preparingBlocks = true;
+    generatedWorld.prepareBlocksWithAirTouch(player);
+    preparingBlocks = false;
+    needToRefreshBlocks = false;
+}
 int main(int argc, char** argv)
 {
 	window.create(sf::VideoMode(1920, 1080), "SfmlOpenGl", sf::Style::Fullscreen, sf::ContextSettings(24, 8, 2));
 	glutInit(&argc, argv);
 	glewInit();
-    XInitThreads();
 	initValues();
 	initGL();
     initVO();
@@ -130,15 +136,34 @@ int main(int argc, char** argv)
     sf::Clock reRenderTimer = sf::Clock();
     sf::Vector3f renderPoint = player.pos;
 
-
+    generatedWorld.prepareBlocksWithAirTouch(player);
+    generatedWorld.prepareToDraw(player);
+    prepareMatrices();
 	while(window.isOpen())
 	{
 		eventHandling();
         update();
         placingAndRemovingBlocks();
         
-        std::thread matricePreparationThreadtest(prepareMatrices);
-        matricePreparationThreadtest.detach();
+
+        if(vec3Length(player.pos - renderPoint) > 10)
+        {
+            needToRefreshBlocks = true;
+        }
+
+        if(!preparingBlocks && !needToRefreshBlocks)
+        {
+            std::thread matricePreparationThreadtest(prepareMatrices);
+            matricePreparationThreadtest.detach();
+            
+        }
+        if(!usingPreparedBlocks && !preparingBlocks && needToRefreshBlocks)
+        {  
+            std::thread prepareBlocksWithAirTouch(test);
+            prepareBlocksWithAirTouch.detach();
+            reRenderTimer.restart();
+            renderPoint = player.pos;
+        }
 
         reRenderWorld();
         drawScreen();
@@ -150,6 +175,5 @@ int main(int argc, char** argv)
         }
     
 	}
-
 	return 0;
 }

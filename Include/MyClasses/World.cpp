@@ -96,7 +96,7 @@ void World::generateTerrain()
     {
         for(int j = 0; j < z; j++)
         {
-            int newHeight = 20 + 20 *pow(sin((float)i/100), 2) +  20* pow(cos((float)j/100), 2) + 5 * pow(sin((float)(i)/20), 2);
+            int newHeight = 10 + 15 *pow(sin((float)i/100), 2) +  20* pow(cos((float)j/100), 2) + 5* pow(sin((float)(i)/20), 2);
 
             if(newHeight >= dimentions.y){newHeight = dimentions.y;}
             heights[i][j] = newHeight;
@@ -186,17 +186,16 @@ void World::fillBlockTypes()
     }
 }
 
-void World::prepareToDraw(const Player &player)
+void World::prepareBlocksWithAirTouch(const Player& player)
 {
     int x = dimentions.x;
     int y = dimentions.y;
     int z = dimentions.z;
     sf::Vector3f distanceVector;
-
-    int ammount = 0;
-    if(blocksToDraw.size())
+    
+    if(blocksWithAirTouch.size())
     {
-        blocksToDraw.clear();
+        blocksWithAirTouch.clear();
     }
 
     int leftBound;
@@ -206,7 +205,7 @@ void World::prepareToDraw(const Player &player)
     int frontBound;
     int backBound;
 
-    int r = 150;
+    int r = 100;
     if(player.pos.x - r <= 1){leftBound = 0;} else {leftBound = player.pos.x - r;}
     if(player.pos.y - r <= 1){bottomBound = 0;} else {bottomBound = player.pos.y - r;}
     if(player.pos.z - r <= 1){backBound = 0;} else {backBound = player.pos.z - r;}
@@ -215,22 +214,48 @@ void World::prepareToDraw(const Player &player)
     if(player.pos.y + r >= dimentions.y - 1){topBound = dimentions.y;} else {topBound = player.pos.y + r;}
     if(player.pos.z + r >= dimentions.z - 1){frontBound = dimentions.z;} else {frontBound = player.pos.z + r;}
 
-    bool signOfCosinus;
-
     for(int i = leftBound; i < rightBound; i++)
     {
         for(int j = bottomBound; j < topBound; j++)
         {
             for(int k = backBound; k < frontBound; k++)
-            {
+            {    
                 distanceVector = blocks[i][j][k].position - player.pos;
-                signOfCosinus = (player.cam.lookDirectionFlat.x * distanceVector.x + player.cam.lookDirectionFlat.z * distanceVector.z) >= -2; 
-                if(checkAir(blocks[i][j][k].position) && distanceVector.y > -40)
+                if(vec3Length(distanceVector) < 5)
                 {
-                    blocksToDraw.push_back(&blocks[i][j][k]);
-                    ammount++;
+                    blocksNextToPlayer.push_back(&blocks[i][j][k]);
+                }
+                if(checkAir(blocks[i][j][k].position))
+                {
+                    blocksWithAirTouch.push_back(&blocks[i][j][k]);
                 }
             }
+        }
+    }
+
+}
+
+void World::prepareToDraw(const Player &player)
+{
+    int ammount = 0;
+    sf::Vector3f distanceVector;
+    bool signOfCosinus;
+    int r = 150;
+
+    if(blocksToDraw.size())
+    {
+        blocksToDraw.clear();
+    }
+
+    for(Block* block : blocksWithAirTouch)
+    {
+        distanceVector = block->position - player.pos;
+        signOfCosinus = (player.cam.lookDirectionFlat.x * distanceVector.x + player.cam.lookDirectionFlat.z * distanceVector.z) >= -2; 
+        
+        if(signOfCosinus && vec3Length(distanceVector) < r)
+        {
+            blocksToDraw.push_back(block);
+            ammount ++;
         }
     }
     ammountToDraw = ammount;

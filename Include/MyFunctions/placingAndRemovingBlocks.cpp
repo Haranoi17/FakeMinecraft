@@ -51,16 +51,23 @@ void placingAndRemovingBlocks()
     int y = player.gunPos.y + 0.25;
     int z = player.gunPos.z + 0.25;
     
-    if(input.getMouseLeft() && !input.getMouseRight())
+    if(input.getMouseLeft() && !input.getMouseRight() && player.pos.y > 5)
     {
         if(checkDestroyPossibility(x, y, z))
         {
             timePassed += Timer.getElapsedTime().asSeconds();
-            if(generatedWorld.blocks[x][y][z].type != blockType::air && timePassed > 0.5)
+            if(generatedWorld.blocks[x][y][z].type != blockType::air)
             {
-                player.slots.push_back(generatedWorld.blocks[x][y][z].type);
-                generatedWorld.blocks[x][y][z].type = blockType::air;
+                for(Block* block : generatedWorld.blocksNextToPlayer)
+                {
+                    if(block->position.x == x && block->position.y == y && block->position.z == z)
+                    {
+                        player.slots.push_back(block->type);
+                        block->type = blockType::air;
+                    }
+                }
                 timePassed = 0;
+                needToRefreshBlocks = true;
             }
         }
     }
@@ -70,12 +77,14 @@ void placingAndRemovingBlocks()
         if(checkPlacePossibility(x, y, z))
         {
             timePassed += Timer.getElapsedTime().asSeconds();
-            if(player.slots.size() && timePassed > 0.2)
+            if(player.slots.size())
             {
+                std::cout << "a";
                 blockType tempType = player.slots.back();
                 player.slots.pop_back();
                 generatedWorld.blocks[x][y][z].type = tempType;
                 timePassed = 0;
+                needToRefreshBlocks = true;
             }
         }
     }

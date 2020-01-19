@@ -45,6 +45,8 @@ extern bool matricesReady;
 extern bool preparingMatrices;
 extern bool preparingBlocks;
 extern bool blocksPrepared;
+extern bool usingPreparedBlocks;
+extern bool needToRefreshBlocks;
 extern sf::Thread matricePreparationThread;
 extern sf::Thread drawThread;
 extern sf::Clock updateClock;

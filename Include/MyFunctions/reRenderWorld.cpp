@@ -3,6 +3,7 @@
 
 void prepareMatrices()
 {
+    usingPreparedBlocks = true;
     if(!preparingMatrices)
     {
         preparingMatrices = true;
@@ -19,14 +20,14 @@ void prepareMatrices()
             if(block->type != blockType::air)
             {
                 blockTypes[iterator] = block->type;
-                matrices[iterator] = glm::translate(glm::mat4(1), glm::vec3(block->position.x, block->position.y, block->position.z));;
+                matrices[iterator] = glm::translate(glm::mat4(1), glm::vec3(block->position.x, block->position.y, block->position.z));
                 iterator++;
             }
         }
-        std::cout << test.getElapsedTime().asMilliseconds() << std::endl;
         matricesReady = true;
         preparingMatrices = false;
     }
+    usingPreparedBlocks = false;
 }
 
 void reRenderWorld()

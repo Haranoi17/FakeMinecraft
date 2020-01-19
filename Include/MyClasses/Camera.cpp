@@ -93,7 +93,7 @@ void Camera::updatePointToLookAtPosition(sf::Vector3f newPos)
 {
 	pointToLookAt = newPos;
 
-	pointToLookAt.y += 0.5;
+	pointToLookAt.y + 0.5;
 }
 
 void Camera::updateWalkDirection(const InputController &input) 
