@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/game.out.dir/main.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyClasses/Block.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyClasses/Camera.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyClasses/Enemy.cpp.o"
@@ -17,8 +16,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/game.out.dir/Include/MyFunctions/reshapeScreen.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyFunctions/update.cpp.o"
   "CMakeFiles/game.out.dir/Include/MyFunctions/vectorOperations.cpp.o"
-  "game.out.pdb"
+  "CMakeFiles/game.out.dir/main.cpp.o"
   "game.out"
+  "game.out.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
