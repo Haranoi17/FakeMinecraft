@@ -1,3 +1,0 @@
-/home/haranoi17/Documents/projects/Fake_Minecraft/build/CMakeFiles/rebuild_cache.dir
-/home/haranoi17/Documents/projects/Fake_Minecraft/build/CMakeFiles/edit_cache.dir
-/home/haranoi17/Documents/projects/Fake_Minecraft/build/CMakeFiles/game.out.dir
