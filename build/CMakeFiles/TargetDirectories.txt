@@ -1,0 +1,6 @@
+/home/haranoi17/github/FakeMinecraft/build/CMakeFiles/FakeMinecraft.dir
+/home/haranoi17/github/FakeMinecraft/build/CMakeFiles/edit_cache.dir
+/home/haranoi17/github/FakeMinecraft/build/CMakeFiles/rebuild_cache.dir
+/home/haranoi17/github/FakeMinecraft/build/Game/CMakeFiles/FakeMinecraftLib.dir
+/home/haranoi17/github/FakeMinecraft/build/Game/CMakeFiles/edit_cache.dir
+/home/haranoi17/github/FakeMinecraft/build/Game/CMakeFiles/rebuild_cache.dir
