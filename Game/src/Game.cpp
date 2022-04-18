@@ -4,7 +4,9 @@
 Game::Game()
 {
 	const sf::VideoMode videoMode{windowSize.x, windowSize.y};
-	m_window.create(videoMode, title);
+	const sf::ContextSettings context{ 24,8,2 };
+	
+	m_window.create(videoMode, title, windowStyle, context);
 
 	glewInit();
 	initValues();

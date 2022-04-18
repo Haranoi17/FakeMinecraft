@@ -12,7 +12,7 @@ class Game
 {
     static inline const std::string title{"FakeMinecraft"};
     static inline const sf::Vector2u windowSize{1280, 720};
-
+    static inline const sf::Uint32 windowStyle{7U};
 public:
     Game();
     void loop();
