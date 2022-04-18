@@ -1,20 +1,20 @@
 #include "Player.hpp"
 #include <math.h>
-#include <vectorOperations.hpp>
+#include <Vector3f.hpp>
 
 
 Player::Player(const World& world)
 	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallingTime(0), jumpingTime(0), jump(false), jumpPrev(false),
-		pos(sf::Vector3f(world.dimentions.x/2 + 3, 0, world.dimentions.z/2)),
-	 	cam(Camera()), movePossibilityNegative(sf::Vector3f(1,1,1)), movePossibilityPositive(sf::Vector3f(1,1,1)) 
+		pos(Vector3f(world.dimentions.x/2 + 3, 0, world.dimentions.z/2)),
+	 	cam(Camera()), movePossibilityNegative(Vector3f(1,1,1)), movePossibilityPositive(Vector3f(1,1,1)) 
 {
 	pos.y = world.heights[(int)pos.x][(int)pos.z] + 10;
 }
 
 Player::Player()
 	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallingTime(0), jumpingTime(0), jump(false), jumpPrev(false),
-		pos(sf::Vector3f(10,10,10)),
-	 	cam(Camera()), movePossibilityNegative(sf::Vector3f(1,1,1)), movePossibilityPositive(sf::Vector3f(1,1,1)) 
+		pos(Vector3f(10,10,10)),
+	 	cam(Camera()), movePossibilityNegative(Vector3f(1,1,1)), movePossibilityPositive(Vector3f(1,1,1)) 
 {
 }
 
@@ -41,7 +41,7 @@ void Player::takeDmg(int dmg)
 
 void Player::walk(const InputController& input, const World& world, float deltaTime) 
 {	
-	static sf::Vector3f prevPos = pos;
+	static Vector3f prevPos = pos;
 	
 		
 	checkMovePossibility(world);
@@ -50,21 +50,21 @@ void Player::walk(const InputController& input, const World& world, float deltaT
 		prevPos = pos;
 	}
 	//moving 
-	if(cam.walkDirection.x > 0 && movePossibilityPositive.x)
+	if(cam.m_front.x > 0 && movePossibilityPositive.x)
 	{
-		pos.x += cam.walkDirection.x * deltaTime * 5.0f;
+		pos.x += cam.m_front.x * deltaTime * 5.0f;
 	}
-	if(cam.walkDirection.x < 0 && movePossibilityNegative.x)
+	if(cam.m_front.x < 0 && movePossibilityNegative.x)
 	{
-		pos.x += cam.walkDirection.x * deltaTime * 5.0f;
+		pos.x += cam.m_front.x * deltaTime * 5.0f;
 	}
-	if(cam.walkDirection.z > 0 && movePossibilityPositive.z)
+	if(cam.m_front.z > 0 && movePossibilityPositive.z)
 	{
-		pos.z += cam.walkDirection.z * deltaTime * 5.0f;
+		pos.z += cam.m_front.z * deltaTime * 5.0f;
 	}
-	if(cam.walkDirection.z < 0 && movePossibilityNegative.z)
+	if(cam.m_front.z < 0 && movePossibilityNegative.z)
 	{
-		pos.z += cam.walkDirection.z * deltaTime * 5.0f;
+		pos.z += cam.m_front.z * deltaTime * 5.0f;
 	}
 	//jumping
 	if(input.getKeySpace())
@@ -108,10 +108,10 @@ void Player::walk(const InputController& input, const World& world, float deltaT
 void Player::updateGunPos()
 {
 	static float pi	= (float)3.14159265359;
-	float alpha = cam.rot.x / (2 * pi);
-	float beta	= -cam.rot.y / (2 * pi);
+	float alpha = cam.m_rotation.x / (2 * pi);
+	float beta	= -cam.m_rotation.y / (2 * pi);
 	float r = 2.1;
-	gunPos = cam.pointToLookAt;
+	gunPos = cam.m_pointToLookAt;
 	gunPos.x += 0.25 + r * -cos(alpha)*cos(beta);
 	gunPos.y += 0.25 + r * -sin(beta);
 	gunPos.z += 0.25 + r * -cos(beta)*sin(alpha);
@@ -152,24 +152,24 @@ void Player::checkMovePossibility(const World& world)
         {
             for(int k = backBound; k < frontBound; k++)
             {
-				if(world.blocks[i][j][k].type != blockType::air)
+				if(world.blocks[i][j][k].m_type != BlockType::Air)
 				{
 					blocks.push_back(&world.blocks[i][j][k]);
 				}
 			}
 		}
 	}
-	movePossibilityNegative = sf::Vector3f(1,1,1);
-	movePossibilityPositive = sf::Vector3f(1,1,1);
+	movePossibilityNegative = Vector3f(1,1,1);
+	movePossibilityPositive = Vector3f(1,1,1);
 	for(auto *block : blocks)
 	{
-		sf::Vector3f middle = sf::Vector3f(block->position.x + 0.25, block->position.y + 0.25, block->position.z + 0.25);
-		float left = block->position.x - 0.5;
-		float right = block->position.x + 0.5;
-		float bottom = block->position.y - 0.5;
-		float top = block->position.y + 0.5;
-		float back = block->position.z - 0.5;
-		float front = block->position.z + 0.5;
+		Vector3f middle = Vector3f(block->m_position.x + 0.25, block->m_position.y + 0.25, block->m_position.z + 0.25);
+		float left = block->m_position.x - 0.5;
+		float right = block->m_position.x + 0.5;
+		float bottom = block->m_position.y - 0.5;
+		float top = block->m_position.y + 0.5;
+		float back = block->m_position.z - 0.5;
+		float front = block->m_position.z + 0.5;
 
 		float PLeft = pos.x -0.2;
 		float PRight = pos.x + 0.2;
@@ -179,7 +179,7 @@ void Player::checkMovePossibility(const World& world)
 		float PFront = pos.z + 0.2;
 		
 		bool intersects = false;
-		if(vec3Length(pos - middle) < 5)
+		if(Vector3f{(pos - middle)}.length() < 5)
 		{
 			if(PRight > left && PLeft < right && PTop > bottom && PBottom < top && PFront > back && PBack < front)
 			{

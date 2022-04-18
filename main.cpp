@@ -4,7 +4,6 @@
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
-	glewInit();
     
     Game game;
     game.loop();   

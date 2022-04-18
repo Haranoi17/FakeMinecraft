@@ -35,8 +35,8 @@ private:
     World world{0};
     Player player{world};
     // sf::RenderWindow window(sf::VideoMode(800, 600), "SfmlOpenGl", 7U, sf::ContextSettings(24, 8, 2));
-    sf::Vector3f crosshairPos;
-    sf::Vector3f renderPoint;
+    Vector3f crosshairPos;
+    Vector3f renderPoint;
     sf::Clock worldTimer;
     sf::Clock animationTimer;
     sf::Texture crosshairTexture;

@@ -19,8 +19,8 @@ class World
     void prepareBlocksWithAirTouch(const Player&);
     void prepareToDraw(const Player&);
 
-    bool checkAir(const sf::Vector3f&) const;
-    sf::Vector3f dimentions;
+    bool checkAir(const Vector3f&) const;
+    Vector3f dimentions;
     float **heights;
     Block ***blocks;
 

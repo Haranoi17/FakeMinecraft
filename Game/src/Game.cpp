@@ -1,24 +1,18 @@
 #include <Game.hpp>
-#include <vectorOperations.hpp>
-// #include <SFML/OpenGL.hpp>
-// #include <SFML/Graphics.hpp>
-// #include <glm/matrix.hpp>
-// #include <glm/gtc/matrix_transform.hpp>
-// #include <glm/gtc/type_ptr.hpp>
-
-// #include <initGL.hpp>
+#include <Vector3f.hpp>
 
 Game::Game()
 {
 	const sf::VideoMode videoMode{1280, 720};
 	m_window.create(videoMode, "FakeMinecraft");
 
+	glewInit();
+	initValues();
 	initOpenGL();
 	initVO();
 	reshapeScreen();
 
-	sf::Clock reRenderTimer;
-	sf::Vector3f renderPoint = player.pos;
+	Vector3f renderPoint = player.pos;
 	world.prepareBlocksWithAirTouch(player);
 	world.prepareToDraw(player);
 	prepareMatrices();
@@ -29,11 +23,11 @@ void Game::loop()
 	while (m_window.isOpen())
 	{
 		handleEvents();
-		update(0);
+		update(updateClock.getElapsedTime().asSeconds());
 
 		placingAndRemovingBlocks();
 
-		if (vec3Length(player.pos - renderPoint) > 10)
+		if (Vector3f{player.pos - renderPoint}.length() > 10)
 		{
 			needToRefreshBlocks = true;
 		}
@@ -89,10 +83,10 @@ void Game::prepareMatrices()
 		sf::Clock test;
 		for (Block *block : world.blocksToDraw)
 		{
-			if (block->type != blockType::air)
+			if (block->m_type != BlockType::Air)
 			{
-				blockTypes[iterator] = block->type;
-				matrices[iterator] = glm::translate(glm::mat4(1), glm::vec3(block->position.x, block->position.y, block->position.z));
+				blockTypes[iterator] = block->m_type;
+				matrices[iterator] = glm::translate(glm::mat4(1), glm::vec3(block->m_position.x, block->m_position.y, block->m_position.z));
 				iterator++;
 			}
 		}
@@ -219,7 +213,7 @@ void Game::update(float dt)
 	player.cam.updateCameraRotation(input, mouseSpeed);
 
 	player.cam.updateWalkDirection(input);
-	player.walk(input, world, updateClock.getElapsedTime().asSeconds());
+	player.walk(input, world, dt);
 	updateClock.restart();
 
 	player.cam.updatePointToLookAtPosition(player.pos);
@@ -239,7 +233,7 @@ void Game::draw()
 	playerShader.setMat4(playerShader.projectionLoc, projection);
 
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
-	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.cam.pos.x, player.cam.pos.y, player.cam.pos.z)));
+	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.cam.m_position.x, player.cam.m_position.y, player.cam.m_position.z)));
 
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_CULL_FACE);
@@ -279,12 +273,12 @@ void Game::draw()
 
 bool Game::checkPlacePossibility(const int &x, const int &y, const int &z)
 {
-	if (world.blocks[x][y][z].type == blockType::air && (world.blocks[x - 1][y][z].type != blockType::air ||
-														 world.blocks[x][y - 1][z].type != blockType::air ||
-														 world.blocks[x][y][z - 1].type != blockType::air ||
-														 world.blocks[x + 1][y][z].type != blockType::air ||
-														 world.blocks[x][y + 1][z].type != blockType::air ||
-														 world.blocks[x][y][z + 1].type != blockType::air))
+	if (world.blocks[x][y][z].m_type == BlockType::Air && (world.blocks[x - 1][y][z].m_type != BlockType::Air ||
+														 world.blocks[x][y - 1][z].m_type != BlockType::Air ||
+														 world.blocks[x][y][z - 1].m_type != BlockType::Air ||
+														 world.blocks[x + 1][y][z].m_type != BlockType::Air ||
+														 world.blocks[x][y + 1][z].m_type != BlockType::Air ||
+														 world.blocks[x][y][z + 1].m_type != BlockType::Air))
 	{
 		return true;
 	}
@@ -295,12 +289,12 @@ bool Game::checkPlacePossibility(const int &x, const int &y, const int &z)
 }
 bool Game::checkDestroyPossibility(const int &x, const int &y, const int &z)
 {
-	if (world.blocks[x][y][z].type != blockType::air && (world.blocks[x - 1][y][z].type == blockType::air ||
-														 world.blocks[x][y - 1][z].type == blockType::air ||
-														 world.blocks[x][y][z - 1].type == blockType::air ||
-														 world.blocks[x + 1][y][z].type == blockType::air ||
-														 world.blocks[x][y + 1][z].type == blockType::air ||
-														 world.blocks[x][y][z + 1].type == blockType::air))
+	if (world.blocks[x][y][z].m_type != BlockType::Air && (world.blocks[x - 1][y][z].m_type == BlockType::Air ||
+														 world.blocks[x][y - 1][z].m_type == BlockType::Air ||
+														 world.blocks[x][y][z - 1].m_type == BlockType::Air ||
+														 world.blocks[x + 1][y][z].m_type == BlockType::Air ||
+														 world.blocks[x][y + 1][z].m_type == BlockType::Air ||
+														 world.blocks[x][y][z + 1].m_type == BlockType::Air))
 	{
 		return true;
 	}
@@ -324,14 +318,14 @@ void Game::placingAndRemovingBlocks()
 		if (checkDestroyPossibility(x, y, z))
 		{
 			timePassed += Timer.getElapsedTime().asSeconds();
-			if (world.blocks[x][y][z].type != blockType::air)
+			if (world.blocks[x][y][z].m_type != BlockType::Air)
 			{
 				for (Block *block : world.blocksNextToPlayer)
 				{
-					if (block->position.x == x && block->position.y == y && block->position.z == z)
+					if (block->m_position.x == x && block->m_position.y == y && block->m_position.z == z)
 					{
-						player.slots.push_back(block->type);
-						block->type = blockType::air;
+						player.slots.push_back(block->m_type);
+						block->m_type = BlockType::Air;
 					}
 				}
 				timePassed = 0;
@@ -348,9 +342,9 @@ void Game::placingAndRemovingBlocks()
 			if (player.slots.size())
 			{
 				std::cout << "a";
-				blockType tempType = player.slots.back();
+				BlockType tempType = player.slots.back();
 				player.slots.pop_back();
-				world.blocks[x][y][z].type = tempType;
+				world.blocks[x][y][z].m_type = tempType;
 				timePassed = 0;
 				needToRefreshBlocks = true;
 			}

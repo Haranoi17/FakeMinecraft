@@ -13,10 +13,10 @@ class Player
 {
 public:
 
-	sf::Vector3f pos;
-	sf::Vector3f movePossibilityPositive;
-	sf::Vector3f movePossibilityNegative;
-	sf::Vector3f gunPos;
+	Vector3f pos;
+	Vector3f movePossibilityPositive;
+	Vector3f movePossibilityNegative;
+	Vector3f gunPos;
 
 
 	sf::Clock immunityTimer;
@@ -28,7 +28,7 @@ public:
 	int hp;
 	int dmg;
 
-	std::vector<blockType> slots;
+	std::vector<BlockType> slots;
 	Camera cam;
 
 	Player();
