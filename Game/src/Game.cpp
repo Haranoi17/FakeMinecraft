@@ -3,8 +3,8 @@
 
 Game::Game()
 {
-	const sf::VideoMode videoMode{1280, 720};
-	m_window.create(videoMode, "FakeMinecraft");
+	const sf::VideoMode videoMode{windowSize.x, windowSize.y};
+	m_window.create(videoMode, title);
 
 	glewInit();
 	initValues();
@@ -12,7 +12,6 @@ Game::Game()
 	initVO();
 	reshapeScreen();
 
-	Vector3f renderPoint = player.pos;
 	world.prepareBlocksWithAirTouch(player);
 	world.prepareToDraw(player);
 	prepareMatrices();
@@ -23,11 +22,13 @@ void Game::loop()
 	while (m_window.isOpen())
 	{
 		handleEvents();
-		update(updateClock.getElapsedTime().asSeconds());
+
+		const float dt{updateClock.getElapsedTime().asSeconds()};
+		update(dt);
 
 		placingAndRemovingBlocks();
 
-		if (Vector3f{player.pos - renderPoint}.length() > 10)
+		if (Vector3f{player.position - renderPoint}.length() > 10)
 		{
 			needToRefreshBlocks = true;
 		}
@@ -44,7 +45,7 @@ void Game::loop()
 
 void Game::initVO()
 {
-	glGenBuffers(3, VBO);
+	glGenBuffers(3, VBO.data());
 	glGenVertexArrays(1, &VAO);
 
 	glBindVertexArray(VAO);
@@ -187,8 +188,10 @@ void Game::handleEvents()
 		{
 		case sf::Event::Closed:
 			m_window.close();
+			break;
 		case sf::Event::Resized:
 			reshapeScreen();
+			break;
 		case sf::Event::KeyPressed:
 		{
 			if (input.getKeyEMERGENCY_EXIT())
@@ -203,20 +206,21 @@ void Game::handleEvents()
 void Game::reshapeScreen()
 {
 	projection = glm::mat4(1);
-	glViewport(0, 0, m_window.getSize().x, m_window.getSize().y);
-	projection = glm::perspective(glm::radians(fov), (float)m_window.getSize().x / m_window.getSize().y, 0.2f, 1000.0f);
+	const sf::Vector2u windowSize{m_window.getSize().x, m_window.getSize().y};
+	const float aspect = static_cast<float>(windowSize.x) / static_cast<float>(windowSize.y);
+	glViewport(0, 0, windowSize.x, windowSize.y);
+	projection = glm::perspective(glm::radians(fov), aspect, 0.2f, 1000.0f);
 }
 
 void Game::update(float dt)
 {
 	input.updateMouseAndKeyValues();
 	player.cam.updateCameraRotation(input, mouseSpeed);
-
 	player.cam.updateWalkDirection(input);
 	player.walk(input, world, dt);
 	updateClock.restart();
 
-	player.cam.updatePointToLookAtPosition(player.pos);
+	player.cam.updatePointToLookAtPosition(player.position);
 	player.cam.updateCameraPosition();
 	player.updateGunPos();
 }
@@ -260,9 +264,9 @@ void Game::draw()
 	blocksShader.use();
 	blocksShader.setMat4(blocksShader.viewLoc, view);
 	blocksShader.setMat4(blocksShader.projectionLoc, projection);
-	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightX"), player.pos.x);
-	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightY"), player.pos.y);
-	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightZ"), player.pos.z);
+	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightX"), player.position.x);
+	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightY"), player.position.y);
+	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightZ"), player.position.z);
 
 	glBindVertexArray(VAO);
 	glDrawArraysInstanced(GL_TRIANGLES, 0, 36, world.ammountToDraw);
@@ -271,37 +275,23 @@ void Game::draw()
 	glBindVertexArray(0);
 }
 
-bool Game::checkPlacePossibility(const int &x, const int &y, const int &z)
+bool Game::checkPlacePossibility(int x, int y, int z)
 {
-	if (world.blocks[x][y][z].m_type == BlockType::Air && (world.blocks[x - 1][y][z].m_type != BlockType::Air ||
-														 world.blocks[x][y - 1][z].m_type != BlockType::Air ||
-														 world.blocks[x][y][z - 1].m_type != BlockType::Air ||
-														 world.blocks[x + 1][y][z].m_type != BlockType::Air ||
-														 world.blocks[x][y + 1][z].m_type != BlockType::Air ||
-														 world.blocks[x][y][z + 1].m_type != BlockType::Air))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return world.blocks[x][y][z].m_type == BlockType::Air && (world.blocks[x - 1][y][z].m_type != BlockType::Air ||
+															  world.blocks[x][y - 1][z].m_type != BlockType::Air ||
+															  world.blocks[x][y][z - 1].m_type != BlockType::Air ||
+															  world.blocks[x + 1][y][z].m_type != BlockType::Air ||
+															  world.blocks[x][y + 1][z].m_type != BlockType::Air ||
+															  world.blocks[x][y][z + 1].m_type != BlockType::Air);
 }
-bool Game::checkDestroyPossibility(const int &x, const int &y, const int &z)
+bool Game::checkDestroyPossibility(int x, int y, int z)
 {
-	if (world.blocks[x][y][z].m_type != BlockType::Air && (world.blocks[x - 1][y][z].m_type == BlockType::Air ||
-														 world.blocks[x][y - 1][z].m_type == BlockType::Air ||
-														 world.blocks[x][y][z - 1].m_type == BlockType::Air ||
-														 world.blocks[x + 1][y][z].m_type == BlockType::Air ||
-														 world.blocks[x][y + 1][z].m_type == BlockType::Air ||
-														 world.blocks[x][y][z + 1].m_type == BlockType::Air))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return world.blocks[x][y][z].m_type != BlockType::Air && (world.blocks[x - 1][y][z].m_type == BlockType::Air ||
+															  world.blocks[x][y - 1][z].m_type == BlockType::Air ||
+															  world.blocks[x][y][z - 1].m_type == BlockType::Air ||
+															  world.blocks[x + 1][y][z].m_type == BlockType::Air ||
+															  world.blocks[x][y + 1][z].m_type == BlockType::Air ||
+															  world.blocks[x][y][z + 1].m_type == BlockType::Air);
 }
 
 void Game::placingAndRemovingBlocks()
@@ -313,7 +303,7 @@ void Game::placingAndRemovingBlocks()
 	int y = player.gunPos.y + 0.25;
 	int z = player.gunPos.z + 0.25;
 
-	if (input.getMouseLeft() && !input.getMouseRight() && player.pos.y > 5)
+	if (input.getMouseLeft() && !input.getMouseRight() && player.position.y > 5)
 	{
 		if (checkDestroyPossibility(x, y, z))
 		{

@@ -2,13 +2,7 @@
 #include <iostream>
 #include <GL/glew.h>
 
-
-Shader::Shader()
-{
-    
-}
-
-Shader::Shader(const std::filesystem::path vertexShaderPath, const std::filesystem::path fragmentShaderPath)
+Shader::Shader(const std::filesystem::path& vertexShaderPath, const std::filesystem::path& fragmentShaderPath)
 {
     programID = glCreateProgram();
     vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
@@ -54,11 +48,6 @@ Shader::Shader(const std::filesystem::path vertexShaderPath, const std::filesyst
 
     glDeleteShader(vertexShaderID);
     glDeleteShader(fragmentShaderID);
-}
-
-Shader::~Shader()
-{
-
 }
 
 void Shader::checkCompilationVertexShader() const
@@ -112,12 +101,12 @@ void Shader::use() const
     glUseProgram(programID);
 }
 
-void Shader::setMat4(const int &location, const glm::mat4 &mat) const
+void Shader::setMat4(int location, const glm::mat4 &mat) const
 {
     glUniformMatrix4fv(location, 1, GL_FALSE, &mat[0][0]);
 }
 
-void Shader::setFloat(const int &location, const float num) const
+void Shader::setFloat(int location, float num) const
 {
     glUniform1f(location, num);
 }

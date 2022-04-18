@@ -16,7 +16,6 @@ class Camera
 
 public:
 	Camera();
-	~Camera() = default;
 
 	Vector3f m_position;
 	Vector3f m_rotation;

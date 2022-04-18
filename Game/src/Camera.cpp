@@ -32,7 +32,7 @@ void Camera::updateCameraRotation(const InputController &input, float mouseSpeed
 
 	float radY = m_rotation.y / (2 * pi);
 
-	m_rotation.x += (float)input.getMouseDeltaX() * mouseSpeed;
+	m_rotation.x += input.getMouseDeltaX() * mouseSpeed;
 
 	if (radY > pi / 2 - 0.1) // less than pi/2
 	{

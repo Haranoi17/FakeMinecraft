@@ -12,12 +12,10 @@ class World;
 class Player
 {
 public:
-
-	Vector3f pos;
+	Vector3f position;
 	Vector3f movePossibilityPositive;
 	Vector3f movePossibilityNegative;
 	Vector3f gunPos;
-
 
 	sf::Clock immunityTimer;
 	sf::Clock generalTimer;
@@ -35,9 +33,9 @@ public:
 	Player(const World&);
 	~Player();
 
- 	void checkMovePossibility(const World&);
+ 	void checkMovePossibility(const World& world);
 	void takeDmg(int dmg);
-	void walk(const InputController&, const World&, float);
+	void walk(const InputController& inputController, const World& world, float dt);
 	void updateGunPos();
 };
 

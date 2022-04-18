@@ -9,14 +9,12 @@
 class Shader
 {
 public:
-
-    Shader();
-    Shader(const std::filesystem::path , const std::filesystem::path);
-    ~Shader();
+    Shader() = default;
+    Shader(const std::filesystem::path& fragmentShaderPath , const std::filesystem::path& vertexShaderPath);
 
     void use() const;
-    void setMat4(const int&, const glm::mat4&) const;
-    void setFloat(const int&, const float) const;
+    void setMat4(int, const glm::mat4&) const;
+    void setFloat(int, float) const;
  
     int getID() const;
 

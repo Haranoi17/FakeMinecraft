@@ -10,17 +10,17 @@ class Player;
 class World
 {
     public:
-    World(int);
+    World();
     ~World();
     void alocateMemory();
     void generateTerrain();
     void generateTrees();
     void fillBlockTypes();
-    void prepareBlocksWithAirTouch(const Player&);
-    void prepareToDraw(const Player&);
+    void prepareBlocksWithAirTouch(const Player& player);
+    void prepareToDraw(const Player& player);
 
     bool checkAir(const Vector3f&) const;
-    Vector3f dimentions;
+    sf::Vector3i dimentions;
     float **heights;
     Block ***blocks;
 

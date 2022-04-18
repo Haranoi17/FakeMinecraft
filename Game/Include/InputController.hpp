@@ -4,10 +4,6 @@
 class InputController 
 {
 public:
-
-    InputController();
-    ~InputController();
-
     void updateKeysValues();
     void updateMouseValues();
     void updateMouseAndKeyValues();
