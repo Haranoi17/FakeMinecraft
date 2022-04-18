@@ -1,1 +1,0 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/FakeMinecraft.dir/main.cpp.o -o FakeMinecraft  Game/libFakeMinecraftLib.a -lsfml-graphics -lsfml-window -lsfml-system -lGL -lGLU -lglut -lGLEW 

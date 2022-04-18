@@ -1,2 +1,0 @@
-/usr/bin/ar qc libFakeMinecraftLib.a CMakeFiles/FakeMinecraftLib.dir/src/GameTemp/Block.cpp.o CMakeFiles/FakeMinecraftLib.dir/src/GameTemp/Camera.cpp.o CMakeFiles/FakeMinecraftLib.dir/src/GameTemp/Game.cpp.o CMakeFiles/FakeMinecraftLib.dir/src/GameTemp/InputController.cpp.o CMakeFiles/FakeMinecraftLib.dir/src/GameTemp/Player.cpp.o CMakeFiles/FakeMinecraftLib.dir/src/GameTemp/Shader.cpp.o CMakeFiles/FakeMinecraftLib.dir/src/GameTemp/World.cpp.o CMakeFiles/FakeMinecraftLib.dir/src/GameTemp/vectorOperations.cpp.o
-/usr/bin/ranlib libFakeMinecraftLib.a
