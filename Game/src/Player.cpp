@@ -50,21 +50,21 @@ void Player::walk(const InputController& input, const World& world, float dt)
 		prevPos = position;
 	}
 	//moving 
-	if(cam.m_front.x > 0 && movePossibilityPositive.x)
+	if(cam.getFront().x > 0 && movePossibilityPositive.x)
 	{
-		position.x += cam.m_front.x * dt * 5.0f;
+		position.x += cam.getFront().x * dt * 5.0f;
 	}
-	if(cam.m_front.x < 0 && movePossibilityNegative.x)
+	if(cam.getFront().x < 0 && movePossibilityNegative.x)
 	{
-		position.x += cam.m_front.x * dt * 5.0f;
+		position.x += cam.getFront().x * dt * 5.0f;
 	}
-	if(cam.m_front.z > 0 && movePossibilityPositive.z)
+	if(cam.getFront().z > 0 && movePossibilityPositive.z)
 	{
-		position.z += cam.m_front.z * dt * 5.0f;
+		position.z += cam.getFront().z * dt * 5.0f;
 	}
-	if(cam.m_front.z < 0 && movePossibilityNegative.z)
+	if(cam.getFront().z < 0 && movePossibilityNegative.z)
 	{
-		position.z += cam.m_front.z * dt * 5.0f;
+		position.z += cam.getFront().z * dt * 5.0f;
 	}
 	//jumping
 	if(input.getKeySpace())
@@ -107,14 +107,14 @@ void Player::walk(const InputController& input, const World& world, float dt)
 
 void Player::updateGunPos()
 {
-	static float pi	= (float)3.14159265359;
-	float alpha = cam.m_rotation.x / (2 * pi);
-	float beta	= -cam.m_rotation.y / (2 * pi);
-	float r = 2.1;
-	gunPos = cam.m_pointToLookAt;
-	gunPos.x += 0.25 + r * -cos(alpha)*cos(beta);
-	gunPos.y += 0.25 + r * -sin(beta);
-	gunPos.z += 0.25 + r * -cos(beta)*sin(alpha);
+	// static float pi	= (float)3.14159265359;
+	// float alpha = cam.m_rotation.x / (2 * pi);
+	// float beta	= -cam.m_rotation.y / (2 * pi);
+	// float r = 2.1;
+	// gunPos = cam.m_pointToLookAt;
+	// gunPos.x += 0.25 + r * -cos(alpha)*cos(beta);
+	// gunPos.y += 0.25 + r * -sin(beta);
+	// gunPos.z += 0.25 + r * -cos(beta)*sin(alpha);
 }
 
 void Player::checkMovePossibility(const World& world)

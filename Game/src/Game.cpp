@@ -88,7 +88,7 @@ void Game::prepareMatrices()
 		{
 			if (block->m_type != BlockType::Air)
 			{
-				blockTypes[iterator] = block->m_type;
+				blockTypes[iterator] = static_cast<float>(block->m_type);
 				matrices[iterator] = glm::translate(glm::mat4(1), glm::vec3(block->m_position.x, block->m_position.y, block->m_position.z));
 				iterator++;
 			}
@@ -217,13 +217,15 @@ void Game::reshapeScreen()
 void Game::update(float dt)
 {
 	input.updateMouseAndKeyValues();
-	player.cam.updateCameraRotation(input, mouseSpeed);
+	player.cam.updateCameraRotation(sf::Vector2i{input.getMouseDeltaX(), input.getMouseDeltaY()}, mouseSpeed);
 	player.cam.updateWalkDirection(input);
 	player.walk(input, world, dt);
 	updateClock.restart();
 
 	player.cam.updatePointToLookAtPosition(player.position);
+	player.cam.updateRotationAngles();
 	player.cam.updateCameraPosition();
+
 	player.updateGunPos();
 }
 
@@ -239,7 +241,8 @@ void Game::draw()
 	playerShader.setMat4(playerShader.projectionLoc, projection);
 
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
-	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(player.cam.m_position.x, player.cam.m_position.y, player.cam.m_position.z)));
+	auto [x,y,z] = player.cam.getPosition();
+	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(x,y,z)));
 
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_CULL_FACE);

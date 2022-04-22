@@ -6,7 +6,7 @@
 #include <Vector3f.hpp>
 
 World::World()
-    : dimentions{1000, 100, 1000}
+    : dimentions{100, 100, 100}
 {
     alocateMemory();
     generateTerrain();
@@ -280,7 +280,6 @@ void World::prepareToDraw(const Player &player)
 {
     int ammount = 0;
     Vector3f distanceVector;
-    bool signOfCosinus;
     int r = 150;
 
     if (blocksToDraw.size())
@@ -291,9 +290,8 @@ void World::prepareToDraw(const Player &player)
     for (Block *block : blocksWithAirTouch)
     {
         distanceVector = block->m_position - player.position;
-        signOfCosinus = (player.cam.m_lookDirectionFlat.x * distanceVector.x + player.cam.m_lookDirectionFlat.z * distanceVector.z) >= -2;
 
-        if (signOfCosinus && distanceVector.length() < r)
+        if (distanceVector.length() < r)
         {
             blocksToDraw.push_back(block);
             ammount++;

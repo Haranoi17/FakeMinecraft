@@ -1,7 +1,7 @@
 #include <Block.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-Block::Block(Vector3f pos, BlockType initType)
-    : m_position(pos), m_type(initType)
+Block::Block(const Vector3f& position, BlockType type)
+    : m_position(position), m_type(type)
 {
 }
