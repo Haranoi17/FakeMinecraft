@@ -1,7 +1,7 @@
-#include "Player.hpp"
 #include <math.h>
-#include <Vector3f.hpp>
 
+#include "Player.hpp"
+#include "Vector3f.hpp"
 
 Player::Player(const World& world)
 	:	hp(100), dmg(10), immunityTimer(sf::Clock()), generalTimer(sf::Clock()), fallingTime(0), jumpingTime(0), jump(false), jumpPrev(false),
@@ -152,7 +152,7 @@ void Player::checkMovePossibility(const World& world)
         {
             for(int k = backBound; k < frontBound; k++)
             {
-				if(world.blocks[i][j][k].m_type != BlockType::Air)
+				if(world.blocks[i][j][k].m_type != Block::Type::Air)
 				{
 					blocks.push_back(&world.blocks[i][j][k]);
 				}

@@ -1,5 +1,6 @@
-#include <Vector3f.hpp>
 #include <math.h>
+
+#include "Vector3f.hpp"
 
 Vector3f::Vector3f()
 	: sf::Vector3f{0.0f, 0.0f, 0.0f}

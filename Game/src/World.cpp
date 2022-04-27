@@ -1,9 +1,10 @@
-#include <World.hpp>
 #include <random>
 #include <iostream>
 #include <math.h>
 #include <random>
-#include <Vector3f.hpp>
+
+#include "World.hpp"
+#include "Vector3f.hpp"
 
 World::World()
     : dimentions{100, 100, 100}
@@ -80,7 +81,7 @@ void World::alocateMemory()
         {
             for (int k = 0; k < z; k++)
             {
-                blocks[i][j][k] = Block(Vector3f(i, j, k), BlockType::Air);
+                blocks[i][j][k] = Block(Vector3f(i, j, k), Block::Type::Air);
             }
         }
     }
@@ -119,39 +120,39 @@ void World::generateTrees()
             {
                 int k = (int)heights[i][j];
                 // pien
-                blocks[i][k][j].m_type = BlockType::Wood;
-                blocks[i][k + 1][j].m_type = BlockType::Wood;
-                blocks[i][k + 2][j].m_type = BlockType::Wood;
-                blocks[i][k + 3][j].m_type = BlockType::Wood;
-                blocks[i][k + 4][j].m_type = BlockType::Wood;
+                blocks[i][k][j].m_type = Block::Type::Wood;
+                blocks[i][k + 1][j].m_type = Block::Type::Wood;
+                blocks[i][k + 2][j].m_type = Block::Type::Wood;
+                blocks[i][k + 3][j].m_type = Block::Type::Wood;
+                blocks[i][k + 4][j].m_type = Block::Type::Wood;
                 // liscie
-                blocks[i][k + 5][j].m_type = BlockType::Leaves;
-                blocks[i - 1][k + 5][j].m_type = BlockType::Leaves;
-                blocks[i - 1][k + 5][j - 1].m_type = BlockType::Leaves;
-                blocks[i - 1][k + 5][j + 1].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 5][j].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 5][j - 1].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 5][j + 1].m_type = BlockType::Leaves;
-                blocks[i][k + 5][j + 1].m_type = BlockType::Leaves;
-                blocks[i][k + 5][j - 1].m_type = BlockType::Leaves;
+                blocks[i][k + 5][j].m_type = Block::Type::Leaves;
+                blocks[i - 1][k + 5][j].m_type = Block::Type::Leaves;
+                blocks[i - 1][k + 5][j - 1].m_type = Block::Type::Leaves;
+                blocks[i - 1][k + 5][j + 1].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 5][j].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 5][j - 1].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 5][j + 1].m_type = Block::Type::Leaves;
+                blocks[i][k + 5][j + 1].m_type = Block::Type::Leaves;
+                blocks[i][k + 5][j - 1].m_type = Block::Type::Leaves;
 
-                blocks[i - 1][k + 4][j].m_type = BlockType::Leaves;
-                blocks[i - 1][k + 4][j - 1].m_type = BlockType::Leaves;
-                blocks[i - 1][k + 4][j + 1].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 4][j - 1].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 4][j + 1].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 4][j].m_type = BlockType::Leaves;
-                blocks[i][k + 4][j - 1].m_type = BlockType::Leaves;
-                blocks[i][k + 4][j + 1].m_type = BlockType::Leaves;
+                blocks[i - 1][k + 4][j].m_type = Block::Type::Leaves;
+                blocks[i - 1][k + 4][j - 1].m_type = Block::Type::Leaves;
+                blocks[i - 1][k + 4][j + 1].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 4][j - 1].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 4][j + 1].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 4][j].m_type = Block::Type::Leaves;
+                blocks[i][k + 4][j - 1].m_type = Block::Type::Leaves;
+                blocks[i][k + 4][j + 1].m_type = Block::Type::Leaves;
 
-                blocks[i - 1][k + 3][j].m_type = BlockType::Leaves;
-                blocks[i - 1][k + 3][j - 1].m_type = BlockType::Leaves;
-                blocks[i - 1][k + 3][j + 1].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 3][j - 1].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 3][j + 1].m_type = BlockType::Leaves;
-                blocks[i + 1][k + 3][j].m_type = BlockType::Leaves;
-                blocks[i][k + 3][j - 1].m_type = BlockType::Leaves;
-                blocks[i][k + 3][j + 1].m_type = BlockType::Leaves;
+                blocks[i - 1][k + 3][j].m_type = Block::Type::Leaves;
+                blocks[i - 1][k + 3][j - 1].m_type = Block::Type::Leaves;
+                blocks[i - 1][k + 3][j + 1].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 3][j - 1].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 3][j + 1].m_type = Block::Type::Leaves;
+                blocks[i + 1][k + 3][j].m_type = Block::Type::Leaves;
+                blocks[i][k + 3][j - 1].m_type = Block::Type::Leaves;
+                blocks[i][k + 3][j + 1].m_type = Block::Type::Leaves;
             }
         }
     }
@@ -169,7 +170,7 @@ void World::fillBlockTypes()
         {
             for (int j = 1; j < heights[i][k] / 2; j++)
             {
-                blocks[i][j][k].m_type = BlockType::Stone;
+                blocks[i][j][k].m_type = Block::Type::Stone;
             }
         }
     }
@@ -180,7 +181,7 @@ void World::fillBlockTypes()
         {
             for (int j = heights[i][k] / 2; j < heights[i][k]; j++)
             {
-                blocks[i][j][k].m_type = BlockType::Dirt;
+                blocks[i][j][k].m_type = Block::Type::Dirt;
             }
         }
     }
@@ -306,113 +307,113 @@ bool World::checkAir(const Vector3f &pos) const
     int y = pos.y;
     int z = pos.z;
 
-    if (blocks[x][y][z].m_type == BlockType::Air)
+    if (blocks[x][y][z].m_type == Block::Type::Air)
     {
         return false;
     }
 
-    if (blocks[x - 1][y - 1][z - 1].m_type == BlockType::Air)
+    if (blocks[x - 1][y - 1][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x - 1][y - 1][z].m_type == BlockType::Air)
+    if (blocks[x - 1][y - 1][z].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x - 1][y - 1][z + 1].m_type == BlockType::Air)
+    if (blocks[x - 1][y - 1][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x][y - 1][z - 1].m_type == BlockType::Air)
+    if (blocks[x][y - 1][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x][y - 1][z].m_type == BlockType::Air)
+    if (blocks[x][y - 1][z].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x][y - 1][z + 1].m_type == BlockType::Air)
+    if (blocks[x][y - 1][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y - 1][z - 1].m_type == BlockType::Air)
+    if (blocks[x + 1][y - 1][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y - 1][z].m_type == BlockType::Air)
+    if (blocks[x + 1][y - 1][z].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y - 1][z + 1].m_type == BlockType::Air)
+    if (blocks[x + 1][y - 1][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x - 1][y][z - 1].m_type == BlockType::Air)
+    if (blocks[x - 1][y][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x - 1][y][z].m_type == BlockType::Air)
+    if (blocks[x - 1][y][z].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x - 1][y][z + 1].m_type == BlockType::Air)
+    if (blocks[x - 1][y][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x][y][z - 1].m_type == BlockType::Air)
+    if (blocks[x][y][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
     // this block XD
-    if (blocks[x][y][z + 1].m_type == BlockType::Air)
+    if (blocks[x][y][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y][z - 1].m_type == BlockType::Air)
+    if (blocks[x + 1][y][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y][z].m_type == BlockType::Air)
+    if (blocks[x + 1][y][z].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y][z + 1].m_type == BlockType::Air)
+    if (blocks[x + 1][y][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x - 1][y + 1][z - 1].m_type == BlockType::Air)
+    if (blocks[x - 1][y + 1][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x - 1][y + 1][z].m_type == BlockType::Air)
+    if (blocks[x - 1][y + 1][z].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x - 1][y + 1][z + 1].m_type == BlockType::Air)
+    if (blocks[x - 1][y + 1][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x][y + 1][z - 1].m_type == BlockType::Air)
+    if (blocks[x][y + 1][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x][y + 1][z].m_type == BlockType::Air)
+    if (blocks[x][y + 1][z].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x][y + 1][z + 1].m_type == BlockType::Air)
+    if (blocks[x][y + 1][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y + 1][z - 1].m_type == BlockType::Air)
+    if (blocks[x + 1][y + 1][z - 1].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y + 1][z].m_type == BlockType::Air)
+    if (blocks[x + 1][y + 1][z].m_type == Block::Type::Air)
     {
         return true;
     }
-    if (blocks[x + 1][y + 1][z + 1].m_type == BlockType::Air)
+    if (blocks[x + 1][y + 1][z + 1].m_type == Block::Type::Air)
     {
         return true;
     }

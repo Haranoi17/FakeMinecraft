@@ -5,7 +5,7 @@ out vec4 FragColor;
 in vec2 texCoords;
 in vec3 normal;
 in vec3 position;
-in float blockType;
+in float Block::Type;
 
 int type;
 uniform sampler2D grassTop;
@@ -25,10 +25,10 @@ void main()
     vec3 lightPos = vec3(lightX, lightY, lightZ);
     vec3 toLight = lightPos - position;
     vec3 toLightNorm = normalize(lightPos - position);
-    if(blockType > 0.5 && blockType < 1.5){type = 1;}
-    if(blockType > 1.5 && blockType < 2.5){type = 2;}
-    if(blockType > 2.5 && blockType < 3.5){type = 3;} 
-    if(blockType > 3.5 && blockType < 4.5){type = 4;}
+    if(Block::Type > 0.5 && Block::Type < 1.5){type = 1;}
+    if(Block::Type > 1.5 && Block::Type < 2.5){type = 2;}
+    if(Block::Type > 2.5 && Block::Type < 3.5){type = 3;} 
+    if(Block::Type > 3.5 && Block::Type < 4.5){type = 4;}
 
 
     switch(type)

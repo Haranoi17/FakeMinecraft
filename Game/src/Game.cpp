@@ -1,11 +1,12 @@
-#include <Game.hpp>
-#include <Vector3f.hpp>
+#include "Game.hpp"
+#include "Vector3f.hpp"
+#include "Utilities.hpp"
 
 Game::Game()
 {
 	const sf::VideoMode videoMode{windowSize.x, windowSize.y};
-	const sf::ContextSettings context{ 24,8,2 };
-	
+	const sf::ContextSettings context{24, 8, 2};
+
 	m_window.create(videoMode, title, windowStyle, context);
 
 	glewInit();
@@ -86,7 +87,7 @@ void Game::prepareMatrices()
 		sf::Clock test;
 		for (Block *block : world.blocksToDraw)
 		{
-			if (block->m_type != BlockType::Air)
+			if (block->m_type != Block::Type::Air)
 			{
 				blockTypes[iterator] = static_cast<float>(block->m_type);
 				matrices[iterator] = glm::translate(glm::mat4(1), glm::vec3(block->m_position.x, block->m_position.y, block->m_position.z));
@@ -134,50 +135,33 @@ void Game::reRenderWorld()
 
 void Game::initValues()
 {
-	crosshairTexture.loadFromFile(std::filesystem::current_path() += "/textures/crosshair.png");
-	dirtTexture.loadFromFile(std::filesystem::current_path() += "/textures/dirt.jpg");
-	grassTexture.loadFromFile(std::filesystem::current_path() += "/textures/grass.jpg");
-	grassTopTexture.loadFromFile(std::filesystem::current_path() += "/textures/grassTop.png");
-	skyboxTexture.loadFromFile(std::filesystem::current_path() += "/textures/skybox.jpeg");
-	stoneTexture.loadFromFile(std::filesystem::current_path() += "/textures/stone.png");
-	woodTexture.loadFromFile(std::filesystem::current_path() += "/textures/wood.jpg");
-	leavesTexture.loadFromFile(std::filesystem::current_path() += "/textures/leaves.png");
+	dirtTexture = resourceLoader.loadTexture("dirt.jpg");
+	woodTexture = resourceLoader.loadTexture("wood.jpg");
+	stoneTexture = resourceLoader.loadTexture("stone.png");
+	grassTexture = resourceLoader.loadTexture("grass.jpg");
+	leavesTexture = resourceLoader.loadTexture("leaves.png");
+	skyboxTexture = resourceLoader.loadTexture("skybox.jpeg");
+	grassTopTexture = resourceLoader.loadTexture("grassTop.png");
 
-	blocksShader = Shader(std::filesystem::current_path() += "/shaders/blocksShader.vert", std::filesystem::current_path() += "/shaders/blocksShader.frag");
-	blocksShader.projectionLoc = glGetUniformLocation(blocksShader.getID(), "projection");
-	blocksShader.viewLoc = glGetUniformLocation(blocksShader.getID(), "view");
-
-	blocksShader.use();
-
-	GLuint texLoc = glGetUniformLocation(blocksShader.getID(), "grassTop");
-	glUniform1i(texLoc, 0);
-
-	texLoc = glGetUniformLocation(blocksShader.getID(), "grassSide");
-	glUniform1i(texLoc, 1);
-
-	texLoc = glGetUniformLocation(blocksShader.getID(), "dirt");
-	glUniform1i(texLoc, 2);
-
-	texLoc = glGetUniformLocation(blocksShader.getID(), "stone");
-	glUniform1i(texLoc, 3);
-
-	texLoc = glGetUniformLocation(blocksShader.getID(), "wood");
-	glUniform1i(texLoc, 4);
-
-	texLoc = glGetUniformLocation(blocksShader.getID(), "leaves");
-	glUniform1i(texLoc, 5);
-
-	glUseProgram(0);
-
-	playerShader = Shader(std::filesystem::current_path() += "/shaders/playerShader.vert", std::filesystem::current_path() += "/shaders/playerShader.frag");
+	playerShader = resourceLoader.loadShader("playerShader.vert", "playerShader.frag");
 	playerShader.viewLoc = glGetUniformLocation(playerShader.getID(), "view");
 	playerShader.modelLoc = glGetUniformLocation(playerShader.getID(), "model");
 	playerShader.projectionLoc = glGetUniformLocation(playerShader.getID(), "projection");
-	playerShader.use();
-	texLoc = glGetUniformLocation(playerShader.getID(), "tex0");
-	glUniform1i(texLoc, 15);
 
-	glUseProgram(0);
+	blockShader = resourceLoader.loadShader("blockShader.vert", "blockShader.frag");
+	blockShader.projectionLoc = glGetUniformLocation(blockShader.getID(), "projection");
+	blockShader.viewLoc = glGetUniformLocation(blockShader.getID(), "view");
+
+	playerShader.use();
+	glUniform1i(glGetUniformLocation(playerShader.getID(), "tex0"), 15);
+
+	blockShader.use();
+	for (std::vector textureNames{"grassTop", "grassSide", "dirt", "stone", "wood", "leaves"};
+		 const auto &[i, textureName] : enumerate(textureNames))
+	{
+		const GLuint textureLocation = glGetUniformLocation(blockShader.getID(), textureName);
+		glUniform1i(textureLocation, i);
+	}
 
 	m_window.setMouseCursorVisible(false);
 }
@@ -196,7 +180,7 @@ void Game::handleEvents()
 			break;
 		case sf::Event::KeyPressed:
 		{
-			if (input.getKeyEMERGENCY_EXIT())
+			if (input.getKeyESC())
 			{
 				m_window.close();
 			}
@@ -241,8 +225,8 @@ void Game::draw()
 	playerShader.setMat4(playerShader.projectionLoc, projection);
 
 	playerShader.setFloat(glGetUniformLocation(playerShader.getID(), "drawGun"), 0);
-	auto [x,y,z] = player.cam.getPosition();
-	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(x,y,z)));
+	auto [x, y, z] = player.cam.getPosition();
+	playerShader.setMat4(playerShader.modelLoc, glm::translate(glm::mat4(1), glm::vec3(x, y, z)));
 
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_CULL_FACE);
@@ -266,12 +250,12 @@ void Game::draw()
 	glBindVertexArray(VAO);
 	glDrawArrays(GL_TRIANGLES, 0, 36);
 
-	blocksShader.use();
-	blocksShader.setMat4(blocksShader.viewLoc, view);
-	blocksShader.setMat4(blocksShader.projectionLoc, projection);
-	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightX"), player.position.x);
-	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightY"), player.position.y);
-	blocksShader.setFloat(glGetUniformLocation(blocksShader.getID(), "lightZ"), player.position.z);
+	blockShader.use();
+	blockShader.setMat4(blockShader.viewLoc, view);
+	blockShader.setMat4(blockShader.projectionLoc, projection);
+	blockShader.setFloat(glGetUniformLocation(blockShader.getID(), "lightX"), player.position.x);
+	blockShader.setFloat(glGetUniformLocation(blockShader.getID(), "lightY"), player.position.y);
+	blockShader.setFloat(glGetUniformLocation(blockShader.getID(), "lightZ"), player.position.z);
 
 	glBindVertexArray(VAO);
 	glDrawArraysInstanced(GL_TRIANGLES, 0, 36, world.ammountToDraw);
@@ -282,21 +266,21 @@ void Game::draw()
 
 bool Game::checkPlacePossibility(int x, int y, int z)
 {
-	return world.blocks[x][y][z].m_type == BlockType::Air && (world.blocks[x - 1][y][z].m_type != BlockType::Air ||
-															  world.blocks[x][y - 1][z].m_type != BlockType::Air ||
-															  world.blocks[x][y][z - 1].m_type != BlockType::Air ||
-															  world.blocks[x + 1][y][z].m_type != BlockType::Air ||
-															  world.blocks[x][y + 1][z].m_type != BlockType::Air ||
-															  world.blocks[x][y][z + 1].m_type != BlockType::Air);
+	return world.blocks[x][y][z].m_type == Block::Type::Air && (world.blocks[x - 1][y][z].m_type != Block::Type::Air ||
+															  world.blocks[x][y - 1][z].m_type != Block::Type::Air ||
+															  world.blocks[x][y][z - 1].m_type != Block::Type::Air ||
+															  world.blocks[x + 1][y][z].m_type != Block::Type::Air ||
+															  world.blocks[x][y + 1][z].m_type != Block::Type::Air ||
+															  world.blocks[x][y][z + 1].m_type != Block::Type::Air);
 }
 bool Game::checkDestroyPossibility(int x, int y, int z)
 {
-	return world.blocks[x][y][z].m_type != BlockType::Air && (world.blocks[x - 1][y][z].m_type == BlockType::Air ||
-															  world.blocks[x][y - 1][z].m_type == BlockType::Air ||
-															  world.blocks[x][y][z - 1].m_type == BlockType::Air ||
-															  world.blocks[x + 1][y][z].m_type == BlockType::Air ||
-															  world.blocks[x][y + 1][z].m_type == BlockType::Air ||
-															  world.blocks[x][y][z + 1].m_type == BlockType::Air);
+	return world.blocks[x][y][z].m_type != Block::Type::Air && (world.blocks[x - 1][y][z].m_type == Block::Type::Air ||
+															  world.blocks[x][y - 1][z].m_type == Block::Type::Air ||
+															  world.blocks[x][y][z - 1].m_type == Block::Type::Air ||
+															  world.blocks[x + 1][y][z].m_type == Block::Type::Air ||
+															  world.blocks[x][y + 1][z].m_type == Block::Type::Air ||
+															  world.blocks[x][y][z + 1].m_type == Block::Type::Air);
 }
 
 void Game::placingAndRemovingBlocks()
@@ -313,14 +297,14 @@ void Game::placingAndRemovingBlocks()
 		if (checkDestroyPossibility(x, y, z))
 		{
 			timePassed += Timer.getElapsedTime().asSeconds();
-			if (world.blocks[x][y][z].m_type != BlockType::Air)
+			if (world.blocks[x][y][z].m_type != Block::Type::Air)
 			{
 				for (Block *block : world.blocksNextToPlayer)
 				{
 					if (block->m_position.x == x && block->m_position.y == y && block->m_position.z == z)
 					{
 						player.slots.push_back(block->m_type);
-						block->m_type = BlockType::Air;
+						block->m_type = Block::Type::Air;
 					}
 				}
 				timePassed = 0;
@@ -337,7 +321,7 @@ void Game::placingAndRemovingBlocks()
 			if (player.slots.size())
 			{
 				std::cout << "a";
-				BlockType tempType = player.slots.back();
+				Block::Type tempType = player.slots.back();
 				player.slots.pop_back();
 				world.blocks[x][y][z].m_type = tempType;
 				timePassed = 0;

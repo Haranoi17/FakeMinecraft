@@ -1,12 +1,13 @@
 #include <SFML/Graphics.hpp>
-#include <InputController.hpp>
-#include <Player.hpp>
-#include <World.hpp>
-#include <Shader.hpp>
-
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <array>
+
+#include "InputController.hpp"
+#include "Player.hpp"
+#include "World.hpp"
+#include "Shader.hpp"
+#include "ResourceLoader.hpp"
 
 class Game
 {
@@ -32,6 +33,7 @@ private:
     bool checkDestroyPossibility(int x, int y, int z);
 
 private:
+    ResourceLoader resourceLoader;
     sf::RenderWindow m_window;
     sf::Event event;
 
@@ -61,7 +63,7 @@ private:
     std::array<GLuint, 3> VBO;
 
     Shader playerShader;
-    Shader blocksShader;
+    Shader blockShader;
 
     glm::mat4 view{1};
     glm::mat4 projection{1};

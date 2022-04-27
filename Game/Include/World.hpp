@@ -2,8 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
-#include <Block.hpp>
-#include <Player.hpp>
+
+#include "Block.hpp"
+#include "Player.hpp"
 
 class Player;
 

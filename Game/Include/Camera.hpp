@@ -3,8 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <glm/matrix.hpp>
 #include <iostream>
-#include <InputController.hpp>
-#include <Vector3f.hpp>
+
+#include "InputController.hpp"
+#include "Vector3f.hpp"
 
 class Camera
 {

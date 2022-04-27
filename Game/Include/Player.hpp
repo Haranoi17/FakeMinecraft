@@ -1,11 +1,11 @@
 #pragma once
 
-#include "SFML/Graphics.hpp"
-#include <InputController.hpp>
-#include <Camera.hpp>
-#include <vector>
-#include <Block.hpp>
-#include <World.hpp>
+#include <SFML/Graphics.hpp>
+#include "InputController.hpp"
+#include "Camera.hpp"
+#include "vector"
+#include "Block.hpp"
+#include "World.hpp"
 
 class World;
 
@@ -26,7 +26,7 @@ public:
 	int hp;
 	int dmg;
 
-	std::vector<BlockType> slots;
+	std::vector<Block::Type> slots;
 	Camera cam;
 
 	Player();

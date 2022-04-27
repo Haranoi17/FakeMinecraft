@@ -144,16 +144,6 @@ void InputController::updateKeysValues()
     {
         ESC = false;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LAlt) &&
-        (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::LControl)) &&
-        (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Delete)))
-    {
-        EMERGENCY_EXIT = true;
-    }
-    else
-    {
-        EMERGENCY_EXIT = false;
-    }
 }
 
 float InputController::normalizedInput(float previousVal, bool pressed, float elapsedTime)
@@ -191,4 +181,3 @@ bool InputController::getKeyQ() const { return Q; }
 bool InputController::getKeyShift() const { return Shift; }
 bool InputController::getKeySpace() const { return Space; }
 bool InputController::getKeyESC() const { return ESC; }
-bool InputController::getKeyEMERGENCY_EXIT() const { return EMERGENCY_EXIT; }

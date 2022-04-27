@@ -21,7 +21,6 @@ public:
     bool getKeyShift() const;
     bool getKeySpace() const;
     bool getKeyESC() const;
-    bool getKeyEMERGENCY_EXIT() const;
 
 private:
 
@@ -46,5 +45,4 @@ private:
     bool Shift;
     bool Space;
     bool ESC;
-    bool EMERGENCY_EXIT;
 };
