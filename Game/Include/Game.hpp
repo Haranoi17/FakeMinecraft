@@ -2,12 +2,13 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <array>
-
+#include <vector>
 #include "InputController.hpp"
 #include "Player.hpp"
 #include "World.hpp"
 #include "Shader.hpp"
 #include "ResourceLoader.hpp"
+#include <thread>
 
 class Game
 {
@@ -16,8 +17,8 @@ class Game
     static inline const sf::Uint32 windowStyle{7U};
 public:
     Game();
-    void loop();
-
+    void startLogic();
+    void drawLoop();
 private:
     void update(float dt);
     void draw();
@@ -31,11 +32,16 @@ private:
     void placingAndRemovingBlocks();
     bool checkPlacePossibility(int x, int y, int z);
     bool checkDestroyPossibility(int x, int y, int z);
-
+    sf::Time deltaTime();
+    bool isRunning();
+    void endGracefully();
+    void waitForThreadsToFinnish();
+    
 private:
+    bool isGameRunning{true};
+    std::vector<std::thread> m_threads;
     ResourceLoader resourceLoader;
     sf::RenderWindow m_window;
-    sf::Event event;
 
     InputController input;
     World world;
@@ -77,6 +83,8 @@ private:
     bool needToRefreshBlocks = false;
 
     sf::Clock updateClock;
+    bool m_updateFinnished{false};
+    bool m_eventsFinnished{false};
 
     float unitMatrix[16] =
         {

@@ -1,6 +1,7 @@
 #include "Game.hpp"
 #include "Vector3f.hpp"
 #include "Utilities.hpp"
+#include <functional>
 
 Game::Game()
 {
@@ -20,29 +21,70 @@ Game::Game()
 	prepareMatrices();
 }
 
-void Game::loop()
+sf::Time Game::deltaTime()
 {
-	while (m_window.isOpen())
-	{
-		handleEvents();
+	return updateClock.getElapsedTime();
+}
 
-		const float dt{updateClock.getElapsedTime().asSeconds()};
-		update(dt);
+bool Game::isRunning()
+{
+	return isGameRunning;
+}
 
-		placingAndRemovingBlocks();
-
-		if (Vector3f{player.position - renderPoint}.length() > 10)
+void Game::startLogic()
+{
+	std::function<void()> eventHandlingLoop{
+		[this]()
 		{
-			needToRefreshBlocks = true;
-		}
+			while (isRunning())
+			{
+				handleEvents();
+			}
+			m_eventsFinnished = true;
+		}};
 
-		prepareMatrices();
-		world.prepareBlocksWithAirTouch(player);
+	std::function<void()> updateLoop{
+		[this]()
+		{
+			while (isRunning())
+			{
+				const float dt{deltaTime().asSeconds()};
+				update(dt);
+				// placingAndRemovingBlocks();
+				// if (Vector3f{player.position - renderPoint}.length() > 10)
+				// {
+				// 	needToRefreshBlocks = true;
+				// }
+				// prepareMatrices();
+				// world.prepareBlocksWithAirTouch(player);
 
-		reRenderWorld();
+				// reRenderWorld();
+			}
+			m_updateFinnished = true;
+		}};
 
+	m_threads.emplace_back(eventHandlingLoop);
+	m_threads.emplace_back(updateLoop);
+
+	for (auto &thread : m_threads)
+	{
+		thread.detach();
+	}
+}
+
+void Game::drawLoop()
+{
+	while (isRunning())
+	{
 		draw();
-		m_window.display();
+	}
+}
+
+void Game::waitForThreadsToFinnish()
+{
+	while (!m_updateFinnished && !m_eventsFinnished)
+	{
+		std::this_thread::sleep_for(std::chrono::milliseconds{50});
 	}
 }
 
@@ -165,27 +207,24 @@ void Game::initValues()
 
 	m_window.setMouseCursorVisible(false);
 }
+void Game::endGracefully()
+{
+	isGameRunning = false;
+}
 
 void Game::handleEvents()
 {
-	while (m_window.pollEvent(event))
+	sf::Event event;
+	m_window.waitEvent(event);
+	
+	switch (event.type)
 	{
-		switch (event.type)
-		{
-		case sf::Event::Closed:
-			m_window.close();
-			break;
-		case sf::Event::Resized:
-			reshapeScreen();
-			break;
-		case sf::Event::KeyPressed:
-		{
-			if (input.getKeyESC())
-			{
-				m_window.close();
-			}
-		}
-		}
+	case sf::Event::Closed:
+		isGameRunning = false;
+		break;
+	case sf::Event::Resized:
+		reshapeScreen();
+		break;
 	}
 }
 
@@ -204,7 +243,6 @@ void Game::update(float dt)
 	player.cam.updateCameraRotation(sf::Vector2i{input.getMouseDeltaX(), input.getMouseDeltaY()}, mouseSpeed);
 	player.cam.updateWalkDirection(input);
 	player.walk(input, world, dt);
-	updateClock.restart();
 
 	player.cam.updatePointToLookAtPosition(player.position);
 	player.cam.updateRotationAngles();
@@ -262,25 +300,27 @@ void Game::draw()
 
 	glUseProgram(0);
 	glBindVertexArray(0);
+
+	m_window.display();
 }
 
 bool Game::checkPlacePossibility(int x, int y, int z)
 {
 	return world.blocks[x][y][z].m_type == Block::Type::Air && (world.blocks[x - 1][y][z].m_type != Block::Type::Air ||
-															  world.blocks[x][y - 1][z].m_type != Block::Type::Air ||
-															  world.blocks[x][y][z - 1].m_type != Block::Type::Air ||
-															  world.blocks[x + 1][y][z].m_type != Block::Type::Air ||
-															  world.blocks[x][y + 1][z].m_type != Block::Type::Air ||
-															  world.blocks[x][y][z + 1].m_type != Block::Type::Air);
+																world.blocks[x][y - 1][z].m_type != Block::Type::Air ||
+																world.blocks[x][y][z - 1].m_type != Block::Type::Air ||
+																world.blocks[x + 1][y][z].m_type != Block::Type::Air ||
+																world.blocks[x][y + 1][z].m_type != Block::Type::Air ||
+																world.blocks[x][y][z + 1].m_type != Block::Type::Air);
 }
 bool Game::checkDestroyPossibility(int x, int y, int z)
 {
 	return world.blocks[x][y][z].m_type != Block::Type::Air && (world.blocks[x - 1][y][z].m_type == Block::Type::Air ||
-															  world.blocks[x][y - 1][z].m_type == Block::Type::Air ||
-															  world.blocks[x][y][z - 1].m_type == Block::Type::Air ||
-															  world.blocks[x + 1][y][z].m_type == Block::Type::Air ||
-															  world.blocks[x][y + 1][z].m_type == Block::Type::Air ||
-															  world.blocks[x][y][z + 1].m_type == Block::Type::Air);
+																world.blocks[x][y - 1][z].m_type == Block::Type::Air ||
+																world.blocks[x][y][z - 1].m_type == Block::Type::Air ||
+																world.blocks[x + 1][y][z].m_type == Block::Type::Air ||
+																world.blocks[x][y + 1][z].m_type == Block::Type::Air ||
+																world.blocks[x][y][z + 1].m_type == Block::Type::Air);
 }
 
 void Game::placingAndRemovingBlocks()
@@ -347,10 +387,6 @@ void Game::initOpenGL()
 	glEnable(GL_CULL_FACE);
 	glFrontFace(GL_CW);
 	glCullFace(GL_BACK);
-
-	// glBlendEquation(GL_ONE_MINUS_SRC_ALPHA);
-	// glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA);
-	// glEnable( GL_BLEND );
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, grassTopTexture.getNativeHandle());

@@ -7,8 +7,8 @@
 
 class ResourceLoader
 {
-    const std::string_view texturesLocation{"/resources/textures/"};
-    const std::string_view shadersLocation{"/resources/shaders/"};
+    inline static constexpr std::string_view texturesLocation{"/resources/textures/"};
+    inline static constexpr std::string_view shadersLocation{"/resources/shaders/"};
 
 public:
     sf::Texture loadTexture(std::string_view filename);

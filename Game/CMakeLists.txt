@@ -15,4 +15,5 @@ GL
 GLU
 glut    
 GLEW 
+X11
 )
